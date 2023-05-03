@@ -1,0 +1,3 @@
+[submodule "static"]
+	path = static
+	url = https://github.com/titaniumnetwork-dev/ultraviolet-site.git
