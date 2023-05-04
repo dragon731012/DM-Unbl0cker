@@ -8,7 +8,7 @@
   "description": "Ultraviolet instance",
   "main": "index.js",
   "scripts": {
-    "prestart": "npm install"
+    "prestart": "npm install",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ."
   },
