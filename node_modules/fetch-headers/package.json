@@ -1,0 +1,51 @@
+{
+  "name": "fetch-headers",
+  "version": "3.0.1",
+  "description": "fetch Headers",
+  "main": "headers.js",
+  "type": "module",
+  "scripts": {
+    "test": "node --no-warnings --experimental-loader ./test/http-loader.js ./test/wpt_test.js",
+    "test:deno": "deno test test --allow-net --allow-read --coverage=x && deno coverage x && rm -rf x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jimmywarting/fetch-headers.git"
+  },
+  "exports": {
+    ".": "./headers.js"
+  },
+  "types": "./headers.d.ts",
+  "keywords": [
+    "Headers",
+    "fetch",
+    "spec",
+    "whatwg"
+  ],
+  "author": "Jimmy Wärting <jimmy@warting.se> (https://jimmy.warting.se/opensource)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jimmywarting/fetch-headers/issues"
+  },
+  "engines": {
+    "node": ">=12.20"
+  },
+  "homepage": "https://github.com/jimmywarting/fetch-headers#readme",
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/jimmywarting"
+    },
+    {
+      "type": "github",
+      "url": "https://paypal.me/jimmywarting"
+    }
+  ],
+  "devDependencies": {
+    "node-fetch": "^3.1.0"
+  }
+
+,"_resolved": "https://registry.npmjs.org/fetch-headers/-/fetch-headers-3.0.1.tgz"
+,"_integrity": "sha512-Kq+NyED/wLgT29St7aW47gAWg8EmmE5QmhwQ5RmPRULYLqpglA7Kc/ZnbqXu2vhH6mw1koikew2g94WiHLPmpA=="
+,"_from": "fetch-headers@3.0.1"
+}
