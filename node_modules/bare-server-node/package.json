@@ -1,0 +1,46 @@
+{
+  "name": "bare-server-node",
+  "description": "Back.",
+  "version": "0.0.1",
+  "homepage": "https://github.com/tomphttp",
+  "bugs": {
+    "url": "https://github.com/tomphttp/bare-server-node/issues",
+    "email": "tomp@sys32.dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tomphttp/bare-server-node.git"
+  },
+  "author": {
+    "name": "TOMP Development",
+    "email": "tomp@sys32.dev",
+    "url": "https://github.com/tomphttp"
+  },
+  "keywords": [
+    "proxy",
+    "tomp",
+    "tomphttp",
+    "sys32"
+  ],
+  "license": "GPL-3.0",
+  "type": "module",
+  "main": "Server.js",
+  "dependencies": {
+    "commander": "^9.0.0",
+    "fetch-headers": "^3.0.1"
+  },
+  "devDependencies": {
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.7",
+    "prettier": "2.6.0"
+  },
+  "lint-staged": {
+    "*.{js,json}": "prettier --write"
+  },
+  "scripts": {
+    "prepare": "husky install"
+  },
+  "_resolved": "",
+  "_integrity": "",
+  "_from": "bare-server-node@github:tomphttp/bare-server-node"
+}
