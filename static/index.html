@@ -149,8 +149,12 @@
             if (!isUrl(url)) url = 'https://www.google.com/search?q=' + url;
             else if (!(url.startsWith('https://') || url.startsWith('http://'))) url = 'http://' + url;
 
-
-            window.location.href = __uv$config.prefix + __uv$config.encodeUrl(url);
+            var unblockiframe = document.createElement('iframe'); 
+            unblockiframe.style.width="100%";
+            unblockiframe.style.height="100%";
+            unblockiframe.style.left="0px";
+            unblockiframe.style.top="0px";
+            unblockiframe.src = __uv$config.prefix + __uv$config.encodeUrl(url);
         });
     });
 
