@@ -108,27 +108,16 @@
     }
 </style>
 <script>
-    var iconcookie=get_cookie("icon");
-    var proxy=localStorage.getItem("proxy");
-    if (proxy==undefined){
-      proxy="Corrosion";
-    }
+    var iconcookie=get_cookie("favicon");
     var fontsize1=2560/screen.width*18;
     var fontsize2=2560/screen.width*6;
     
     title1.style.fontSize = fontsize1+"px";
     search.style.fontSize = fontsize2+"px";
+    
     if (iconcookie=null){
         iconcookie="/img/logo.png";
     }
-    const favicon=document.querySelector('[rel=icon]');
-    (function() {
-        var link=document.querySelector("link[rel*='icon']") || document.createElement('link');
-        link.type='image/x-icon';
-        link.rel='shortcut icon';
-        link.href=url;
-        document.getElementsByTagName('head')[0].appendChild(link);
-    })();
 </script>
 <script>
     const form = document.querySelector('form');
