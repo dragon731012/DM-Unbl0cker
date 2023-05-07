@@ -110,7 +110,7 @@ if (url.includes("https://")==false){
 
 url="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url="+url;
    
-document.cookie="icon="+url+"; expires=Thu, 18 Dec 9013 12:00:00 UTC";
+document.cookie="icon="+url+"; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/";
 
 setfavicon(url); 
 }
@@ -133,14 +133,14 @@ var favicon=document.getElementById('url1').value;
            
 if (imported==''){
     document.title=title2;
-    document.cookie='title2='+title2+'; expires=Thu, 18 Dec 9013 12:00:00 UTC';
+    document.cookie='title2='+title2+'; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/';
             
     var t = document.querySelector('head');
     var f = document.createElement('link');
     f.setAttribute('rel','shortcut icon');
     f.setAttribute('href',favicon);
     t.appendChild(f);
-    document.cookie='favicon='+favicon+'; expires=Thu, 18 Dec 9013 12:00:00 UTC';
+    document.cookie='favicon='+favicon+'; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/';
             
     alert('done!');
             
@@ -151,7 +151,7 @@ else{
     var originalurl=url;
 
     document.title=originalurl;
-    document.cookie='title2='+originalurl+'; expires=Thu, 18 Dec 9013 12:00:00 UTC';
+    document.cookie='title2='+originalurl+'; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/';
 
     if (url.includes('https://')==false){
         url='https://'+url;
