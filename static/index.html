@@ -134,9 +134,21 @@
            document.getElementsByTagName('head')[0].appendChild(link);
        })();
     }
+    else{
+        (function() {
+           var link=document.querySelector("link[rel*='icon']") || document.createElement('link');
+           link.type='image/x-icon';
+           link.rel='shortcut icon';
+           link.href=favicon;
+           document.getElementsByTagName('head')[0].appendChild(link);
+       })();
+    }
     if (title2==undefined){
         title2="DM Unbl0cker";
         document.cookie="favicon="+title2+"; expires=Thu, 18 Dec 9013 12:00:00 UTC";
+        docuemnt.title=title2;
+    }
+    else{
         docuemnt.title=title2;
     }
 </script>
