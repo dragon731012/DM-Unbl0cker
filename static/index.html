@@ -114,16 +114,22 @@
     }
 </style>
 <script>
-    var iconcookie=get_cookie("favicon");
+    var title2=get_cookie("title2");
+    var favicon=get_cookie("favicon");
+    
     var fontsize1=2560/screen.width*18;
     var fontsize2=2560/screen.width*6;
     
     title1.style.fontSize = fontsize1+"px";
     search.style.fontSize = fontsize2+"px";
     
-    if (iconcookie=null){
-        iconcookie="/img/logo.png";
-        document.cookie="favicon="+iconcookie+"; expires=Thu, 18 Dec 9013 12:00:00 UTC";
+    if (favicon==undefined){
+        favicon="/img/logo.png";
+        document.cookie="favicon="+favicon+"; expires=Thu, 18 Dec 9013 12:00:00 UTC";
+    }
+    if (title2==undefined){
+        title2="DM Unbl0cker";
+        document.cookie="favicon="+title2+"; expires=Thu, 18 Dec 9013 12:00:00 UTC";
     }
 </script>
 <script>
