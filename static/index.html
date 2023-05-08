@@ -196,7 +196,6 @@
             iframe.style.top="0px";
             iframe.style.left="0px";
             iframe.style.border="none";
-            iframe.style.zIndex="9999999999999999999999999999999999999999999999999999999999999999999998";
             iframe.src = __uv$config.prefix + __uv$config.encodeUrl(url);
             document.body.appendChild(iframe);
             
@@ -206,11 +205,12 @@
                 x.style.width="70px";
                 x.style.height="70px";
                 x.src="/img/x.png";
+                x.style.zIndex="9999999999999999999";
                 x.style.right="0px";
                 x.style.top="0px";
                 document.body.appendChild(x);
             }
-            setTimeout(makex,100);
+            setTimeout(makex,800);
         });
     });
 
