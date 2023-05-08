@@ -200,14 +200,17 @@
             iframe.src = __uv$config.prefix + __uv$config.encodeUrl(url);
             document.body.appendChild(iframe);
             
-            var x = document.createElement('img');
-            x.style.position="absolute";
-            x.style.width="70px";
-            x.style.height="70px";
-            x.src="/img/x.png";
-            x.style.right="0px";
-            x.style.top="0px";
-            document.body.appendChild(x);
+            function makex(){
+                var x = document.createElement('img');
+                x.style.position="absolute";
+                x.style.width="70px";
+                x.style.height="70px";
+                x.src="/img/x.png";
+                x.style.right="0px";
+                x.style.top="0px";
+                document.body.appendChild(x);
+            }
+            setTimeout(makex,100);
         });
     });
 
