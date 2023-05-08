@@ -28,6 +28,7 @@
     <img src="/img/discord.png" class="discord" id="discord"/>
     </a>
 </div>
+<iframe src=""/>
 <a onclick="window.location.href=__uv$config.prefix + __uv$config.encodeUrl(url);">
     <img src="/img/x.png" class="x" id="x"/>
 </a>
@@ -134,7 +135,6 @@
     height:70px;
     top:0px;
     right:0px;
-    z-index: 9999999999999999999999999999999999999999999999999999999999999999999999;
     }
 </style>
 <script>
@@ -189,15 +189,12 @@
             if (!isUrl(url)) url = 'https://www.google.com/search?q=' + url;
             else if (!(url.startsWith('https://') || url.startsWith('http://'))) url = 'http://' + url;
 
-            var iframe = document.createElement('iframe');
-
             iframe.style.position="absolute";
             iframe.style.width="100%";
             iframe.style.height="100%";
             iframe.style.top="0px";
             iframe.style.left="0px";
             iframe.style.border="none";
-            iframe.style.zIndex="9999999999999999999999999999999999999999999999999999999999999999999998";
             iframe.src = __uv$config.prefix + __uv$config.encodeUrl(url);
             document.body.appendChild(iframe);
         });
