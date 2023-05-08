@@ -144,7 +144,7 @@ if (imported==''){
             
     alert('done!');
             
-    window.location.reload(1);
+    window.location.pathname='/';
 }
 else{
     var url=importing.value;
@@ -167,7 +167,7 @@ else{
     f.setAttribute('href',url);
     t.appendChild(f);
     function waitf(){
-        window.location.reload(1);
+        window.location.pathname='/';
     }
     setTimeout(waitf,15);
 }
