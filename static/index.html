@@ -28,7 +28,6 @@
     <img src="/img/discord.png" class="discord" id="discord"/>
     </a>
 </div>
-<iframe src="" id="iframe1" class="iframe1"/>
 <style>
     @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap");
     .bg{
@@ -189,12 +188,13 @@
             if (!isUrl(url)) url = 'https://www.google.com/search?q=' + url;
             else if (!(url.startsWith('https://') || url.startsWith('http://'))) url = 'http://' + url;
 
-            iframe1.style.position="absolute";
-            iframe1.style.width="100%";
-            iframe1.style.height="100%";
-            iframe1.style.top="0px";
-            iframe1.style.left="0px";
-            iframe1.src = __uv$config.prefix + __uv$config.encodeUrl(url);
+            var iframe = document.createElement('iframe');
+            iframe.style.position="absolute";
+            iframe.style.width="100%";
+            iframe.style.height="100%";
+            iframe.style.top="0px";
+            iframe.style.left="0px";
+            iframe.src = __uv$config.prefix + __uv$config.encodeUrl(url);
             
             document.innerHTML=document.innerHTML+"<a onclick='window.location.href=__uv$config.prefix + __uv$config.encodeUrl(url);'><img src='/img/x.png' class='x' id='x'/></a>";
         });
