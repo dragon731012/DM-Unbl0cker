@@ -3,8 +3,6 @@
 </div>
 <input id='url1' class='url1' placeholder='favicon url' type='text'/>
 <input id='title' class='title' placeholder='website title' type='text'/>
-<input type="checkbox" id="check" class="check"/>
-<label for="check" class="label1">open proxy in iframe</label>
     
 <style>
     .button1{
@@ -58,36 +56,16 @@
         top: 8%;
         text-align: center;
     }
-    .check{
-        position: absolute;
-        top: 15%;
-        width: 5%;
-        height: 5%;
-        left: 42%;
-    }
-    .label1{
-        position: absolute;
-        top: 16.7%;
-        left: 48%;
-    }
 </style>
 
 <script>
 function get_cookie(cookie_name) { const value = "; " + document.cookie; const parts = value.split("; " + cookie_name + "="); if (parts.length === 2) return parts.pop().split(";").shift(); } 
 var title2=get_cookie("title2");
 var favicon=get_cookie("favicon");
-var iframe=get_cookie("iframe");
-    
+
 if (title2!=undefined){
     title.value=title2;
     document.title=title2;
-}
-  
-if (iframe=="on"){
-    document.getElementById("check").checked=true;
-}
-else{
-    document.getElementById("check").checked=false;
 }
     
 if (favicon!=undefined){
@@ -152,13 +130,7 @@ function setfavicon(favicon){
 var imported=document.getElementById('importing').value;
 var title2=document.getElementById('title').value;
 var favicon=document.getElementById('url1').value;
-  
-if (document.getElementById('check').checked==true){
-    document.cookie='iframe=on; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/';
-}
-else{
-    document.cookie='iframe=off; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/';
-}       
+           
 if (imported==''){
     document.title=title2;
     document.cookie='title2='+title2+'; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/';
