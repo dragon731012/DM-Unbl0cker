@@ -188,31 +188,43 @@
             if (!isUrl(url)) url = 'https://www.google.com/search?q=' + url;
             else if (!(url.startsWith('https://') || url.startsWith('http://'))) url = 'http://' + url;
             
-            var iframe = document.createElement('iframe');
-
-            iframe.style.position="absolute";
-            iframe.style.width="100%";
-            iframe.style.height="100%";
-            iframe.style.top="0px";
-            iframe.style.left="0px";
-            iframe.style.border="none";
-            iframe.src = __uv$config.prefix + __uv$config.encodeUrl(url);
-            document.body.appendChild(iframe);
+            var white = document.createElement('img');
+            x.style.position="absolute";
+            x.style.width="100%";
+            x.style.height="100%";
+            x.src="/img/white.jpg";
+            x.style.zIndex="9999999999999999999";
+            x.style.right="0px";
+            x.style.top="0px";
             
-            function makex(){
-                var x = document.createElement('img');
-                x.style.position="absolute";
-                x.style.width="50px";
-                x.style.height="50px";
-                x.src="/img/x.png";
-                x.style.zIndex="9999999999999999999";
-                x.style.right="1%";
-                x.style.top="1%";
-                x.onclick=function(){window.location.reload(1);};
-                
-                document.body.appendChild(x);
+            function finish(){
+                var iframe = document.createElement('iframe');
+
+                iframe.style.position="absolute";
+                iframe.style.width="100%";
+                iframe.style.height="100%";
+                iframe.style.top="0px";
+                iframe.style.left="0px";
+                iframe.style.border="none";
+                iframe.src = __uv$config.prefix + __uv$config.encodeUrl(url);
+                document.body.appendChild(iframe);
+
+                function makex(){
+                    var x = document.createElement('img');
+                    x.style.position="absolute";
+                    x.style.width="50px";
+                    x.style.height="50px";
+                    x.src="/img/x.png";
+                    x.style.zIndex="99999999999999999999";
+                    x.style.right="1%";
+                    x.style.top="1%";
+                    x.onclick=function(){window.location.reload(1);};
+
+                    document.body.appendChild(x);
+                }
+                setTimeout(makex,800);
             }
-            setTimeout(makex,800);
+            setTimeout(finish,600);
         });
     });
 
