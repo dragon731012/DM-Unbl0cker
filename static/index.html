@@ -28,7 +28,7 @@
     <img src="/img/discord.png" class="discord" id="discord"/>
     </a>
 </div>
-<iframe src=""/>
+<iframe src="" id="iframe1" class="iframe1"/>
 <a onclick="window.location.href=__uv$config.prefix + __uv$config.encodeUrl(url);">
     <img src="/img/x.png" class="x" id="x"/>
 </a>
@@ -40,6 +40,9 @@
     position: absolute;
     width:100%;
     height:100%;
+    }
+    .iframe1{
+    border: none;
     }
     .searchbox{
     width:80%;
@@ -189,14 +192,12 @@
             if (!isUrl(url)) url = 'https://www.google.com/search?q=' + url;
             else if (!(url.startsWith('https://') || url.startsWith('http://'))) url = 'http://' + url;
 
-            iframe.style.position="absolute";
-            iframe.style.width="100%";
-            iframe.style.height="100%";
-            iframe.style.top="0px";
-            iframe.style.left="0px";
-            iframe.style.border="none";
-            iframe.src = __uv$config.prefix + __uv$config.encodeUrl(url);
-            document.body.appendChild(iframe);
+            iframe1.style.position="absolute";
+            iframe1.style.width="100%";
+            iframe1.style.height="100%";
+            iframe1.style.top="0px";
+            iframe1.style.left="0px";
+            iframe1.src = __uv$config.prefix + __uv$config.encodeUrl(url);
         });
     });
 
