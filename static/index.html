@@ -14,6 +14,9 @@
 <form class="searchbox" id="searchbox">
     <input class="search" id="search" placeholder='Search Google or Type a URL' type='text'/>
 </form>
+<a onclick="window.location.pathname='/settings';">
+    <img src="/img/settings.png" class="settings" id="settings"/>
+</a>
 <div class="icons">
     <a onclick="blank();">
     <img src="/img/IMG_3024.png" class="blank" id="blank"/>
@@ -93,6 +96,14 @@
     right:0%;
     opacity:0.5;
     }
+    .settings{
+    position: absolute;
+    width:70px;
+    height:70px;
+    left:0%;
+    top:0%;
+    opacity:0.5;
+    }
     .discord{
     position: absolute;
     height:100%;
@@ -108,6 +119,9 @@
     opacity:1;
     }
     .blank:hover{
+    opacity:1;
+    }
+    .settings:hover{
     opacity:1;
     }
 </style>
