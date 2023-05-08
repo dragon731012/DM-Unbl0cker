@@ -201,8 +201,12 @@
             document.body.appendChild(iframe);
             
             var x = document.createElement('img');
-            x.class="x";
+            x.style.position="absolute";
+            x.style.width="70px";
+            x.style.height="70px";
             x.src="/img/x.png";
+            x.style.right="0px";
+            x.style.top="0px";
             document.body.appendChild(x);
         });
     });
