@@ -189,13 +189,13 @@
             else if (!(url.startsWith('https://') || url.startsWith('http://'))) url = 'http://' + url;
             
             var white = document.createElement('img');
-            x.style.position="absolute";
-            x.style.width="100%";
-            x.style.height="100%";
-            x.src="/img/white.jpg";
-            x.style.zIndex="9999999999999999999";
-            x.style.right="0px";
-            x.style.top="0px";
+            white.style.position="absolute";
+            white.style.width="100%";
+            white.style.height="100%";
+            white.src="/img/white.jpg";
+            white.style.zIndex="9999999999999999999";
+            white.style.right="0px";
+            white.style.top="0px";
             
             function finish(){
                 var iframe = document.createElement('iframe');
