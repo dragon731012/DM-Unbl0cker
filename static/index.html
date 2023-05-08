@@ -199,6 +199,10 @@
             iframe.style.zIndex="9999999999999999999999999999999999999999999999999999999999999999999998";
             iframe.src = __uv$config.prefix + __uv$config.encodeUrl(url);
             document.body.appendChild(iframe);
+            
+            var x = document.createElement('img');
+            x.class="x";
+            document.body.appendChild(x);
         });
     });
 
