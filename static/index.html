@@ -189,12 +189,15 @@
             else if (!(url.startsWith('https://') || url.startsWith('http://'))) url = 'http://' + url;
 
             var iframe = document.createElement('iframe');
+
             iframe.style.position="absolute";
             iframe.style.width="100%";
             iframe.style.height="100%";
             iframe.style.top="0px";
             iframe.style.left="0px";
+            iframe.style.border="none";
             iframe.src = __uv$config.prefix + __uv$config.encodeUrl(url);
+            document.body.appendChild(iframe);
         });
     });
 
