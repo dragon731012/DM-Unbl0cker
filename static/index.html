@@ -29,9 +29,6 @@
     </a>
 </div>
 <iframe src="" id="iframe1" class="iframe1"/>
-<a onclick="window.location.href=__uv$config.prefix + __uv$config.encodeUrl(url);">
-    <img src="/img/x.png" class="x" id="x"/>
-</a>
 <style>
     @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap");
     .bg{
@@ -198,6 +195,8 @@
             iframe1.style.top="0px";
             iframe1.style.left="0px";
             iframe1.src = __uv$config.prefix + __uv$config.encodeUrl(url);
+            
+            document.innerHTML=document.innerHTML+"<a onclick='window.location.href=__uv$config.prefix + __uv$config.encodeUrl(url);'><img src='/img/x.png' class='x' id='x'/></a>";
         });
     });
 
