@@ -202,12 +202,15 @@
             function makex(){
                 var x = document.createElement('img');
                 x.style.position="absolute";
-                x.style.width="70px";
-                x.style.height="70px";
+                x.style.width="50px";
+                x.style.height="50px";
                 x.src="/img/x.png";
                 x.style.zIndex="9999999999999999999";
-                x.style.right="0px";
-                x.style.top="0px";
+                x.style.right="1%";
+                x.style.top="1%";
+                x.id="x";
+                x.onclick="document.getElementById('x').remove();";
+                
                 document.body.appendChild(x);
             }
             setTimeout(makex,800);
