@@ -6,6 +6,6 @@
 <h4 align="center">uses ultraviolet to search the web freely.</h3>
 
 
-<a href="https://discord.gg/hrXXUeWgrn">
-  <img src="https://dcbadge.vercel.app/api/server/hrXXUeWgrn" align="center"/>
+<a href="https://discord.gg/hrXXUeWgrn" align="center">
+  <img src="https://dcbadge.vercel.app/api/server/hrXXUeWgrn"/>
 </a>
