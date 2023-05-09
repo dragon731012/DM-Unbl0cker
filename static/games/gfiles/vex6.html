@@ -1,4 +1,5 @@
-<iframe id="frame"></iframe>
+<iframe id="frame" class="iframe"></iframe>
+<img class="back" id="back" src="./img/back.png"/>
 <style>
   .frame{
     position: absolute;
@@ -8,6 +9,17 @@
     top:0px;
     margin: 0px;
   }
+  .back{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 1%;
+    top: 1%;
+  }
 <script>
   frame.src=window.location.origin+"/service/hvtrs8%2F-rcw%2Cgktjaak%2Ccmm-3ih2%2F1kj0%2Faqsgtq%2Foakn-vgx4%2Fknfez.jtol";
+  
+  back.onclick = function() {
+    window.location.reload(1);
+  };
 </script>
