@@ -197,7 +197,6 @@
             white.style.top="0px";
             document.body.appendChild(white);
             
-            function finish(){
                 var iframe = document.createElement('iframe');
 
                 iframe.style.position="absolute";
@@ -209,8 +208,7 @@
                 iframe.style.border="none";
                 iframe.src = __uv$config.prefix + __uv$config.encodeUrl(url);
                 document.body.appendChild(iframe);
-
-                function makex(){
+                
                     var x = document.createElement('img');
                     x.style.position="absolute";
                     x.style.width="50px";
@@ -222,10 +220,8 @@
                     x.onclick=function(){window.location.reload(1);};
 
                     document.body.appendChild(x);
-                }
-                setTimeout(makex,800);
                 
-                function makeopen(){
+                
                     var open = document.createElement('img');
                     open.style.position="absolute";
                     open.style.width="50px";
@@ -237,10 +233,7 @@
                     open.onclick=function(){window.open(document.getElementById("iframe").contentWindow.location.href);};
 
                     document.body.appendChild(open);
-                }
-                setTimeout(makeopen,800);
-            }
-            setTimeout(finish,600);
+          
         });
     });
 
