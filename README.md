@@ -7,5 +7,5 @@
 
 
 <a href="https://discord.gg/hrXXUeWgrn">
-  <img src="https://dcbadge.vercel.app/api/server/hrXXUeWgrn"/>
+  <img src="https://dcbadge.vercel.app/api/server/hrXXUeWgrn" align="center"/>
 </a>
