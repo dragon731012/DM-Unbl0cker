@@ -1,5 +1,6 @@
 function runframe(urltoadd){
-  var iframeq = document.createElement('iframe');
+  alert("working...");
+  var iframe = document.createElement('iframe');
   iframe.style.position = "absolute";
   iframe.style.width = "100%";
   iframe.style.height = "100%";
