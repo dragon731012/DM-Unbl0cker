@@ -234,7 +234,7 @@
                     open.style.zIndex="99999999999999999999";
                     open.style.right="57px";
                     open.style.top="1%";
-                    open.onclick=function(){window.open(document.getElementById("iframe").src);};
+                    open.onclick=function(){window.open(document.getElementById("iframe").contentWindow.location.href);};
 
                     document.body.appendChild(open);
                 }
