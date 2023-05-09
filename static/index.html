@@ -233,7 +233,9 @@
             open.style.right = "65px";
             open.style.top = "1%";
             open.onclick = function() {
-                window.open(document.getElementById("iframe").contentWindow.location.href);
+                if (document.getElementById("iframe").contentWindow.location.href!="about:blank"){
+                    window.open(document.getElementById("iframe").contentWindow.location.href);
+                }
             };
 
             document.body.appendChild(open);
