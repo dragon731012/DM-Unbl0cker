@@ -1,6 +1,7 @@
 <img class="back" id="back" src = "/img/back.png" onclick="reroutetogames();"/>
 <h1 id="title1" class="title1">games</h1>
-<div class="buttons">
+<div class="buttons" align="center">
+  <button class="button1" onclick="paperio();">paper.io</button>
 </div>
 <style>
   .buttons{
@@ -24,5 +25,8 @@
 <script>
   function reroutetogames(){
     window.location.pathname="/games";
+  }
+  function paperio(){
+    window.location.pathname=window.location.pathname+"/gfiles/paperio.html";
   }
 </script>
