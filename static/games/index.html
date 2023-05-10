@@ -2,7 +2,8 @@
 <img class="back" id="back" src = "/img/back.png" onclick="reroutetogames();"/>
 <h1 id="title1" class="title1">games</h1>
 <div class="buttons" align="center">
-  <button class="button1" onclick="paperio();">paper.io</button>
+  <button class="games" onclick="paperio();">paper.io</button>
+  <button class="games" onclick="rooftopsnipers();">rooftop snipers</button>
 </div>
 <style>
   .bg{
@@ -23,7 +24,7 @@
     position: absolute;
     width: 100%;
     height: 100px;
-    top:12%;
+    top:7%;
     float: center;
     align: center;
     text-align: center;
@@ -32,7 +33,8 @@
   .games{
     border-radius: 25px;
     text-align: center;
-    align: center;
+    background-color: #808080;
+    color: #000000;
   }
   .back{
     position: absolute;
@@ -51,6 +53,9 @@
     window.location.pathname="/games";
   }
   function paperio(){
-    window.location.pathname=window.location.origin+"/games/gfiles/paperio.html";
+    window.location.href=window.location.origin+"/games/gfiles/paperio.html";
+  }
+  function paperio(){
+    window.location.href=window.location.origin+"/games/gfiles/rooftopsnipers.html";
   }
 </script>
