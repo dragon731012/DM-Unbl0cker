@@ -5,7 +5,7 @@
   <button class="games" onclick="paperio();">paper.io</button>
   <button class="games" onclick="rooftopsnipers();">rooftop snipers</button>
   <button class="games" onclick="vex6();">vex 6</button>
-  <button class="games" onclick="2048();">2048</button>
+  <button class="games" onclick="twentyfortyeight();">2048</button>
 </div>
 <a href="https://github.com/3kh0">
   <h4 class="credits">credit to 3kh0</h4>
@@ -16,7 +16,7 @@
     bottom:0px;
     right:5px;
     color:#FFFFFF;
-    magin: 0px;
+    magin: 0;
   }
   .bg{
     top: 0%;
@@ -100,7 +100,7 @@
 </script>
 <script>
   function reroutetohome(){
-    window.location.pathname="/";
+    window.location.href=window.location.origin;
   }
   function paperio(){
     window.location.href=window.location.origin+"/games/gfiles/paperio.html";
@@ -111,7 +111,7 @@
   function vex6(){
     window.location.href=window.location.origin+"/games/gfiles/vex6.html";
   }
-  function 2048(){
+  function twentyfortyeight(){
     window.location.href=window.location.origin+"/games/gfiles/2048.html";
   }
 </script>
