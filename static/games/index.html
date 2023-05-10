@@ -1,5 +1,5 @@
 <img src="/img/IMG_2996.gif" class="bg"/>
-<img class="back" id="back" src = "/img/back.png" onclick="reroutetogames();"/>
+<img class="back" id="back" src = "/img/back.png" onclick="reroutetohome();"/>
 <h1 id="title1" class="title1">games</h1>
 <div class="buttons" align="center">
   <button class="games" onclick="paperio();">paper.io</button>
@@ -82,8 +82,8 @@
   title1.style.fontSize = fontsize1+"px";
 </script>
 <script>
-  function reroutetogames(){
-    window.location.pathname="/games";
+  function reroutetohome(){
+    window.location.pathname="/";
   }
   function paperio(){
     window.location.href=window.location.origin+"/games/gfiles/paperio.html";
