@@ -1,28 +1,140 @@
-<!DOCTYPE html>
-<html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>DM Unbl0cker</title>
-   </head>
-   <style>
-      iframe {
-      width: 100%;
-      height: 100vh;
-      z-index: 1;
-      }
-   </style>
-   <body>
-      <header>
-         <div class="logo">
-            <h1>games</h1>
-         </div>
-         <nav>
-            <ul>
-               <li><a href="/">Home</a></li>
-            </ul>
-         </nav>
-      </header>
-      <iframe src="https://e9jxqs-8080.csb.app/proxy/https://fultongriffin2.github.io/chilibowlflas34/" frameborder="0"></iframe>
-   </body>
-</html>
+<img src="/img/IMG_2996.gif" class="bg"/>
+<img class="back" id="back" src = "/img/back.png" onclick="reroutetohome();"/>
+<h1 id="title1" class="title1">games</h1>
+<div class="buttons" align="center">
+  <button class="games" onclick="paperio();">paper.io</button>
+  <button class="games" onclick="rooftopsnipers();">rooftop snipers</button>
+  <button class="games" onclick="vex6();">vex 6</button>
+  <button class="games" onclick="twentyfortyeight();">2048</button>
+  <button class="games" onclick="cookieclicker();">cookie clicker</button>
+  <button class="games" onclick="subwaysurfers();">subway surfers</button>
+  <button class="games" onclick="survivio();">surviv.io</button>
+  <button class="games" onclick="chromedino();">chrome dino</button>
+  <button class="games" onclick="basketbros();">basket bros</button>
+</div>
+<a href="https://github.com/3kh0">
+  <h4 class="credits">credit to 3kh0</h4>
+</a>
+<style>
+  .credits{
+    position: absolute;
+    bottom:0px;
+    right:5px;
+    color:#FFFFFF;
+  }
+  .bg{
+    top: 0%;
+    left: 0%;
+    position: absolute;
+    width:100%;
+    height:100%;
+  }
+  .buttons{
+    position: absolute;
+    width: 40%;
+    left: 30%;
+    height: 60%;
+    top: 40%;
+  }
+  .title1{
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    top:7%;
+    float: center;
+    align: center;
+    text-align: center;
+    color: #FFFFFF;
+  }
+  .games{
+    border-radius: 25px;
+    background-color: #000000;
+    color: #FFFFFF;
+  }
+  .games:hover{
+    border-radius: 4px;
+    color: #0000FF;
+  }
+  .back{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top:1%;
+    left:1%;
+  }
+</style>
+<script>
+  function get_cookie(cookie_name) { const value = "; " + document.cookie; const parts = value.split("; " + cookie_name + "="); if (parts.length === 2) return parts.pop().split(";").shift(); } 
+  
+  var title2=get_cookie("title2");
+  var favicon=get_cookie("favicon");
+  
+  if (favicon==null || favicon==undefined || favicon==""){
+        favicon="/img/logo.png";
+        document.cookie="favicon="+favicon+"; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/";
+        (function() {
+           var link=document.querySelector("link[rel*='icon']") || document.createElement('link');
+           link.type='image/x-icon';
+           link.rel='shortcut icon';
+           link.href=favicon;
+           document.getElementsByTagName('head')[0].appendChild(link);
+       })();
+    }
+    else{
+        (function() {
+           var link=document.querySelector("link[rel*='icon']") || document.createElement('link');
+           link.type='image/x-icon';
+           link.rel='shortcut icon';
+           link.href=favicon;
+           document.getElementsByTagName('head')[0].appendChild(link);
+       })();
+    }
+    if (title2==null || title2==undefined || title2==""){
+        title2="DM Unbl0cker";
+        document.cookie="title2="+title2+"; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/";
+        document.title=title2;
+    }
+    else{
+        document.title=title2;
+    }
+</script>
+<script>
+  var fontsize1=2560/screen.width*18;
+  title1.style.fontSize = fontsize1+"px";
+</script>
+<script>
+  function reroutetohome(){
+    window.location.href=window.location.origin;
+  }
+  function paperio(){
+    window.location.href=window.location.origin+"/games/gfiles/paperio.html";
+  }
+  function rooftopsnipers(){
+    window.location.href=window.location.origin+"/games/gfiles/rooftopsnipers.html";
+  }
+  function vex6(){
+    window.location.href=window.location.origin+"/games/gfiles/vex6.html";
+  }
+  function twentyfortyeight(){
+    window.location.href=window.location.origin+"/games/gfiles/2048.html";
+  }
+  function cookieclicker(){
+    window.location.href=window.location.origin+"/games/gfiles/cookieclicker.html";
+  }
+  function subwaysurfers(){
+    window.location.href=window.location.origin+"/games/gfiles/subwaysurfers.html";
+  }
+  function survivio(){
+    window.location.href=window.location.origin+"/games/gfiles/survivio.html";
+  }
+  function chromedino(){
+    window.location.href=window.location.origin+"/games/gfiles/chromedino.html";
+  }
+  function raze(){
+    window.location.href=window.location.origin+"/games/gfiles/raze.html";
+  }
+  function basketbros(){
+    window.location.href=window.location.origin+"/games/gfiles/basketbros.html";
+  }
+</script>
