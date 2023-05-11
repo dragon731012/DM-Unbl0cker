@@ -17,4 +17,4 @@ build command: `node`
 
 start command: `node .`
 
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/dragon731012/DM-Unbl0cker)
+[![Deploy to Cyclic](https://deploy.cyclic.sh/button.svg)](https://deploy.cyclic.sh/dragon731012/DM-Unbl0cker)
