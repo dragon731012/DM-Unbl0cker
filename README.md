@@ -13,6 +13,6 @@
 <h1></h1>
 <h2>deployment</h2>
 
-build command: node
+build command: `node`
 
-start command: node .
+start command: `node .`
