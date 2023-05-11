@@ -10,3 +10,9 @@
   <img src="https://dcbadge.vercel.app/api/server/hrXXUeWgrn"/>
 </a>
 </p>
+<h1></h1>
+# deployment
+
+build command: node
+
+start command: node .
