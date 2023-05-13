@@ -8,6 +8,7 @@
      color: #444;
      background-color: #f6f6f6;
      line-height: 1.6;
+     overflow-x: hidden;
 }
  header {
      background-color: #222;
