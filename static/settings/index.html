@@ -1,3 +1,4 @@
+<img class="back" id="back" src = "/img/back.png" onclick="reroutetohome();"/>
 <div class="importingbox" id="importingbox">
     <input id='importing' class='importing' placeholder='import from website' type='text' align="center"/>
 </div>
@@ -5,6 +6,13 @@
 <input id='title' class='title' placeholder='website title' type='text'/>
     
 <style>
+    .back{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top:1%;
+    left:1%;
+  }
     .button1{
         position: absolute;
         width: 10%;
@@ -123,6 +131,9 @@ function setfavicon(favicon){
        document.getElementsByTagName('head')[0].appendChild(link);
    })();
 }
+function reroutetohome(){
+    window.location.href=window.location.origin;
+  }
 </script>
 
 <a onclick="
