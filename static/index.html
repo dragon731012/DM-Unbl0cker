@@ -21,6 +21,9 @@
 <a onclick="window.location.pathname='/games';">
     <img src="/img/games.png" class="games" id="games"/>
 </a>
+<a onclick="window.location.pathname='/apps';">
+    <img src="/img/apps.png" class="apps" id="apps"/>
+</a>
 <div class="icons">
     <a onclick="blank();">
     <img src="/img/IMG_3024.png" class="blank" id="blank"/>
@@ -51,6 +54,15 @@
     position: absolute;
     left:30%;
     top:50%;
+    }
+    .apps{
+    position: absolute;
+    height:100%;
+    width:70px;
+    height:70px;
+    right:90px;
+    top:1%;
+    opacity:0.5;
     }
     .search{
     text-align: center;
@@ -150,6 +162,9 @@
     height:70px;
     top:0px;
     right:0px;
+    }
+    .apps:hover{
+    opacity:1;
     }
 </style>
 <script>
