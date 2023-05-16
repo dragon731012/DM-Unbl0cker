@@ -5,7 +5,7 @@
   },
   "name": "DM-unblocker",
   "version": "1.4.0",
-  "description": "Ultraviolet instance",
+  "description": "a web proxy with a backend of uv, made by a 13-year-old.",
   "main": "index.js",
   "scripts": {
     "prestart": "npm install",
