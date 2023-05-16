@@ -222,6 +222,7 @@
             else if (!(url.startsWith('https://') || url.startsWith('http://'))) url = 'http://' + url;
 
             var white = document.createElement('img');
+            white.style.cursor="pointer";
             white.style.position = "absolute";
             white.style.width = "100%";
             white.style.height = "100%";
@@ -243,6 +244,7 @@
             document.body.appendChild(iframe);
 
             var x = document.createElement('img');
+            x.style.cursor="pointer";
             x.style.position = "absolute";
             x.style.width = "50px";
             x.style.height = "50px";
@@ -258,6 +260,7 @@
 
 
             var open = document.createElement('img');
+            open.style.cursor="pointer";
             open.style.position = "absolute";
             open.style.width = "50px";
             open.style.height = "50px";
