@@ -8,6 +8,7 @@
   "description": "a web proxy with a backend of uv, made by a 13-year-old.",
   "main": "index.js",
   "scripts": {
+    "build": "node",
     "prestart": "npm install",
     "start": "node ."
   },
