@@ -211,7 +211,26 @@
 <script>
     const form = document.querySelector('form');
     const input = document.querySelector('input');
-
+    
+    var browsercookie=get_cookie("browser3");
+            if (browsercookie==null || browsercookie==undefined || browsercookie==""){
+                document.cookie="browser3=google; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/";
+                browsercookie="google";
+            }
+            
+            if (browsercookie=="google"){
+                if (!isUrl(url)) url = 'https://www.google.com/search?q=' + url;
+                else if (!(url.startsWith('https://') || url.startsWith('http://'))) url = 'http://' + url;
+            }
+            if (browsercookie=="bing"){
+                if (!isUrl(url)) url = 'https://www.bing.com/search?q=' + url;
+                else if (!(url.startsWith('https://') || url.startsWith('http://'))) url = 'http://' + url;
+            }
+            if (browsercookie=="yahoo!"){
+                if (!isUrl(url)) url = 'https://search.yahoo.com/search?p=' + url;
+                else if (!(url.startsWith('https://') || url.startsWith('http://'))) url = 'http://' + url;
+            }
+    
     form.addEventListener('submit', async event => {
         event.preventDefault();
         window.navigator.serviceWorker.register('./sw.js', {
