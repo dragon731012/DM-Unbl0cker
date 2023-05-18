@@ -79,6 +79,7 @@
 </style>
 
 <script>
+browser1.style.left=screen.width/2-70/2;
 var script1 = document.createElement('script');script1.src="/cursor.js"; document.body.appendChild(script1);
     
 function get_cookie(cookie_name) { const value = "; " + document.cookie; const parts = value.split("; " + cookie_name + "="); if (parts.length === 2) return parts.pop().split(";").shift(); } 
@@ -118,8 +119,6 @@ var fontsize2=2560/screen.width*8;
 title.style.fontSize = fontsize2+"px";
 var fontsize3=2560/screen.width*8;
 importing.style.fontSize = fontsize3+"px";
-    
-browser1.style.left=screen.width/2-70/2;
     
 function settitle(titlename){
    document.title=titlename;
