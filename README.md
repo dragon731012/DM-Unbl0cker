@@ -16,5 +16,3 @@
 build command: `node`
 
 start command: `node .`
-
-[![Deploy to Cyclic](https://deploy.cyclic.sh/button.svg)](https://deploy.cyclic.sh/dragon731012/DM-Unbl0cker)
