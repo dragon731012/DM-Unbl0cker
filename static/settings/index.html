@@ -11,7 +11,22 @@
     <option value="yahoo!">yahoo!</option> 
 </select>
 
+<label for="cursoractivate" class="label1" id="label1">cursor: </label>
+<input type="checkbox" id="cursoractivate" class="cursoractivate">
+
 <style>
+  .cursoractivate{
+        position:absolute;
+        top:30%;
+        height: 20px;
+        width:20px;
+    }
+    .label1{
+        position:absolute;
+        top:30%;
+        width:50px;
+        height:20px;
+    }
     .back{
     position: absolute;
     width: 50px;
@@ -80,6 +95,8 @@
 
 <script>
 browser1.style.left=screen.width/2-70/2;
+cursoractivate.style.left=screen.width/2-20/2+50/2;
+label1.style.left=screen.width/2-50/2-50/2;
     
 var script1 = document.createElement('script');script1.src="/cursor.js"; document.body.appendChild(script1);
     
@@ -87,10 +104,24 @@ function get_cookie(cookie_name) { const value = "; " + document.cookie; const p
 var title2=get_cookie("title2");
 var favicon=get_cookie("favicon");
 var browser2=get_cookie("browser3");
+var cursor2=get_cookie("cursor");
 
 if (title2!=undefined){
     title.value=title2;
     document.title=title2;
+}
+    
+if (cursor2!=undefined){
+    if (cursor2=="on"){
+        cursoractivate.checked=true;
+    }
+    if (cursor2=="off"){
+        cursoractivate.checked=false;
+    }
+}
+else{
+    document.cookie="cursor=on; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/";
+    cursoractivate.checked=true;
 }
     
 if (browser2!=undefined){
@@ -167,8 +198,17 @@ var imported=document.getElementById('importing').value;
 var title2=document.getElementById('title').value;
 var favicon=document.getElementById('url1').value;
 var browser4=document.getElementById('browser1').value;
+var cursor3=document.getElementById('cursoractivate').checked;
            
 if (imported==''){
+    if (cursor3==true){
+        document.cookie='cursor=on; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/';
+    }
+
+    if (cursor3==false){
+        document.cookie='cursor=off; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/';
+    }
+
     document.cookie='browser3='+browser4+'; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/';
     document.title=title2;
     document.cookie='title2='+title2+'; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/';
@@ -183,6 +223,14 @@ if (imported==''){
     window.location.pathname='/';
 }
 else{
+    if (cursor3==true){
+        document.cookie='cursor=on; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/';
+    }
+
+    if (cursor3==false){
+        document.cookie='cursor=off; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/';
+    }
+            
     var url=importing.value;
     var originalurl=url;
 
