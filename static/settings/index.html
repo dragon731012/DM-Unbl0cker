@@ -86,6 +86,7 @@ var script1 = document.createElement('script');script1.src="/cursor.js"; documen
 function get_cookie(cookie_name) { const value = "; " + document.cookie; const parts = value.split("; " + cookie_name + "="); if (parts.length === 2) return parts.pop().split(";").shift(); } 
 var title2=get_cookie("title2");
 var favicon=get_cookie("favicon");
+var browser2=get_cookie("browser3");
 
 if (title2!=undefined){
     title.value=title2;
