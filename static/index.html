@@ -1,306 +1,65 @@
-<link rel="stylesheet" type="text/css" href="/style.css"/>
-<script src="uv/uv.bundle.js"></script>
-<script src="uv/uv.config.js"></script>
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+      <link rel="stylesheet" href="index.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+      <link rel="icon" type="image/png" href="/logo.png">
+   </head>
+   <body>
+      <nav>
+         <div class="logo">
+           <img src="/logo.png" alt="Logo">
+           <h3>TIW</h3>
+         </div>
+         <ul class="menu">
+           <li><a href="/index.html">Home</a></li>
+           <li><a href="games.html">Games</a></li>
+           <li><a href="index.html">Proxy</a></li>
+           <li><a href="/settings/">Settings</a></li>
+         </ul>
+       </nav>
+      <div id="header">
+         <img src="logo.gif" alt="Logo">
+      </div>
+      <div id="content">
+         <h1 onclick="launchURL('netflix.com')">Search the Web and use the FIRST static proxy</h1>
+         <form id="uv-form"">
+            <input id="uv-search-engine" value="" type="hidden"/> 
+            <input id="uv-address" type="text" placeholder="Search Google or type an URL" class="form__input"/>
+          </form>
+          <div class="desc left-margin">
+            <p id="uv-error"></p>
+            <pre id="uv-error-code"></pre>
+          </div>
+         <a href="https://discord.gg/zJhPJYJCeJ" target="_blank" class="fa-brands fa-discord"></a>
+         <a href="https://github.com/TheTIW/UV-Static" target="_blank"class="fa-brands fa-github"></a>
+         <a href="https://starttiw.org" target="_blank"class="fa-solid fa-cloud"></a>
+      </div>
+      <script src="uv/uv.bundle.js" defer></script>
+      <script src="uv/uv.config.js" defer></script>
+      <script src="register-sw.js" defer></script>
+      <script src="search.js" defer></script>
+      <script src="index.js" defer></script>
+   </body>
+</html>
+
 
 <script>
-    function get_cookie(cookie_name) { const value = "; " + document.cookie; const parts = value.split("; " + cookie_name + "="); if (parts.length === 2) return parts.pop().split(";").shift(); } 
-    function blank(){
-      (function () {var url = document.URL; var urlObj = new window.URL(window.location.href); win = window.open(); win.document.body.style.margin = "0"; win.document.body.style.height = "100vh"; var iframe = win.document.createElement("iframe"); iframe.style.border = "none"; iframe.style.width = "100%"; iframe.style.height = "100%"; iframe.style.margin = "0"; iframe.referrerpolicy = "no-referrer"; iframe.allow = "fullscreen"; iframe.src = url.toString(); win.document.body.appendChild(iframe); var script = win.document.createElement("script"); script.src = "https://3kh0.github.io/js/main.js"; win.document.body.appendChild(script); })();
-    }
+   document.addEventListener("DOMContentLoaded", function() {
+  // Get the search engine value from local storage
+  var searchEngine = localStorage.getItem("searchengine");
+
+  // Set the value of the input field
+  var searchInput = document.getElementById("uv-search-engine");
+  searchInput.value = searchEngine || "https://www.google.com/search?q=";
+});
+
 </script>
-<img src="/img/IMG_2996.gif" class="bg"/>
-<div class="title">
-    <h1 id="title1">DM Unblocker</h1>
-</div>
-<form class="searchbox" id="searchbox">
-    <input class="search" id="search" placeholder='Search the web freely' type='text'/>
-</form>
-<a onclick="window.location.pathname='/settings';">
-    <img src="/img/settings.png" class="settings" id="settings"/>
-</a>
-<a onclick="window.location.pathname='/games';">
-    <img src="/img/games.png" class="games" id="games"/>
-</a>
-<a onclick="window.location.pathname='/apps';">
-    <img src="/img/apps.png" class="apps" id="apps"/>
-</a>
-<div class="icons">
-    <a onclick="blank();">
-    <img src="/img/IMG_3024.png" class="blank" id="blank"/>
-    </a>
-    <a href="https://github.com/dragon731012" target="_blank" rel="noopener">
-    <img src="/img/github.png" class="github" id="github"/>
-    </a>
-    <a href="https://discord.gg/hrXXUeWgrn" target="_blank" rel="noopener">
-    <img src="/img/discord.png" class="discord" id="discord"/>
-    </a>
-</div>
-<style>
-    @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap");
-    .bg{
-    top: 0%;
-    left: 0%;
-    position: absolute;
-    width:100%;
-    height:100%;
-    }
-    .iframe1{
-    border: none;
-    }
-    .searchbox{
-    width:47%;
-    height:7%;
-    color: #FFFFFF;
-    position: absolute;
-    left:26.5%;
-    top:50%;
-    }
-    .apps{
-    position: absolute;
-    height:100%;
-    width:70px;
-    height:70px;
-    right:90px;
-    top:1%;
-    opacity:0.5;
-    }
-    .search{
-    text-align: center;
-    background: transparent;
-    border-radius: 18px;
-    border-radius: 18px;
-    border: 2px solid #FFFFFF;
-    color: #FFFFFF;
-    width:100%;
-    height:100%;
-    }
-    .title{
-    font-family: "Roboto", Arial, Helvetica, sans-serif;
-    position: absolute;
-    width: 100%;
-    height: 100px;
-    top:17%;
-    float: center;
-    align: center;
-    text-align: center;
-    color: #FFFFFF;
-    }
-    ::placeholder {
-    margin: auto;
-    color: #FFFFFF;
-    font-size: 1.2em;
-    }
-    .icons{
-    align: center;
-    text-align: center;
-    position: absolute;
-    width: 100%;
-    height: 70px;
-    bottom: 0%;
-    left: 0%;
-    }
-    .github{
-    position: absolute;
-    width:70px;
-    height:70px;
-    right:40%;
-    opacity:0.5;
-    }
-    .blank{
-    position: absolute;
-    height:100%;
-    width:70px;
-    height:70px;
-    right:0%;
-    opacity:0.5;
-    }
-    .settings{
-    position: absolute;
-    height:100%;
-    width:70px;
-    height:70px;
-    left:1%;
-    top:1%;
-    opacity:0.5;
-    }
-    .games{
-    position: absolute;
-    height:100%;
-    width:70px;
-    height:70px;
-    right:1%;
-    top:1%;
-    opacity:0.5;
-    }
-    .discord{
-    position: absolute;
-    height:100%;
-    width:70px;
-    height:58px;
-    opacity:0.5;
-    left:40%;
-    top:8%;
-    }
-    .discord:hover{
-    opacity:1;
-    }
-    .github:hover{
-    opacity:1;
-    }
-    .blank:hover{
-    opacity:1;
-    }
-    .settings:hover{
-    opacity:1;
-    }
-    .games:hover{
-    opacity:1;
-    }
-    .x{
-    position: absolute;
-    width:70px;
-    height:70px;
-    top:0px;
-    right:0px;
-    }
-    .apps:hover{
-    opacity:1;
-    }
-</style>
-<script>
-    var script1 = document.createElement('script');script1.src="/cursor.js"; document.body.appendChild(script1);
-    
-    var title2=get_cookie("title2");
-    var favicon=get_cookie("favicon");
-    
-    var fontsize1=2560/screen.width*18;
-    var fontsize2=2560/screen.width*7.5;
-    
-    title1.style.fontSize = fontsize1+"px";
-    search.style.fontSize = fontsize2+"px";
-    
-    if (favicon==null || favicon==undefined || favicon==""){
-        favicon="/img/logo.png";
-        document.cookie="favicon="+favicon+"; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/";
-        (function() {
-           var link=document.querySelector("link[rel*='icon']") || document.createElement('link');
-           link.type='image/x-icon';
-           link.rel='shortcut icon';
-           link.href=favicon;
-           document.getElementsByTagName('head')[0].appendChild(link);
-       })();
-    }
-    else{
-        (function() {
-           var link=document.querySelector("link[rel*='icon']") || document.createElement('link');
-           link.type='image/x-icon';
-           link.rel='shortcut icon';
-           link.href=favicon;
-           document.getElementsByTagName('head')[0].appendChild(link);
-       })();
-    }
-    if (title2==null || title2==undefined || title2==""){
-        title2="DM Unbl0cker";
-        document.cookie="title2="+title2+"; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/";
-        document.title=title2;
-    }
-    else{
-        document.title=title2;
-    }
-</script>
-<script>
-    const form = document.querySelector('form');
-    const input = document.querySelector('input');
-
-    form.addEventListener('submit', async event => {
-        event.preventDefault();
-        window.navigator.serviceWorker.register('./sw.js', {
-            scope: __uv$config.prefix
-        }).then(() => {
-            let url = input.value.trim();
-            
-            var browsercookie=get_cookie("browser3");
-            if (browsercookie==null || browsercookie==undefined || browsercookie==""){
-                document.cookie="browser3=google; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/";
-                browsercookie="google";
-            }
-            
-            if (browsercookie=="google"){
-                if (!isUrl(url)) url = 'https://www.google.com/search?q=' + url;
-                else if (!(url.startsWith('https://') || url.startsWith('http://'))) url = 'http://' + url;
-            }
-            if (browsercookie=="bing"){
-                if (!isUrl(url)) url = 'https://www.bing.com/search?q=' + url;
-                else if (!(url.startsWith('https://') || url.startsWith('http://'))) url = 'http://' + url;
-            }
-            if (browsercookie=="yahoo!"){
-                if (!isUrl(url)) url = 'https://search.yahoo.com/search?p=' + url;
-                else if (!(url.startsWith('https://') || url.startsWith('http://'))) url = 'http://' + url;
-            }
-            
-            if (!isUrl(url)) url = 'https://www.google.com/search?q=' + url;
-            else if (!(url.startsWith('https://') || url.startsWith('http://'))) url = 'http://' + url;
-
-            var white = document.createElement('img');
-            white.style.cursor="pointer";
-            white.style.position = "absolute";
-            white.style.width = "100%";
-            white.style.height = "100%";
-            white.src = "/img/white.jpg";
-            white.style.right = "0px";
-            white.style.top = "0px";
-            document.body.appendChild(white);
-
-            var iframe = document.createElement('iframe');
-
-            iframe.style.position = "absolute";
-            iframe.style.width = "100%";
-            iframe.style.height = "100%";
-            iframe.style.top = "0px";
-            iframe.style.left = "0px";
-            iframe.id = "iframe";
-            iframe.style.border = "none";
-            iframe.src = __uv$config.prefix + __uv$config.encodeUrl(url);
-            document.body.appendChild(iframe);
-
-            var x = document.createElement('img');
-            x.style.cursor="pointer";
-            x.style.position = "absolute";
-            x.style.width = "50px";
-            x.style.height = "50px";
-            x.src = "/img/x.png";
-            x.style.zIndex = "99999999999999999999";
-            x.style.right = "1%";
-            x.style.top = "1%";
-            x.onclick = function() {
-                window.location.reload(1);
-            };
-
-            document.body.appendChild(x);
 
 
-            var open = document.createElement('img');
-            open.style.cursor="pointer";
-            open.style.position = "absolute";
-            open.style.width = "50px";
-            open.style.height = "50px";
-            open.src = "/img/open.png";
-            open.style.zIndex = "99999999999999999999";
-            open.style.right = "65px";
-            open.style.top = "1%";
-            open.onclick = function() {
-                if (document.getElementById("iframe").contentWindow.location.href!="about:blank"){
-                    window.open(document.getElementById("iframe").contentWindow.location.href);
-                }
-            };
-
-            document.body.appendChild(open);
-
-        });
-    });
-
-    function isUrl(val = '') {
-        if (/^http(s?):\/\//.test(val) || val.includes('.') && val.substr(0, 1) !== ' ') return true;
-        return false;
-    };
-</script>
+<script src="/settings/js/index.js"></script>
+<script src="/settings/js/settings.js"></script>
