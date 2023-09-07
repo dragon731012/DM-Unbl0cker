@@ -10,7 +10,7 @@
   "scripts": {
     "build": "node",
     "prestart": "npm install",
-    "start": "node ."
+    "start": "node . && npm install --save node-cron"
   },
   "keywords": [
     "proxy"
