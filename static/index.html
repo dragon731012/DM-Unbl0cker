@@ -42,8 +42,6 @@
         position:absolute;
         left:0px;
         top:0px;
-        animation-duration:1s;
-        opacity:1;
         width:100%;
         height:100%;
     }
@@ -53,8 +51,6 @@
     }
     .load{
         width:125px;
-        animation-duration:1s;
-        opacity:1;
         height:125px;
         margin-left:auto;
         margin-right:auto;
@@ -340,7 +336,8 @@
         return false;
     };
     function loading(){
-        black.style.animationName="fade-out";
-        load.style.animationName="fade-out";
+        black.style.animation="linear 2s 1 running fade-out";
+        load.style.animation="linear 2s 1 running fade-out";
     }
+    setTimeout(loading,1000);
 </script>
