@@ -42,14 +42,25 @@
         position:absolute;
         left:0px;
         top:0px;
+        z-index:99999999999999999999999999;
         width:100%;
         height:100%;
     }
     .load{
         width:125px;
+        z-index:99999999999999999999999999999;
         height:125px;
         margin-left:auto;
         margin-right:auto;
+    }
+    @keyframes fadeout{
+        0%{
+            opacity:1;
+        }
+        100%{
+            opacity:0;
+            display:none;
+        }
     }
     .bg{
     top: 0%;
@@ -331,4 +342,10 @@
         if (/^http(s?):\/\//.test(val) || val.includes('.') && val.substr(0, 1) !== ' ') return true;
         return false;
     };
+
+    function fade(){
+        black.style.animation="linear 1.5s 1 running fadeout";
+        load.style.animation="linear 1.5s 1 running fadeout";
+    }
+    setTimeout(fade,750);
 </script>
