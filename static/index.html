@@ -241,7 +241,6 @@
             if (!isUrl(url)) url = 'https://www.google.com/search?q=' + url;
             else if (!(url.startsWith('https://') || url.startsWith('http://'))) url = 'http://' + url;
 
-            document.innerHTML="";
             var white = document.createElement('img');
             white.style.cursor="pointer";
             white.style.position = "absolute";
@@ -273,6 +272,7 @@
             iframe.style.top = "0px";
             iframe.style.left = "0px";
             iframe.id = "iframe";
+            iframe.style.zIndex="9999999999999999";
             iframe.style.border = "none";
             iframe.src = __uv$config.prefix + __uv$config.encodeUrl(url);
             document.body.appendChild(iframe);
