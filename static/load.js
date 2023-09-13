@@ -23,4 +23,11 @@ loading.style.left="50%";
 loading.style.transform="translate(-50%, -50%)";
 document.body.appendChild(loading);
 
-
+function waitforfade(){
+  function fade(){
+    var lo=Number(loading.style.opacity)-0.01;
+    loading.style.opacity=lo.toString();
+  }
+  setInterval(fade,5);
+}
+setTimeout(waitforfade,500);
