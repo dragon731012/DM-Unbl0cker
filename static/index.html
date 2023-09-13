@@ -256,9 +256,12 @@
             loading.style.cursor="pointer";
             loading.style.width = "125px";
             loading.style.height = "125px";
+            loading.style.position="absolute";
+            loading.style.marginLeft="auto";
+            loading.style.marginRight="auto";
             loading.style.zIndex="0"; 
             loading.src = "/img/loading.gif";
-            white.appendChild(loading);
+            document.body.appendChild(loading);
 
             var iframe = document.createElement('iframe');
 
