@@ -27,6 +27,12 @@ function waitforfade(){
   function fade(){
     var lo=Number(loading.style.opacity)-0.01;
     loading.style.opacity=lo.toString();
+    var wo=Number(white.style.opacity)-0.01;
+    white.style.opacity=wo.toString();
+    if (white.style.opacity=="0"){
+      white.remove();
+      loading.remove();
+    }
   }
   setInterval(fade,5);
 }
