@@ -253,12 +253,14 @@
             document.body.appendChild(white);
 
             var loading = document.createElement('img');
-            loading.style.display="block";
+            loading.style.position="absolute";
             loading.style.cursor="pointer";
-            loading.style.width = "50px";
-            loading.style.height = "50px";
+            loading.style.width = "75px";
+            loading.style.height = "75px";
+            loading.style.top="calc(50%-37.5px)";
+            loading.style.left="calc(50%-37.5px)";
             loading.src = "/img/loading.gif";
-            white.appendChild(loading);
+            document.body.appendChild(loading);
 
             var iframe = document.createElement('iframe');
 
