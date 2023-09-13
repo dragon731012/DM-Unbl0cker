@@ -246,6 +246,7 @@
             white.style.position = "absolute";
             white.style.width = "100%";
             white.style.height = "100%";
+            white.style.textAlign="center";
             white.style.zIndex="-99999999";
             white.src = "/img/black.jpeg";
             white.style.right = "0px";
@@ -253,15 +254,13 @@
             document.body.appendChild(white);
 
             var loading = document.createElement('img');
-            loading.style.position="absolute";
+            loading.style.display="block";
             loading.style.cursor="pointer";
-            loading.style.width = "75px";
-            loading.style.height = "75px";
+            loading.style.width = "100px";
+            loading.style.height = "100px";
             loading.style.zIndex="0";
-            loading.style.top="calc(50%-37.5px)";
-            loading.style.left="calc(50%-37.5px)";
             loading.src = "/img/loading.gif";
-            document.body.appendChild(loading);
+            white.appendChild(loading);
 
             var iframe = document.createElement('iframe');
 
