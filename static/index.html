@@ -246,10 +246,19 @@
             white.style.position = "absolute";
             white.style.width = "100%";
             white.style.height = "100%";
-            white.src = "/img/white.jpg";
+            white.style.textAlign="center";
+            white.src = "/img/black.jpeg";
             white.style.right = "0px";
             white.style.top = "0px";
             document.body.appendChild(white);
+
+            var loading = document.createElement('img');
+            loading.style.display="block";
+            loading.style.cursor="pointer";
+            loading.style.width = "50px";
+            loading.style.height = "50px";
+            loading.src = "/img/loading.gif";
+            white.appendChild(loading);
 
             var iframe = document.createElement('iframe');
 
