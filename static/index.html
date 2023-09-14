@@ -350,19 +350,16 @@
     };
 
     
-    function fade1(){
+    function fade(){
         document.getElementById("loadimg").style.animation="linear 1.5s 1 running fadeout";
         document.getElementById("loadimg").addEventListener("animationend", () => {
+            document.getElementById("black").style.animation="linear 1.5s 1 running fadeout";
+            document.getElementById("black").addEventListener("animationend", () => {
+                document.getElementById("black").remove();
+            });
             document.getElementById("loadimg").remove();
         });
 
     }
-    function fade2(){
-        document.getElementById("black").style.animation="linear 1.5s 1 running fadeout";
-        document.getElementById("black").addEventListener("animationend", () => {
-            document.getElementById("black").remove();
-        });
-    }
     setTimeout(fade,1200);
-    setTimeout(fade2,1500);
 </script>
