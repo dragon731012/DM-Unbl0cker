@@ -54,8 +54,7 @@
         width:125px;
         z-index:99999999999999999999999999999999999999999999;
         height:125px;
-        margin-left:auto;
-        margin-right:auto;
+        margin:0 auto;
     }
     @keyframes fadeout{
         0%{
@@ -349,10 +348,10 @@
 
     function fade(){
         black.style.animation="linear 1.5s 1 running fadeout";
-        load.style.animation="linear 1.5s 1 running fadeout";
-        load.addEventListener("animationend", () => {
+        //load.style.animation="linear 1.5s 1 running fadeout";
+        black.addEventListener("animationend", () => {
             black.remove();
-            load.remove();
+            //load.remove();
         });
 
     }
