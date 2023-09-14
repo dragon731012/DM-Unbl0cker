@@ -51,6 +51,7 @@
         opacity:1;
         display:block;
         width:125px;
+        z-index:999999999999999999999999999999999999999999999;
         height:125px;
         margin:0 auto;
     }
@@ -344,27 +345,11 @@
         return false;
     };
 
-
-    var allelements = document.getElementsByTagName("*");
-    var typelist=[];
-
-    for (var i=0; i<allelements.length; i++) {
-        typelist.push(allelements[i].style.display);
-        if (allelements[i].className!="black" && allelements[i].className!="loadimg"){
-            allelements[i].style.display="none";
-        }
-    }
-
+    
     function fade(){
         document.getElementById("black").style.animation="linear 1.5s 1 running fadeout";
         document.getElementById("loadimg").style.animation="linear 1.5s 1 running fadeout";
-        
-        var allelements2 = document.getElementsByTagName("*");
-        for (var i=0; i<allelements2.length; i++) {
-            allelements[i].style.display=typelist[i];
-            if (allelements[i].className!="black" && allelements[i].className!="loadimg"){
-            }
-        }
+
         
         document.getElementById("black").addEventListener("animationend", () => {
             document.getElementById("black").remove();
