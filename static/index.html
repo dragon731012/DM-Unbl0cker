@@ -49,13 +49,15 @@
         height:100%;
     }
     .loadimg{
+        position:absolute;
         opacity:1;
         display:block;
         width:125px;
-        z-index:999999999999999999999999999999999999999999999;
+        z-index:9999999999999999999999999999999999999999999999;
         height:125px;
-        margin:0 auto;
-        position:relative;
+        top:50%;
+        left:50%;
+        transform:translate(-50%, -50%);
     }
     @keyframes fadeout{
         0%{
@@ -348,18 +350,19 @@
     };
 
     
-    function fade(){
-        document.getElementById("black").style.animation="linear 1.5s 1 running fadeout";
+    function fade1(){
         document.getElementById("loadimg").style.animation="linear 1.5s 1 running fadeout";
-
-        
-        document.getElementById("black").addEventListener("animationend", () => {
-            document.getElementById("black").remove();
-        });
         document.getElementById("loadimg").addEventListener("animationend", () => {
             document.getElementById("loadimg").remove();
         });
 
     }
+    function fade2(){
+        document.getElementById("black").style.animation="linear 1.5s 1 running fadeout";
+        document.getElementById("black").addEventListener("animationend", () => {
+            document.getElementById("black").remove();
+        });
+    }
+    setTimeout(fade,1200);
     setTimeout(fade,1500);
 </script>
