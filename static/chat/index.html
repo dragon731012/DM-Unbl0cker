@@ -140,7 +140,9 @@ initComments({
     bottom:0px;
     resize:none;
     overflow:hidden;
-    height:100%;
+    padding-top:50%;
+    padding-bottom:50%;
+    height:0%;
     color:white;
     left:2%;
   }
@@ -233,7 +235,6 @@ initComments({
       }
   }, true);
   function loop(){
-    document.body.scrollTo(0,0);
     if (document.getElementsByClassName("cactus-editor-name")[0].querySelector("span").querySelector("input").value==""){
       document.getElementsByClassName("cactus-send-button")[0].disabled=true;
     }
