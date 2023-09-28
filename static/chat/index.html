@@ -13,6 +13,28 @@
 </div>
 <div id="comment-section"></div>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<input class="cactus-editor-textarea" placeholder="Add a comment" style="border-radius: 35px 0% 0% 35px;
+    resize: none;
+    line-height: 190%;
+    white-space: nowrap;
+    box-sizing: border-box;
+    font-size: 300%;
+    background-color: transparent;
+    border: 5px solid white;
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    bottom: 0px;
+    resize: none;
+    overflow: hidden;
+    /* margin-top: 10%; */
+    padding-bottom: 0%;
+    height: 100%;
+    color: white;
+    left: 2%;">
+
 <script>
 initComments({
   node: document.getElementById("comment-section"),
@@ -125,6 +147,7 @@ initComments({
     width: 61%;
   }
   .cactus-editor>span>textarea {
+    display:none !important;
     border-radius:35px 0% 0% 35px;
     resize:none;
     line-height: 190%;
