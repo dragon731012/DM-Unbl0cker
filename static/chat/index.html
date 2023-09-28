@@ -245,10 +245,10 @@ initComments({
     if (document.getElementsByClassName("cactus-editor-name")[0].querySelector("span").querySelector("input").value==""){
       document.getElementsByClassName("cactus-send-button")[0].disabled=true;
     }
-    if (document.getElementsByClassName("cactus-editor-textarea")[0].value==""){
+    if (document.getElementsByClassName("cactus-editor-textarea")[1].value==""){
       document.getElementsByClassName("cactus-send-button")[0].disabled=true;
     }
-    if (document.getElementsByClassName("cactus-editor-textarea")[0].value!="" && document.getElementsByClassName("cactus-editor-name")[0].querySelector("span").querySelector("input").value!=""){
+    if (document.getElementsByClassName("cactus-editor-textarea")[1].value!="" && document.getElementsByClassName("cactus-editor-name")[0].querySelector("span").querySelector("input").value!=""){
       document.getElementsByClassName("cactus-send-button")[0].disabled=false;
     }
   }
