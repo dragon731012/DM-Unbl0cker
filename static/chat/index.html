@@ -126,7 +126,6 @@
     width: 61%;
   }
   .cactus-editor>span>textarea {
-    display:none !important;
     border-radius:35px 0% 0% 35px;
     resize:none;
     line-height: 190%;
@@ -138,6 +137,7 @@
     position: absolute;
     display:inline-block;
     width:100%;
+    top:9999%;
     text-align: center; 
     bottom:0px;
     resize:none;
@@ -258,8 +258,8 @@
       }
   }, true);
   function loop(){
-    if (document.getElementsByClassName("cactus-editor-textarea")[0].innerText!=document.getElementsByClassName("textbarinput")[0].value){
-      document.getElementsByClassName("cactus-editor-textarea")[0].innerText=document.getElementsByClassName("textbarinput")[0].value;
+    if (document.getElementsByClassName("cactus-editor-textarea")[0].value!=document.getElementsByClassName("textbarinput")[0].value){
+      document.getElementsByClassName("cactus-editor-textarea")[0].value=document.getElementsByClassName("textbarinput")[0].value;
     }
     if (document.getElementsByClassName("cactus-editor-name")[0].querySelector("span").querySelector("input").value==""){
       document.getElementsByClassName("cactus-send-button")[0].disabled=true;
