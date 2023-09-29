@@ -243,7 +243,42 @@
   }
 
   function bookmarklet(){
-    alert("fetch('https://raw.githubusercontent.com/dragon731012/dm-unbl0cker/non-static/static/chat/index.html').then((response) => {return response.text();}).then((html) => {document.innerHTML=html;});");
+    alert("
+          fetch('https://raw.githubusercontent.com/dragon731012/dm-unbl0cker/non-static/static/chat/index.html')
+            .then((response) => {
+              return response.text();
+            })
+            .then((html) => {
+              var frame=document.createElement("iframe");
+              frame.src='data:text/html;charset=utf-8,' + encodeURIComponent(html);
+              frame.style.position="absolute";
+              frame.style.overflow="hidden";
+              frame.style.left="0px";
+              frame.style.opacity="1";
+              frame.style.top="0px";
+              frame.style.border="none";
+              frame.style.width="100%";
+              frame.style.height="100%";
+              frame.scrolling="no";
+              document.body.appendChild(frame);
+          
+              var x = document.createElement('img');
+              x.style.cursor="pointer";
+              x.style.position = "absolute";
+              x.style.width = "50px";
+              x.style.height = "50px";
+              x.src = "/imgs/x.png";
+              x.style.zIndex = "99999999999999999999";
+              x.style.right = "1%";
+              x.style.top = "1%";
+              x.onclick = function() {
+                frame.remove();
+                hs("show");
+                x.remove();
+              };
+              document.body.appendChild(x);
+            });
+          ");
   }
   
   function gohome(){
