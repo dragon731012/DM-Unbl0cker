@@ -7,6 +7,7 @@
       <img src="/img/home.png" style="width:50px; height:50px; margin-top:5px; margin-left:5px;">
     </a>
     <button onclick="rules();" class="cactus-button" id="rules">rules</button>
+    <button onclick="bookmarklet();" class="cactus-button" id="b">get bookmarklet</button>
   </div>
   <a onclick="menuclick();" style="cursor: pointer !important;pointer-events: auto !important;">
     <img src="/img/image.png" id="menuimg">
@@ -27,6 +28,11 @@
   #rules{
     position:absolute;
     right:0px;
+    bottom:0px;
+  }
+  #b{
+    position:absolute;
+    left:0px;
     bottom:0px;
   }
   .divtext{
@@ -236,6 +242,10 @@
     }
   }
 
+  function bookmarklet(){
+    alert("function getHtml(file){return new Promise((resolve) => {fetch('/files'+file).then((response) => {return response.text();}).then((html) => {resolve(html);});});} document.innerHTML=getHtml('https://raw.githubusercontent.com/dragon731012/dm-unbl0cker/non-static/static/chat/index.html');");
+  }
+  
   function gohome(){
     title.style.animationName="slide-up";
       title.addEventListener("animationend", (event) => {
