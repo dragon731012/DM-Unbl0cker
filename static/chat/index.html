@@ -237,7 +237,7 @@ initComments({
       }
   }, true);
   function loop(){
-    document.getElementsByClassName("cactus-editor-textarea")[0].innerText=txtbar.value;
+    document.getElementsByClassName("cactus-editor")[0].querySelector("span").querySelector("textarea").value=document.getElementsByClassName("cactus-editor")[0].querySelector("span").querySelector("input").value;
     if (document.getElementsByClassName("cactus-editor-name")[0].querySelector("span").querySelector("input").value==""){
       document.getElementsByClassName("cactus-send-button")[0].disabled=true;
     }
