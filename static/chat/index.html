@@ -215,7 +215,7 @@
   var txtbar=document.createElement("input"); 
   txtbar.style="margin-left:10px;border-radius: 35px 0% 0% 35px;resize: none;line-height: 190%;white-space: nowrap;box-sizing: border-box;font-size: 200%;background-color: transparent;border: 5px solid white;position: absolute;display: inline-block;width: 100%;text-align: center;bottom: 0px;resize: none;overflow: hidden;padding-bottom: 0%;height: 100%;color: white;left: 2%;"; 
   txtbar.placeholder="Add a comment"; 
-  txtbar.className="cactus-editor-textarea"; 
+  txtbar.className="textbarinput"; 
   document.getElementsByClassName("cactus-editor")[0].querySelector("span").appendChild(txtbar);
   
   document.getElementsByClassName("cactus-editor-textarea")[0].scrollTo(0,(document.getElementsByClassName("cactus-editor-textarea")[0].scrollHeight/2)-(Math.ceil(document.getElementsByClassName("cactus-editor-textarea")[0].clientHeight/2)));
@@ -258,16 +258,16 @@
       }
   }, true);
   function loop(){
-    if (document.getElementsByClassName("cactus-editor-textarea")[0].value!=document.getElementsByClassName("cactus-editor-textarea")[1].value){
-      document.getElementsByClassName("cactus-editor-textarea")[0].value=document.getElementsByClassName("cactus-editor-textarea")[1].value;
+    if (document.getElementsByClassName("cactus-editor-textarea")[0].value!=document.getElementsByClassName("textbarinput")[0].value){
+      document.getElementsByClassName("cactus-editor-textarea")[0].value=document.getElementsByClassName("textbarinput")[0].value;
     }
     if (document.getElementsByClassName("cactus-editor-name")[0].querySelector("span").querySelector("input").value==""){
       document.getElementsByClassName("cactus-send-button")[0].disabled=true;
     }
-    if (document.getElementsByClassName("cactus-editor-textarea")[1].value==""){
+    if (document.getElementsByClassName("textbarinput")[0].value==""){
       document.getElementsByClassName("cactus-send-button")[0].disabled=true;
     }
-    if (document.getElementsByClassName("cactus-editor-textarea")[1].value!="" && document.getElementsByClassName("cactus-editor-name")[0].querySelector("span").querySelector("input").value!=""){
+    if (document.getElementsByClassName("textbarinput")[0].value!="" && document.getElementsByClassName("cactus-editor-name")[0].querySelector("span").querySelector("input").value!=""){
       document.getElementsByClassName("cactus-send-button")[0].disabled=false;
     }
   }
