@@ -10,6 +10,9 @@
   <a onclick="menuclick();" style="cursor: pointer !important;pointer-events: auto !important;">
     <img src="/img/image.png" id="menuimg">
   </a>
+  <a onclick="rules();">
+      <button class="cactus-button" id="rules">rules</button>
+    </a>
 </div>
 <div id="comment-section"></div>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -196,9 +199,12 @@ initComments({
     return true;
   }
   
-
-  if (localStorage.getItem("read")==null){
+  function rules(){
     alert("rules - \n1. No impersonating others.\n2. No inappropriate links.\n3. No bullying.\n4. Just be nice!");
+  }
+  
+  if (localStorage.getItem("read")==null){
+    rules();
     localStorage.setItem("read", "true");
   }
   
