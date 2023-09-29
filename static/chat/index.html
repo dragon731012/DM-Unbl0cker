@@ -258,12 +258,12 @@
       }
   }, true);
   function loop(){
-    if (document.getElementsByClassName("cactus-editor-textarea")[0].value!=document.getElementsByClassName("textbarinput")[0].value && document.getElementsByClassName("cactus-editor-textarea")[0].innerText!=""){
+    if (document.getElementsByClassName("cactus-editor-textarea")[0].innerText!=document.getElementsByClassName("textbarinput")[0].value && document.getElementsByClassName("cactus-editor-textarea")[0].innerText!=""){
       document.getElementsByClassName("cactus-editor-textarea")[0].value=document.getElementsByClassName("textbarinput")[0].value;
     }
     else{
       if (document.activeElement!=document.getElementsByClassName("textbarinput")[0]){
-        document.getElementsByClassName("textbarinput")[0].value=document.getElementsByClassName("cactus-editor-textarea")[0].value;
+        document.getElementsByClassName("textbarinput")[0].value=document.getElementsByClassName("cactus-editor-textarea")[0].innerText;
       }
     }
     
