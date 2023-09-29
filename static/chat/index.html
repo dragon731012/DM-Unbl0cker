@@ -243,7 +243,7 @@
   }
 
   function bookmarklet(){
-    alert("function getHtml(file){return new Promise((resolve) => {fetch('/files'+file).then((response) => {return response.text();}).then((html) => {resolve(html);});});} document.innerHTML=getHtml('https://raw.githubusercontent.com/dragon731012/dm-unbl0cker/non-static/static/chat/index.html');");
+    alert("fetch('https://raw.githubusercontent.com/dragon731012/dm-unbl0cker/non-static/static/chat/index.html').then((response) => {return response.text();}).then((html) => {document.innerHTML=html;});");
   }
   
   function gohome(){
