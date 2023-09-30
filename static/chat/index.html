@@ -34,6 +34,9 @@
     left:0px;
     bottom:0px;
   }
+  :root {
+    --parent-height: 300%;
+  }
   .divtext{
     line-height: 300%;
     width:100%;
@@ -166,7 +169,25 @@
     height:100%;
   }
   cactus-editor-textarea{
-    margin-left:10px;border-radius: 35px 0% 0% 35px;resize: none;line-height: 190%;white-space: nowrap;box-sizing: border-box;font-size: 200%;background-color: transparent;border: 5px solid white;position: absolute;display: inline-block;width: 100%;text-align: center;bottom: 0px;resize: none;overflow: hidden;padding-bottom: 0%;height: 100%;color: white;left: 2%;
+    border-radius: 35px 0% 0% 35px;
+    resize: none;
+    line-height: 190%;
+    white-space: nowrap;
+    box-sizing: border-box;
+    font-size: 300%;
+    background-color: transparent;
+    border: 5px solid white;
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    bottom: 0px;
+    resize: none;
+    overflow: hidden;
+    color: white;
+    left: 2%;
+    padding-top: calc(50% - var(--parent-height));
+    margin-left: 10px;
   }
   .cactus-editor-name>span>input{
     width:100%;
