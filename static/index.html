@@ -207,7 +207,11 @@
     var script1 = document.createElement('script');script1.src="/cursor.js"; document.body.appendChild(script1);
 
     if (get_cookie("autoblank")=="on"){
-        blank();
+        var gfg = window.frameElement;
+        if (gfg) {}
+        else {
+            blank();
+        }
     }
     
     var title2=get_cookie("title2");
