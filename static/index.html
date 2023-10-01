@@ -205,6 +205,10 @@
 </style>
 <script>
     var script1 = document.createElement('script');script1.src="/cursor.js"; document.body.appendChild(script1);
+
+    if (get_cookie("autoblank")==true || get_cookie("autoblank")=="true"){
+        blank();
+    }
     
     var title2=get_cookie("title2");
     var favicon=get_cookie("favicon");
