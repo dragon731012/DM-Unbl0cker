@@ -261,7 +261,7 @@ var title2=document.getElementById('title').value;
 var favicon=document.getElementById('url1').value;
 var browser4=document.getElementById('browser1').value;
 var cursor3=document.getElementById('cursoractivate').checked;
-var abcookie=document.getElementById('autoblank').checked;
+var autoblanker=document.getElementById('autoblank').checked;
            
 if (imported==''){
     if (cursor3==true){
@@ -272,11 +272,11 @@ if (imported==''){
         document.cookie='cursor=off; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/';
     }
 
-    if (abcookie==true){
+    if (autoblanker==true){
         document.cookie='autoblank=on; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/';
     }
 
-    if (abcookie==false){
+    if (autoblanker==false){
         document.cookie='autoblank=off; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/';
     }
 
@@ -302,11 +302,11 @@ else{
         document.cookie='cursor=off; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/';
     }
 
-    if (abcookie==true){
+    if (autoblanker==true){
         document.cookie='autoblank=on; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/';
     }
 
-    if (abcookie==false){
+    if (autoblanker==false){
         document.cookie='autoblank=off; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/';
     }
 
