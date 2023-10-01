@@ -207,9 +207,8 @@
     var script1 = document.createElement('script');script1.src="/cursor.js"; document.body.appendChild(script1);
 
     if (get_cookie("autoblank")=="on"){
-        var gfg = window.frameElement;
-        if (gfg) {}
-        else {
+        if (window.top !== window) {}
+        else{
             blank();
         }
     }
