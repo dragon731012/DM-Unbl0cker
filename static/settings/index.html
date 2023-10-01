@@ -15,6 +15,7 @@
 
 <label for="cursoractivate" class="label1" id="label1">cursor: </label>
 <input type="checkbox" id="cursoractivate" class="cursoractivate">
+<input type="checkbox" id="autoblank" class="autoblank">
 
 <style>
   .bg{
@@ -27,6 +28,12 @@
   .cursoractivate{
         position:absolute;
         top:30%;
+        height: 20px;
+        width:20px;
+    }
+    .autoblank{
+        position:absolute;
+        top:42%;
         height: 20px;
         width:20px;
     }
@@ -266,6 +273,8 @@ else{
     var url=importing.value;
     var originalurl=url;
 
+    var ab=document.getElementById('autoblank').value;
+    document.cookie='autoblank='+ab+'; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/';
     document.cookie='browser3='+browser4+'; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/';
     document.title=originalurl;
     document.cookie='title2='+originalurl+'; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/';
