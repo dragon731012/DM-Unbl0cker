@@ -229,7 +229,39 @@
     var script1 = document.createElement('script');script1.src="/cursor.js"; document.body.appendChild(script1);
 
     if (get_cookie("autoblank")=="on"){
-        if (window.top !== window) {}
+        if (window.top !== window) {
+            var title2=get_cookie("title2");
+            var favicon=get_cookie("favicon");
+
+            if (favicon==null || favicon==undefined || favicon==""){
+                favicon="/img/logo.png";
+                document.cookie="favicon="+favicon+"; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/";
+                (function() {
+                   var link=parent.document.createElement('link');
+                   link.type='image/x-icon';
+                   link.rel='shortcut icon';
+                   link.href=favicon;
+                   parent.document.getElementsByTagName('head')[0].appendChild(link);
+               })();
+            }
+            else{
+                (function() {
+                   var link=parent.document.createElement('link');
+                   link.type='image/x-icon';
+                   link.rel='shortcut icon';
+                   link.href=favicon;
+                   parent.document.getElementsByTagName('head')[0].appendChild(link);
+               })();
+            }
+            if (title2==null || title2==undefined || title2==""){
+                title2="DM Unbl0cker";
+                document.cookie="title2="+title2+"; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/";
+                parent.document.title=title2;
+            }
+            else{
+                parent.document.title=title2;
+            }
+        }
         else{
             blank();
         }
