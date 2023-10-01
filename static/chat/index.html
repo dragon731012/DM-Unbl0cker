@@ -276,10 +276,8 @@
   }, true);
   function loop(){
     if (document.getElementsByClassName("cactus-errors")[0]!=null){
-      if (document.getElementsByClassName("cactus-error-text")[0].innerText==" Error: M_BAD_STATE Cannot join user who was banned"){
-        document.getElementById("banalert").style.display="block";
-        document.getElementsByClassName("cactus-errors")[0].remove();
-      }
+      document.getElementById("banalert").style.display="block";
+      document.getElementsByClassName("cactus-errors")[0].remove();
     }
    
     if (document.getElementsByClassName("cactus-editor-name")[0].querySelector("span").querySelector("input").value==""){
