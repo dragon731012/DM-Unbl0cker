@@ -1,3 +1,13 @@
+<script>
+    var script1 = document.createElement('script');script1.src="/cursor.js"; document.body.appendChild(script1);
+
+    if (get_cookie("autoblank")=="on"){
+        if (window.top !== window) {}
+        else{
+            blank();
+        }
+    }
+</script>
 <link rel="stylesheet" type="text/css" href="/style.css"/>
 <script src="uv/uv.bundle.js"></script>
 <script src="uv/uv.config.js"></script>
@@ -204,15 +214,6 @@
     }
 </style>
 <script>
-    var script1 = document.createElement('script');script1.src="/cursor.js"; document.body.appendChild(script1);
-
-    if (get_cookie("autoblank")=="on"){
-        if (window.top !== window) {}
-        else{
-            blank();
-        }
-    }
-    
     var title2=get_cookie("title2");
     var favicon=get_cookie("favicon");
     
