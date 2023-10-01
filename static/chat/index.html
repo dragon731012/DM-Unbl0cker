@@ -258,11 +258,6 @@
       });
   }
   
-  window.onerror = function(msg, url, linenumber) {
-    alert('Error message: '+msg+'\nURL: '+url+'\nLine Number: '+linenumber);
-    return true;
-  }
-  
   function rules(){
     document.getElementById("rulesalert").style.display="block";
     document.getElementById("rulesalert").style.animationName="alertfadein";
