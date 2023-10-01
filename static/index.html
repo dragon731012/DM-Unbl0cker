@@ -35,6 +35,9 @@
 <a onclick="window.location.pathname='/apps';">
     <img src="/img/apps.png" class="apps" id="apps"/>
 </a>
+<a onclick="window.location.pathname='/chat';">
+    <img src="/img/message.png" class="chat" id="chat"/>
+</a>
 <div class="icons">
     <a onclick="blank();">
     <img src="/img/IMG_3024.png" class="blank" id="blank"/>
@@ -103,6 +106,15 @@
     width:70px;
     height:70px;
     right:90px;
+    top:1%;
+    opacity:1;
+    }
+    .chat{
+    position: absolute;
+    height:100%;
+    width:70px;
+    height:70px;
+    right:180px;
     top:1%;
     opacity:1;
     }
@@ -208,8 +220,11 @@
     .apps:hover{
     opacity:0.5;
     }
+    .chat:hover{
+    opacity:0.5;
+    }
 
-    .apps,.games,.settings,.blank,.github,.discord{
+    .apps,.games,.settings,.blank,.github,.discord,.chat{
         transition: all 0.7s ease-out;
     }
 </style>
