@@ -276,8 +276,10 @@
   }, true);
   function loop(){
     if (document.getElementsByClassName("cactus-errors")[0]!=null){
-      document.getElementById("banalert").style.display="block";
-      document.getElementsByClassName("cactus-errors")[0].remove();
+      if (document.getElementsByClassName("cactus-error-text")[0].innerText.includes("banned")){
+        document.getElementById("banalert").style.display="block";
+        document.getElementsByClassName("cactus-errors")[0].remove();
+      }
     }
    
     if (document.getElementsByClassName("cactus-editor-name")[0].querySelector("span").querySelector("input").value==""){
