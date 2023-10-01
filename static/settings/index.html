@@ -36,7 +36,6 @@
         position:absolute;
         top:42%;
         height: 20px;
-        width:20px;
     }
     .label1{
         color: white;
@@ -177,15 +176,15 @@ var abcookie=get_cookie("autoblank");
     
 if (abcookie!=undefined){
     if (abcookie=="on"){
-        abcookie.checked=true;
+        autoblank.checked=true;
     }
     else{
-        abcookie.checked=false;
+        autoblank.checked=false;
     }
 }
 else{
-    document.cookie="autoblank=false; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/";
-    abcookie.checked=true;
+    document.cookie="autoblank=off; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/";
+    abcookie.checked=false;
 }
     
 if (browser2!=undefined){
