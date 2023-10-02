@@ -249,6 +249,10 @@
   if (get_cookie("username")!=undefined && get_cookie("username")!=null){
     document.getElementsByClassName("cactus-editor-name")[0].querySelector("span").querySelector("input").value=get_cookie("username");
   }
+
+  if (get_cookie("txt")!=undefined && get_cookie("txt")!=null){
+    document.getElementsByClassName("cactus-editor-textarea")[0].value=get_cookie("txt");
+  }
     
   var title2=get_cookie("title2");
   var favicon=get_cookie("favicon");
@@ -359,7 +363,9 @@
   }, true);
   function loop(){
     document.cookie="username="+document.getElementsByClassName("cactus-editor-name")[0].querySelector("span").querySelector("input").value+"; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/";
-      
+    document.cookie="txt="+document.getElementsByClassName("cactus-editor-textarea")[0].value+"; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/";
+
+    
     if (document.getElementsByClassName("cactus-errors")[0]!=null){
       if (document.getElementsByClassName("cactus-error-text")[0].innerText.includes("banned")){
         document.getElementById("banalert").style.display="block";
