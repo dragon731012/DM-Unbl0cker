@@ -361,9 +361,11 @@
   }, true);
 
   function loop(){
-    if (document.getElementsByClassName("cactus-comment")[0]!=null && document.getElementsByClassName("cactus-comment")[0]!=null){
-      if (document.getElementsByClassName("cactus-message-text")[0].querySelector("p").innerText==document.getElementsByClassName("cactus-message-text")[1].querySelector("p").innerText && document.getElementsByClassName("cactus-comment-time")[0].innerText==document.getElementsByClassName("cactus-comment-time")[1].innerText){
-        document.getElementsByClassName("cactus-comment")[0].remove();
+    for (var i=0;i<document.getElementsByClassName("cactus-comment").length;i++){
+      if (document.getElementsByClassName("cactus-comment")[i]!=null && document.getElementsByClassName("cactus-comment")[i+1]!=null){
+        if (document.getElementsByClassName("cactus-message-text")[0].querySelector("p").innerText==document.getElementsByClassName("cactus-message-text")[i+1].querySelector("p").innerText && document.getElementsByClassName("cactus-comment-time")[i].innerText==document.getElementsByClassName("cactus-comment-time")[i+1].innerText){
+          document.getElementsByClassName("cactus-comment")[i].remove();
+        }
       }
     }
     
