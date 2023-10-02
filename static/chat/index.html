@@ -359,7 +359,18 @@
         return false;
       }
   }, true);
+
   function loop(){
+    for (var i=0,i<document.getElementsByClassName("cactus-message-text").length,i++){
+      if (document.getElementsByClassName("cactus-message-text")[i].innerText==document.getElementsByClassName("cactus-message-text")[i+1].innerText){  
+        if (document.getElementsByClassName("cactus-comment-time")[i].innerText==document.getElementsByClassName("cactus-comment-time")[i+1].innerText){
+          if (document.getElementsByClassName("cactus-comment-displayname")[i].innerText==document.getElementsByClassName("cactus-comment-displayname")[i+1].innerText){
+            document.getElementsByClassName("cactus-comment")[i].remove();
+          }
+        }
+      }
+    }
+    
     if (document.getElementsByClassName("cactus-errors")[0]!=null){
       if (document.getElementsByClassName("cactus-error-text")[0].innerText.includes("banned")){
         document.getElementById("banalert").style.display="block";
