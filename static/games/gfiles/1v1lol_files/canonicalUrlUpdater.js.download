@@ -1,0 +1,34 @@
+function updateCanonicalUrl() {
+	let canonicalUrlElement = document.getElementById("canonicalUrl");
+	let canonicalUrlElement2 = document.querySelector('link[rel="canonical"]')
+	let canonicalURL;
+	const url = window.location.href;
+	
+	if (url.includes("play1v1.com")) {
+		canonicalURL = "https://play1v1.com/";
+	}
+	else if (url.includes("boxfight.io")) {
+		canonicalURL = "https://boxfight.io/";
+	}
+	else if (url.includes("zonewars.io")) {
+		canonicalURL = "https://zonewars.io/";
+	}
+	else if (url.includes("justaim.lol")) {
+		canonicalURL = "https://justaim.lol/";
+	}
+	else if (url.includes("aim.lol")) {
+		canonicalURL = "https://aim.lol/";
+	}
+	else if (url.includes("justedit.lol")) {
+		canonicalURL = "https://justedit.lol/";
+	}
+	else if (url.includes("127.0.0.1")) {
+		canonicalURL = "https://127.0.0.1/";
+	}
+	else {
+		canonicalURL = "https://1v1.school/";
+	}
+	
+	canonicalUrlElement.setAttribute("content", canonicalURL);
+	canonicalUrlElement2.href = canonicalURL;
+}

@@ -1,0 +1,3 @@
+function getBuildUrl() {
+	return "https://justbuild.nyc3.cdn.digitaloceanspaces.com/CI/1v1-unblocked/2/SDXxfEKxZZVTSfmtmWUzgmxbhZUCxjXkLsXwGtLS";
+}
