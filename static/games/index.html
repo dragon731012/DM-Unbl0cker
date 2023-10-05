@@ -97,7 +97,7 @@
   function searchfunct(){
     for (var i=0;i<document.getElementsByClassName("games").length;i++){
       if (document.getElementsByClassName("games")[i].innerText.includes(document.getElementById("searchbar").value)){
-        document.getElementsByClassName("games")[i].style.display="block";
+        document.getElementsByClassName("games")[i].style.display="inline-block";
       }
       else{
         document.getElementsByClassName("games")[i].style.display="none";
