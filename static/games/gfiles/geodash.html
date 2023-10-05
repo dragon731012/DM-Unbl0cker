@@ -1,63 +1,217 @@
-<iframe src="https://scratch.mit.edu/projects/105500895/embed" style="position:absolute;left:0px;bottom:0px;" allowtransparency="true" width="100%" height="110%" frameborder="0" scrolling="no" allowfullscreen></iframe>
-<iframe class="iframe" id="iframe"></iframe>
-<img class="back" id="back" src = "/img/back.png" onclick="reroutetogames();"/>
-<style>
-  .back{
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    top:1%;
-    left:1%;
-  }
-  .iframe{
-    position: absolute;
-    width:100%;
-    height: 100%;
-    left:0px;
-    top:0px;
-    border: none;
-  }
-</style>
+<!DOCTYPE html>
+<!-- saved from url=(0028)https://geometrydashlite.io/ -->
+<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Geometry Dash Lite</title><meta name="description" content="Play Geometry Dash Lite to experience new thrilling adventures. Control your character to overcome deadly obstacles and complete tricky roads to win"><meta name="title" content="Geometry Dash Lite"><meta name="keywords" content="Geometry Dash Lite
+"><meta name="news_keywords" content="Geometry Dash Lite
+"><link rel="canonical" href="https://geometrydashlite.io/"><link rel="icon" href="https://geometrydashlite.io/rs/logo-geometry-dash-lite.png"><meta property="og:title" content="Geometry Dash Lite" itemprop="headline"><meta property="og:type" content="website"><meta property="og:url" itemprop="url" content="https://geometrydashlite.io/"><meta property="og:image" itemprop="thumbnailUrl" content="/rs/banner-geometry-dash-lite.jpg"><meta property="og:description" content="Play Geometry Dash Lite to experience new thrilling adventures. Control your character to overcome deadly obstacles and complete tricky roads to win" itemprop="description"><meta property="og:site_name" content="Geometry Dash Lite"><link rel="apple-touch-icon" href="https://geometrydashlite.io/rs/logo-geometry-dash-lite.png"><meta name="twitter:title" content="Geometry Dash Lite"><meta name="twitter:url" content="https://geometrydashlite.io/"><meta name="twitter:image" content="/rs/banner-geometry-dash-lite.jpg"><meta name="twitter:description" content="Play Geometry Dash Lite to experience new thrilling adventures. Control your character to overcome deadly obstacles and complete tricky roads to win"><meta name="twitter:card" content="summary"><link rel="stylesheet" href="./geodash_files/reboot.css"><link rel="stylesheet" href="./geodash_files/body-style.css"><link rel="stylesheet" href="./geodash_files/home.css"> <script src="./geodash_files/f.txt"></script><script src="./geodash_files/f(1).txt"></script><script src="./geodash_files/f(2).txt" id="google_shimpl"></script><script async="" src="./geodash_files/js"></script><script>window.dataLayer = window.dataLayer || [];
+ function gtag() {
+ dataLayer.push(arguments);
+ }
+ gtag('js', new Date());
 
-<script>
-  window.navigator.serviceWorker.register('/sw.js');
-  function get_cookie(cookie_name) { const value = "; " + document.cookie; const parts = value.split("; " + cookie_name + "="); if (parts.length === 2) return parts.pop().split(";").shift(); } 
-  
-  var title2=get_cookie("title2");
-  var favicon=get_cookie("favicon");
-  
-  if (favicon==null || favicon==undefined || favicon==""){
-        favicon="/img/logo.png";
-        document.cookie="favicon="+favicon+"; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/";
-        (function() {
-           var link=document.querySelector("link[rel*='icon']") || document.createElement('link');
-           link.type='image/x-icon';
-           link.rel='shortcut icon';
-           link.href=favicon;
-           document.getElementsByTagName('head')[0].appendChild(link);
-       })();
-    }
-    else{
-        (function() {
-           var link=document.querySelector("link[rel*='icon']") || document.createElement('link');
-           link.type='image/x-icon';
-           link.rel='shortcut icon';
-           link.href=favicon;
-           document.getElementsByTagName('head')[0].appendChild(link);
-       })();
-    }
-    if (title2==null || title2==undefined || title2==""){
-        title2="DM Unbl0cker";
-        document.cookie="title2="+title2+"; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/";
-        document.title=title2;
-    }
-    else{
-        document.title=title2;
-    }
-</script>
+ gtag('config', 'G-8J1T3W0VWH');</script> <script async="" src="./geodash_files/f(3).txt" crossorigin="anonymous" data-checked-head="true"></script> <meta http-equiv="origin-trial" content="A7CQXglZzTrThjGTBEn1rWTxHOEtkWivwzgea+NjyardrwlieSjVuyG44PkYgIPGs8Q9svD8sF3Yedn0BBBjXAkAAACFeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A3vKT9yxRPjmXN3DpIiz58f5JykcWHjUo/W7hvmtjgh9jPpQgem9VbADiNovG8NkO6mRmk70Kex8/KUqAYWVWAEAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A4A26Ymj79UVY7C7JGUS4BG1s7MdcDokAQf/RP0paks+RoTYbXHxceT/5L4iKcsleFCngi75YfNRGW2+SpVv1ggAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ=="></head><body aria-hidden="false"><link rel="stylesheet" href="./geodash_files/game.css"><div class="main-panel" style="width: 0px;"><button type="button" class="btn btn-default hide-main-panel" title="Show/hide"><i class="">Info</i></button><div class="main-panel-content" style="display: none;"><div class="main-panel-ads" style="margin-left: 2px; display: none;"><div style="text-transform: uppercase; text-align: center; height: 20 px; letter-spacing: 1px; color: #9e9e9e; font-size: 9px;">Advertisement</div><div id="Ads1"><script async="" src="./geodash_files/f(3).txt" crossorigin="anonymous"></script><ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-4017755729799438" data-ad-slot="5788371856" data-adsbygoogle-status="done" data-ad-status="filled"><div id="aswift_1_host" tabindex="0" title="Advertisement" aria-label="Advertisement" style="border: none; height: 250px; width: 300px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"><iframe id="aswift_1" name="aswift_1" browsingtopics="true" style="left:0;position:absolute;top:0;border:0;width:300px;height:250px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="300" height="250" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allow="attribution-reporting" src="./geodash_files/ads.html" data-google-container-id="a!2" data-google-query-id="CLy7mu6m34EDFdrDTwIdeJgPAw" data-load-complete="true"></iframe></div></ins></div></div> <div class="recommend"><div class="item-game"><div class="cr-item"><a href="https://geometrydashlite.io/geometry-dash-world"><div class="cr-detail"><div class="cr-item-content"><div class="cr-img"><img loading="lazy" src="./geodash_files/geometry-dash-world-m240x240.jpg" title="Geometry Dash World" alt="Geometry Dash World"></div><div class="cr-info"><span>Geometry Dash World</span> </div> </div> </div></a></div> </div><div class="item-game"><div class="cr-item"><a href="https://geometrydashlite.io/geometry-dash"><div class="cr-detail"><div class="cr-item-content"><div class="cr-img"><img loading="lazy" src="./geodash_files/geometry-dash-m240x240.jpg" title="Geometry Dash" alt="Geometry Dash"></div><div class="cr-info"><span>Geometry Dash</span> </div> </div> </div></a></div> </div><div class="item-game"><div class="cr-item"><a href="https://geometrydashlite.io/geometry-dash-subzero"><div class="cr-detail"><div class="cr-item-content"><div class="cr-img"><img loading="lazy" src="./geodash_files/geometry-dash-subzero-m240x240.jpg" title="Geometry Dash SubZero" alt="Geometry Dash SubZero"></div><div class="cr-info"><span>Geometry Dash SubZero</span> </div> </div> </div></a></div> </div><div class="item-game"><div class="cr-item"><a href="https://geometrydashlite.io/geometry-dash-bloodbath"><div class="cr-detail"><div class="cr-item-content"><div class="cr-img"><img loading="lazy" src="./geodash_files/geometry-dash-bloodbath1-m240x240.jpg" title="Geometry Dash Bloodbath" alt="Geometry Dash Bloodbath"></div><div class="cr-info"><span>Geometry Dash Bloodbath</span> </div> </div> </div></a></div> </div><div class="item-game"><div class="cr-item"><a href="https://geometrydashlite.io/subway-surfers-monaco"><div class="cr-detail"><div class="cr-item-content"><div class="cr-img"><img loading="lazy" src="./geodash_files/subway-surfers-monaco-m240x240.png" title="Subway Surfers Monaco" alt="Subway Surfers Monaco"></div><div class="cr-info"><span>Subway Surfers Monaco</span> </div> </div> </div></a></div> </div><div class="item-game"><div class="cr-item"><a href="https://geometrydashlite.io/geometry-jump-world"><div class="cr-detail"><div class="cr-item-content"><div class="cr-img"><img loading="lazy" src="./geodash_files/geometry-jump-world-m240x240.jpg" title="Geometry Jump World" alt="Geometry Jump World"></div><div class="cr-info"><span>Geometry Jump World</span> </div> </div> </div></a></div> </div><div class="item-game"><div class="cr-item"><a href="https://geometrydashlite.io/slope"><div class="cr-detail"><div class="cr-item-content"><div class="cr-img"><img loading="lazy" src="./geodash_files/slope-m240x240.jpg" title="Slope" alt="Slope"></div><div class="cr-info"><span>Slope</span> </div> </div> </div></a></div> </div><div class="item-game"><div class="cr-item"><a href="https://geometrydashlite.io/geometry-jump-2"><div class="cr-detail"><div class="cr-item-content"><div class="cr-img"><img loading="lazy" src="./geodash_files/geometry-jump-2-m240x240.jpg" title="Geometry Jump 2" alt="Geometry Jump 2"></div><div class="cr-info"><span>Geometry Jump 2</span> </div> </div> </div></a></div> </div><div class="item-game"><div class="cr-item"><a href="https://geometrydashlite.io/tallman-run"><div class="cr-detail"><div class="cr-item-content"><div class="cr-img"><img loading="lazy" src="./geodash_files/tallman-run-m240x240.jpg" title="Tallman Run" alt="Tallman Run"></div><div class="cr-info"><span>Tallman Run</span> </div> </div> </div></a></div> </div><div class="item-game"><div class="cr-item"><a href="https://geometrydashlite.io/geometry-dash-meltdown"><div class="cr-detail"><div class="cr-item-content"><div class="cr-img"><img loading="lazy" src="./geodash_files/geometry-dash-meltdown2-m240x240.png" title="Geometry Dash Meltdown" alt="Geometry Dash Meltdown"></div><div class="cr-info"><span>Geometry Dash Meltdown</span> </div> </div> </div></a></div> </div><div class="item-game"><div class="cr-item"><a href="https://geometrydashlite.io/color-stack"><div class="cr-detail"><div class="cr-item-content"><div class="cr-img"><img loading="lazy" src="./geodash_files/color-stack-m240x240.jpg" title="Color Stack" alt="Color Stack"></div><div class="cr-info"><span>Color Stack</span> </div> </div> </div></a></div> </div><div class="item-game"><div class="cr-item"><a href="https://geometrydashlite.io/stickman-battle-fight-warriors"><div class="cr-detail"><div class="cr-item-content"><div class="cr-img"><img loading="lazy" src="./geodash_files/stickman-battle-fight-warriors-m240x240.jpg" title="Stickman Battle Fight Warriors" alt="Stickman Battle Fight Warriors"></div><div class="cr-info"><span>Stickman Battle Fight Warriors</span> </div> </div> </div></a></div> </div></div> <div class="menu-header"><a href="https://geometrydashlite.io/hot-games" target="_blank" class="menu-header-item hot">Hot games</a><a href="https://geometrydashlite.io/new-games" target="_blank" class="menu-header-item new">new games</a></div> <h1>Geometry Dash Lite</h1> <p style="text-align: left; font-size: 13px;"><img src="./geodash_files/no-off.jpg" alt="" width="297" height="53"></p><h2>About Geometry Dash Lite</h2><p><img style="display: block; margin-left: auto; margin-right: auto; max-width: 100%;" src="./geodash_files/banner-geometry-dash-lite.jpg" alt="banner geometry dash lite"></p><p>Play Geometry Dash Lite to experience new thrilling adventures. Control your character to overcome deadly obstacles and complete tricky roads to win.</p><p>Welcome to the Geometry Dash Lite game where you can enjoy exciting races! This game is the next version of the popular Geometry Dash series. Have you played this game before? Start this game now to have new experiences with games of the running category. This game will give you a lot of new features that no other game has.</p><p>In this game, your mission is to control your character to avoid colliding with obstacles. If you collide with the obstacles, the game will be over. There are many different obstacles along the way. You can jump over spikes or walk on high walls. Blocks are also dangerous. They will cause your character to break after colliding with them. As a result, the game is over. However, you need not worry if you are not a master in this running game. You can replay this game an unlimited number of times. Besides, the practice mode is ready for you to experience.</p><h2>Geometry Dash</h2><p>When talking about online running games, Geometry Dash will be the first mentioned game. It is a fascinating running game to help players experience intriguing adventures with easy controls and impressive graphics. Colorful neon graphics of the Geometry Dash game always make an impression on fans as well as new players when they play this game for the first time. Play this game now to enjoy your leisure time!</p><p>As you can know, the Geometry Dash Lite game is the innovative version of the Geometry Dash game. After participating in this volume, you may notice some similarities and differences between these two games. Both these games provide players with an opportunity to enjoy thrilling adventures. Control your character through exciting races to overcome deadly obstacles. In particular, the difficulty of the game will be divided into modes. The way to control your character is also similar. You can control it easily with a mouse or a spacebar. These similarities are all prominent features of the Geometry Dash series.</p><p>However, the difference is also very striking. You can experience new maps with new roads in Geometry Dash Lite. The maps have no duplicates. As a result, you will always feel fantastic and never get bored if you play this entertaining game. The variety of maps has helped this game attract many players worldwide because of its attractiveness, challenge, and novelty. The Geometry Dash Lite game gives you more skins. The special thing is self-design. You can choose colors and effects for your character.</p><h2>Various features of the Geometry Dash Lite</h2><h3>Character Select</h3><p>There are 7 different characters in this entertaining game. They are Cube, Ship, Ball, UFO, Wave, Robot, and Spider. These characters will appear after you go through the respective portals. The game will place portals in unexpected places. Each of these characters has a different way of moving.</p><ul><li>Cube character will move according to the slope of the game. Your character will rotate while jumping.</li><li>Ship character will fly in the air. You need to click for the Ship to fly to the top and release it to fly to the bottom.</li><li>The Ball character has the same movement as the Ball character. The Ball will also roll along the slope of the game.</li><li>UFO character is the next character with the ability to fly. You need to click to control this character flying in the air.</li><li>Wave character is a special character with a zigzag way of flying. The special way of moving has created the uniqueness of this character.</li><li>Robot characters will move on the ground like regular robots. Click to make the character jump.</li><li>Spider characters move like spiders. This character will use his legs to move on the ground.</li></ul><p>In addition, there are many different skins for each character. For example, you can choose from one of 148 skins for the Cube character and one of 51 skins for the Ship character. Moreover, you can color each skin. The color palette is extremely diverse with 96 different colors.</p><p>Another innovation of this game is the effect on your character. You can choose effects when moving and dying in two sections after the 7 main characters of this game.</p><h3>Game Modes</h3><p>This game provides 15 game modes for gamers. Each mode gives you different difficulty levels. You can see the number of stars in the upper right to know the difficulty of that mode. The more stars the mode has, the higher the difficulty is. You can see some featured modes such as Stereo Madness, Back On Track, Base After Base, and Dry Out. Besides that, there are many different modes on the list of game modes. Can you conquer all modes? You need to complete 100% of each mode to gain the winner title. Try to overcome as many modes as possible and achieve admirable achievements!</p><h3>Achievements</h3><p>This game gives you many interesting challenges. Each challenge corresponds to a title and achievement. You can follow the challenges in the Trophy Section on the Main Menu. There are various achievements for you to conquer. Let's see some featured achievements you can gain! You can complete Stereo Madness in Practice mode and Normal mode or overcome On My Way in Practice mode and Back On Track in Normal mode.</p><p>Besides, you can install some other options for this game. You can follow Rate, How To Play, Music, and SFX in the Setting section. Set them to the most convenient mode for you. In addition, you can track your stats after participating in this running game. There are 14 stats, including total jump, total attempts, collected stars, collected diamonds, total orbs collected, complete levels, completed online levels, completed demon levels, completed daily levels, completed secret coins, completed users coins, complete map pack, link / dislinked levels, and rated levels.</p> <div class="menu-footer"><a href="https://geometrydashlite.io/privacy-policy">Privacy Policy</a><a href="https://geometrydashlite.io/about-us">About Us</a><a href="https://geometrydashlite.io/contact-us">Contact Us</a><a href="https://geometrydashlite.io/term-of-use">Term of use</a><a href="https://geometrydashlite.io/copyright-infringement-notice-procedure">Copyright infringement notice procedure</a></div>
+</div></div><div id="gameContainer" style="padding: 0px; margin: 0px; border: 0px; position: relative; background: rgb(35, 31, 32);"><canvas id="#canvas" width="1170" height="2532" style="width: 100%; height: 100%; cursor: default;"></canvas></div><div id="loader" style="display: none;"><img class="logo" src="./geodash_files/loading.png"><div class="spinner" style="display: none;"></div><div class=" pos_progress"><div class="progress" style="display: block;"><div class="posfull"><img class="full" src="./geodash_files/process_bar_back.png" style="transform: scaleX(1);"></div><div class="posbox"><img class="box_process" src="./geodash_files/process_bar_front.png"></div></div></div>
+<script src="./geodash_files/UnityLoader.js.download"></script><script>UnityLoader.compatibilityCheck=function(e,t,r){t();};
+ var gameInstance = UnityLoader.instantiate("gameContainer", "Build/GeometryDashLife.json", {onProgress: UnityProgress});
+ function UnityProgress(gameInstance, progress) {
+ if (!gameInstance.Module) {
+ return;
+ }
+ const loader = document.querySelector("#loader");
+ if (!gameInstance.progress) {
+ const progress = document.querySelector("#loader .progress");
+ progress.style.display = "block";
+ gameInstance.progress = progress.querySelector(".full");
+ loader.querySelector(".spinner").style.display = "none";
+ }
+ gameInstance.progress.style.transform = `scaleX(${progress})`;
+ if (progress === 1 && !gameInstance.removeTimeout) {
+ gameInstance.removeTimeout = setTimeout(function() {
+ loader.style.display = "none";
+ }, 2000);
+ }
+ }
 
-<script>
-  function reroutetogames(){
-    window.location.pathname="/games";
-  }
-</script>
+var theElement = document.getElementById("gameContainer");
+theElement.addEventListener("mouseup", tapOrClick, false);
+theElement.addEventListener("touchend", tapOrClick, false);
+
+function tapOrClick(event) {
+ fullScreenAPI();
+ event.preventDefault();
+ return false;
+ }
+ function HiddenClass(instane_game) {
+ var widthPage = window.innerWidth;
+ var heightPage = window.innerHeight;
+ if (heightPage > widthPage) {
+ document.getElementById('orientation').style.display = "block"; 
+ document.getElementById("gameContainer").style.display = "none"; 
+ gameInstance.SendMessage('AudioMainController', 'JSCallUnity', 0);
+ }
+ else{
+ document.getElementById('orientation').style.display = "none";
+ document.getElementById("gameContainer").style.display = "block";
+ gameInstance.SendMessage('AudioMainController', 'JSCallUnity', 1);
+ }
+ }
+ function fullScreenAPI(){
+ var ua = navigator.userAgent.toLowerCase();
+ var isAndroid = ua.indexOf("android") > -1;
+ if(isAndroid) {
+ GoFullScreen(document.documentElement);
+ }
+ }
+function GoFullScreen(element) {
+ if (!document.fullscreenElement && !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement ) {
+ if(element.requestFullscreen && document.fullscreenEnabled){
+ element.requestFullscreen();
+ } 
+ else if(element.mozRequestFullScreen){
+ element.mozRequestFullScreen();
+ }
+ else if(element.webkitRequestFullscreen){
+ element.webkitRequestFullscreen();
+ } 
+ else if(element.msRequestFullscreen){
+ element.msRequestFullscreen();
+ }
+ }
+ }</script> <script src="./geodash_files/jquery-3.4.1.min.js.download"></script><script> 
+		let ads_pub = '4017755729799438';
+		let ads_text_0='<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-';
+		let ads_text_1= '"crossorigin="anonymous"><\/script><ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-';
+		let ads_text_2= '" data-ad-slot="';
+		let ads_text_3= '"></ins>';
+		let adsindex =1;
+		let adsindex2 =1;
+		let FlagTimeout = 0;
+		let timeTimeout = 15000;
+		function ChangeAds1(adsindex) {			
+			if(adsindex===1){
+				document.getElementById("Ads1").innerHTML = ads_text_0+ads_pub+ads_text_1+ads_pub+ads_text_2+'5788371856'+ads_text_3;
+				(adsbygoogle = window.adsbygoogle || []).push({});
+			}
+			if(adsindex===2){
+				document.getElementById("Ads1").innerHTML = ads_text_0+ads_pub+ads_text_1+ads_pub+ads_text_2+'6909881836'+ads_text_3;		
+				(adsbygoogle = window.adsbygoogle || []).push({});
+			}
+			if(adsindex===3){
+				document.getElementById("Ads1").innerHTML = ads_text_0+ads_pub+ads_text_1+ads_pub+ads_text_2+'5405228475'+ads_text_3;		
+				(adsbygoogle = window.adsbygoogle || []).push({});
+			}
+		}
+		function ChangeAds2(adsindex2) {
+			/*
+			if(adsindex2===1){
+				document.getElementById("Ads2").innerHTML = ads_text_0+ads_pub+ads_text_1+ads_pub+ads_text_2+'5788371856'+ads_text_3;		
+				(adsbygoogle = window.adsbygoogle || []).push({});
+			}
+			if(adsindex2===2){
+				document.getElementById("Ads2").innerHTML = ads_text_0+ads_pub+ads_text_1+ads_pub+ads_text_2+'6909881836'+ads_text_3;		
+				(adsbygoogle = window.adsbygoogle || []).push({});
+			}
+			if(adsindex2===3){
+				document.getElementById("Ads2").innerHTML = ads_text_0+ads_pub+ads_text_1+ads_pub+ads_text_2+'5405228475'+ads_text_3;			
+				(adsbygoogle = window.adsbygoogle || []).push({});
+			}
+			*/
+		}
+		function ChangeFlagTimeout() {		
+			FlagTimeout = 1;
+			setTimeout(function() {
+				FlagTimeout = 0;
+			}, timeTimeout);
+		}
+		ChangeAds1(adsindex);
+		ChangeAds2(adsindex2);
+		ChangeFlagTimeout();
+		function ToggleInfo() {
+ if ($('button.hide-main-panel').children('i')[0].textContent != 'Info') {
+ $("div.main-panel").css('width', '0px');
+ $("div.main-panel-ads").css('display', 'none');
+ $("div.main-panel-content").css('display', 'none');
+ $('button.hide-main-panel').children('i').html('Info');
+ } else {
+ $("div.main-panel").css('width', $("div.main-panel").css('max-width'));
+ $("div.main-panel-ads").css('display', 'block');
+ $("div.main-panel-content").css('display', 'block');
+ $('button.hide-main-panel').children('i').html('>>');
+ }
+		}
+		function ShowInfo() {
+			$("div.main-panel").css('width', $("div.main-panel").css('max-width'));
+			$("div.main-panel-ads").css('display', 'block');
+			$("div.main-panel-content").css('display', 'block');
+			$('button.hide-main-panel').children('i').html('>>');
+		}
+		function HideInfo() {
+			$("div.main-panel").css('width', '0px');
+			$("div.main-panel-ads").css('display', 'none');
+			$("div.main-panel-content").css('display', 'none');
+			$('button.hide-main-panel').children('i').html('Info');
+		}
+		$('button.hide-main-panel').click(function () {
+			ToggleInfo();
+		});
+		function UnityCallJs() {
+		}
+		function UnityCallEndgameJs (){
+			if(FlagTimeout==0)
+			{
+				ShowInfo();
+				ChangeAds1(adsindex);
+				//ChangeAds2(adsindex2);
+				ChangeFlagTimeout();
+			}
+		}
+		function UnityCallPlayJs (){
+		console.log("untiy call Play game");
+		}
+		function UnityCallLeaderboardJs (){
+			console.log("untiy call On Leaderboard");
+		}
+		function UnityCallAgainJs (){
+		}
+		function UnityCallBackHomeJs (){
+		console.log("untiy call backHome");
+		}
+		function UnityCallChangeDayLeaderboardJs(){
+		console.log("untiy call change day leaderboard");
+		}
+		function UnityCallCloseLeaderboardJs(){
+		 console.log("untiy call close leaderboard");
+		}
+		function UnityCallPlayJs() {
+			console.log("untiy call play game");
+		}
+		function UnityCallReturnHomeJs() {
+		 console.log("untiy call return home");
+		}
+		function UnityCallChooseLevelJs() {
+		 console.log("untiy call choose level");
+		}
+		function UnityCallChooseCharacterJs() {
+		 console.log("untiy call choose character");
+		}
+		function UnityCallChooseColorJs() {
+		 console.log("untiy call choose color");
+		}
+		function UnityCallContinueJs() {
+		 console.log("untiy call continue");
+		}
+		function UnityCallChangeModeJs() {
+		 console.log("untiy call change mode");
+		}
+		function UnityCallPauseGameJs() {
+		 console.log("untiy call pause game");
+		}
+		function UnityCallChangeLevelJs() {
+		 console.log("untiy call change level");
+		}
+		function UnityCallLevelUpJs() {
+		 console.log("untiy call level up");
+		}
+		
+		</script>
+
+</div><ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;" data-ad-status="unfilled"><div id="aswift_0_host" tabindex="0" title="Advertisement" aria-label="Advertisement" style="border: none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"><iframe id="aswift_0" name="aswift_0" browsingtopics="true" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allow="attribution-reporting" src="./geodash_files/ads(1).html" data-google-container-id="a!1" data-load-complete="true"></iframe></div></ins><script src="blob:https://geometrydashlite.io/ff508b3e-cd0e-42e1-915f-3538d2e82b15" id="6c47f6de54024924a0ecbf9f1b8b85b5"></script><iframe src="./geodash_files/aframe.html" width="0" height="0" style="display: none;"></iframe></body><iframe id="google_esf" name="google_esf" src="./geodash_files/zrt_lookup.html" style="display: none;"></iframe><ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important; width: 100vw !important; height: 100vh !important; inset: 0px auto auto 0px !important; clear: none !important; float: none !important; margin: 0px !important; max-height: none !important; max-width: none !important; opacity: 1 !important; overflow: visible !important; padding: 0px !important; position: fixed !important; vertical-align: baseline !important; visibility: visible !important; z-index: 2147483647 !important; background: transparent !important;" aria-hidden="true" data-ad-status="filled" data-vignette-loaded="true"><div id="aswift_2_host" tabindex="0" title="Advertisement" aria-label="Advertisement" style="border: none !important; height: 100vh !important; width: 100vw !important; margin: 0px !important; padding: 0px !important; position: relative !important; visibility: visible !important; background-color: transparent !important; display: inline-block !important; inset: auto !important; clear: none !important; float: none !important; max-height: none !important; max-width: none !important; opacity: 1 !important; overflow: visible !important; vertical-align: baseline !important; z-index: auto !important;"><iframe id="aswift_2" name="aswift_2" browsingtopics="true" style="width: 100vw !important; height: 100vh !important; inset: 0px auto auto 0px !important; position: absolute !important; clear: none !important; display: inline !important; float: none !important; margin: 0px !important; max-height: none !important; max-width: none !important; opacity: 1 !important; overflow: visible !important; padding: 0px !important; vertical-align: baseline !important; visibility: visible !important; z-index: auto !important;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="" height="" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allow="attribution-reporting" src="./geodash_files/zrt_lookup(1).html" data-google-container-id="a!3" data-google-query-id="CPmOme6m34EDFU6RAAAdjDkBEw" data-load-complete="true"></iframe></div></ins></html>
