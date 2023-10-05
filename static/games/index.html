@@ -105,7 +105,7 @@
     }
   }
     
-  document.getElementById("searchbar").addEventListener("change",searchfunct);
+  setInterval(5,searchfunct);
   
   function get_cookie(cookie_name) { const value = "; " + document.cookie; const parts = value.split("; " + cookie_name + "="); if (parts.length === 2) return parts.pop().split(";").shift(); } 
   
