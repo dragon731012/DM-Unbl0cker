@@ -25,6 +25,7 @@
   <button class="games" onclick="slope();">slope</button>
   <button class="games" onclick="eglr();">eaglercraft (minecraft)</button>
   <button class="games" onclick="bp();">blockpost</button>
+  <button class="games" onclick="ss();">shell shockers</button>
 </div>
 <a href="https://github.com/3kh0">
   <h4 class="credits">credit to 3kh0 for a few games</h4>
@@ -58,8 +59,8 @@
   .buttons{
     position: absolute;
     overflow-y:scroll;
-    width: 40%;
-    left: 30%;
+    width: 60%;
+    left: 20%;
     height: 40%;
     top: 50%;
   }
@@ -78,12 +79,12 @@
     color: #FFFFFF;
   }
   .games{
-    font-size: 12px;
+    font-size: 12px;text-align:center;border:5px solid white;
     border-radius: 25px;
     background-color: transparent;
     color: #FFFFFF;
-    width:80px;
-    height:42px;
+    width:120px;
+    height:70px;
     vertical-align:top;
     margin:6px;
     transition: width .5s, height .5s;
@@ -217,5 +218,8 @@
   }
   function dragonjoust(){
     window.location.href=window.location.origin+"/games/gfiles/dr@g0nj0ust.html";
+  }
+  function ss(){
+    window.location.href=window.location.origin+"/games/gfiles/she11sh0ckers.html";
   }
 </script>
