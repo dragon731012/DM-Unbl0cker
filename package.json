@@ -10,7 +10,7 @@
   "scripts": {
     "prestart": "npm install",
     "prestart": "*/5 * * * * /ping.sh",
-    "start": "node ."
+    "start": "node index.js"
   },
   "keywords": [
     "proxy"
