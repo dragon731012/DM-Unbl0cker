@@ -246,8 +246,11 @@
   function getdate(sec){
        var seconds = sec;
        var dateNow = new Date();
-       var date5SecondsAgo = new Date(dateNow.getTime() - seconds*1000);
-       alert(date5SecondsAgo);
+       var datesecago = new Date(dateNow.getTime() - seconds*1000);
+       let month = datesecago.getUTCMonth() + 1;
+       let day = datesecago.getUTCDate();
+       let year = datesecago.getUTCFullYear();
+       return (month+"/"+day+"/"+year);
   }
   var script1 = document.createElement('script');script1.src="/cursor.js"; document.body.appendChild(script1);
   
