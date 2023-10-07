@@ -1,4 +1,4 @@
-import Server from '../bare-server-node';
+import Server from 'bare-server-node';
 import http from 'http';
 import nodeStatic from 'node-static';
 
