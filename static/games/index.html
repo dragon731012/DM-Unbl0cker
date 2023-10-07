@@ -102,9 +102,13 @@
   }
 </style>
 <script>
+  var fontsize2=2560/screen.width*7.5;
+  searchbar.style.fontSize = fontsize2+"px";
+
+  
   function searchfunct(){
     for (var i=0;i<document.getElementsByClassName("games").length;i++){
-      if (document.getElementsByClassName("games")[i].innerText.includes(document.getElementById("searchbar").value)){
+      if (document.getElementsByClassName("games")[i].innerText.includes(document.getElementById("searchbar").value.toLowerCase())){
         document.getElementsByClassName("games")[i].style.display="inline-block";
       }
       else{
