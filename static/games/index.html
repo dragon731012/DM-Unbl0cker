@@ -2,7 +2,6 @@
 <img src="/img/IMG_2996.gif" class="bg"/> 
 <img class="back" id="back" src = "/img/back.png" onclick="reroutetohome();"/>
 <h1 id="title1" class="title1">games</h1> 
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
 <img src="/img/black.jpeg" id="black" class="black"/> <img src="/img/loading.gif" id="loadimg" class="loadimg"/> <style> @keyframes fadeout{ 0%{ opacity:1; pointer-events: none;} 100%{ opacity:0; display:none; }} .black{ position:absolute; left:0px; opacity:1; display:block; top:0px; width:100%; z-index:999999999999999999999999999999999999999999999; height:100%; } .loadimg{ position:absolute; opacity:1; display:block; width:125px; z-index:9999999999999999999999999999999999999999999999; height:125px; top:50%; left:50%; transform:translate(-50%, -50%); } </style> <script> function fade(){ document.getElementById("loadimg").style.animation="linear 1.5s 1 running fadeout"; document.getElementById("loadimg").addEventListener("animationend", () => { document.getElementById("black").style.animation="linear 1.5s 1 running fadeout"; document.getElementById("black").addEventListener("animationend", () => { document.getElementById("black").remove(); }); document.getElementById("loadimg").remove(); }); } setTimeout(fade,1200); </script> 
 <input type="text" placeholder="Search..." id="searchbar">
@@ -103,14 +102,6 @@
   }
 </style>
 <script>
-  $('.games').sort(function(a, b) {
-    if (a.textContent < b.textContent) {
-      return -1;
-    } else {
-      return 1;
-    }
-  }).appendTo('buttons');
-  
   var fontsize2=2560/screen.width*7.5;
   searchbar.style.fontSize = fontsize2+"px";
 
