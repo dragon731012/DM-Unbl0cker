@@ -1,4 +1,5 @@
 <link rel="stylesheet" type="text/css" href="/style.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <img src="/img/IMG_2996.gif" class="bg"/> 
 <img class="back" id="back" src = "/img/back.png" onclick="reroutetohome();"/>
 <h1 id="title1" class="title1">games</h1> 
@@ -103,6 +104,14 @@
   }
 </style>
 <script>
+  $('.games').sort(function(a, b) {
+  if (a.textContent < b.textContent) {
+    return -1;
+  } else {
+    return 1;
+  }
+}).appendTo('buttons');
+  
   var fontsize2=2560/screen.width*7.5;
   searchbar.style.fontSize = fontsize2+"px";
 
