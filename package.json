@@ -9,7 +9,7 @@
   "main": "index.js",
   "scripts": {
     "build": "npm install",
-    "start": "node index.js"
+    "start": "node ."
   },
   "keywords": [
     "proxy"
