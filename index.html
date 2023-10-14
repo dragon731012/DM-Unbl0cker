@@ -324,6 +324,8 @@
     search.style.fontSize = fontsize2+"px";
     credits.style.fontSize = fontsize3+"px";
 
+    var searchengine=document.getElementById("uv-search-engine");
+
     if (browsertype==null || browsertype==undefined || browsertype==""){
         browsertype="google";
         searchengine.value="https://www.google.com/search?q=";
@@ -379,7 +381,7 @@ function isUrl(val = '') {
     };
     
    document.addEventListener("DOMContentLoaded", function() {
-  var searchEngine = document.getElementById("searchengine").value;
+  var searchEngine = document.getElementById("uv-search-engine").value;
   var searchInput = document.getElementById("search").value;
        
   searchInput.value = searchEngine || "https://www.google.com/search?q=";
