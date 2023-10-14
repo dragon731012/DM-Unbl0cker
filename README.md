@@ -17,4 +17,4 @@ build command: `node`
 
 start command: `node .`
 
-[view static proxy without games here.](https://github.com/dragon731012/DM-Unbl0cker/)
+[view UPDATED unblocker here.](https://github.com/dragon731012/DM-Unbl0cker/)
