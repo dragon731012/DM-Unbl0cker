@@ -9,6 +9,7 @@ if (isenabled=="on"){
   ring.style.pointerEvents = "none";
   ring.style.userdrag="none";
   ring.style.userselect="none";
+  ring.style.zIndex="999999999999999999999999999999999999";
   ring.style.display="none";
   ring.style.position="absolute";
   ring.style.width="45px";
@@ -21,6 +22,7 @@ if (isenabled=="on"){
   cursor1.style.pointerEvents = "none";
   cursor1.style.userdrag="none";
   cursor1.style.userselect="none";
+  cursor1.style.zIndex="999999999999999999999999999999999999";
   cursor1.style.display="none";
   cursor1.style.position="absolute";
   cursor1.style.width="22px";
