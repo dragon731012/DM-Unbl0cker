@@ -1,4 +1,4 @@
-{
+{ 
   "dependencies": {
     "bare-server-node": "github:tomphttp/bare-server-node",
     "node-static": "^0.7.11"
@@ -8,7 +8,12 @@
   "description": "a web proxy with a backend of uv, made by a 13-year-old.",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "vercel-start": "npm install @vercel/node",
+    "start": "node ."
+  },
+  "engines": {
+    "npm": ">=7.0.0",
+    "node": ">=16.0.0"
   },
   "keywords": [
     "proxy"
