@@ -1,9 +1,8 @@
-<link rel="stylesheet" type="text/css" href="/style.css"/>
+<link rel="stylesheet" type="text/css" href="/main.css"/>
 <script src="uv/uv.bundle.js" defer></script>
 <script src="uv/uv.config.js" defer></script>
 <script src="register-sw.js" defer></script>
-<script src="search.js" defer></script>
-<script src="index.js" defer></script>
+<script src="scripts/index.js" defer></script> 
 
 <script>
     function get_cookie(cookie_name) { const value = "; " + document.cookie; const parts = value.split("; " + cookie_name + "="); if (parts.length === 2) return parts.pop().split(";").shift(); } 
@@ -15,7 +14,7 @@
 <div class="title">
     <h1 id="title1">DM Unblocker</h1>
 </div>
-<div class="credits">
+<div class="credits" onclick="window.location.pathname="/credits">
     <h4 id="credits">credits</h4>
 </div>
 <form class="searchbox" id="searchbox">
@@ -168,6 +167,7 @@
 
     if (browsertype==null || browsertype==undefined || browsertype==""){
         browsertype="google";
+        searchengine.value="https://www.google.com/search?q=";
         document.cookie="browser3="+browsertype+"; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/";
     }
     else{
@@ -221,8 +221,6 @@ function isUrl(val = '') {
     
    document.addEventListener("DOMContentLoaded", function() {
   var searchEngine = document.getElementById("searchengine").value;
-
-  // Set the value of the input field
   var searchInput = document.getElementById("search").value;
        
   searchInput.value = searchEngine || "https://www.google.com/search?q=";
