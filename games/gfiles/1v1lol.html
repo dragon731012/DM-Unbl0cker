@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<!-- saved from url=(0019)https://1v1.school/ -->
+<html lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <img class="back" id="back" src = "/img/back.png" onclick="reroutetogames();"/>
+    <style>
+        .back{
+	    position: absolute;
+	    width: 50px;
+	    height: 50px;
+    	    top:1%;
+	    left:1%;
+        }
+    </style>
+    <script>
+	  function reroutetogames(){
+	    window.location.pathname="/games";
+	  }
+    </script>
+	
+    <title>1v1.LOL Unblocked Official</title>
+	<link rel="canonical" href="https://1v1.school/">
+    <meta property="og:title" content="1v1.LOL Unblocked Official">
+    <meta property="og:type" content="website">
+    <meta property="og:url" id="canonicalUrl" content="https://1v1.school/">
+    <meta property="og:image" content="https://1v1.school/splash.jpg">
+    <meta property="og:description" content="The official 1v1 lol unblocked game you can play anywhere! Fast online multiplayer games with shooting, building and editing, with multiple modes 1 on 1, battle royale, zone wars, box fight">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="The official 1v1 lol unblocked game you can play anywhere! Fast online multiplayer games with shooting, building and editing, with multiple modes 1 on 1, battle royale, zone wars, box fight">
+    <meta name="keywords" content="just,build,simulator,practice,free,online,battle,royale">
+	<script type="text/javascript" async="" src="./1v1lol_files/analytics.js.download"></script><script src="./1v1lol_files/canonicalUrlUpdater.js.download"></script>
+    <script>
+        updateCanonicalUrl();
+    </script>
+	
+	<script type="text/javascript" src="./1v1lol_files/ima3.js.download"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="./1v1lol_files/js"></script>
+    <script src="./1v1lol_files/googleAnalytics.js.download"></script>
+    <script src="./1v1lol_files/jquery.min.js.download"></script>
+    <script src="./1v1lol_files/IronSourceRV.js.download"></script>
+    <!-- <script src="js/mobileRedirect.js"></script> -->
+    <script src="./1v1lol_files/fullscreen.js.download"></script>
+	<script src="./1v1lol_files/unityUrls.js.download"></script>
+   
+    <script>
+      var gameLoaded = false;
+      window.addEventListener("beforeunload", function (e) {
+        if (adsVisible || !gameLoaded || !lockedOccured)
+          return null;
+        var confirmationMessage = 'Are you sure you want to leave? ';
+        (e || window.event).returnValue = confirmationMessage; //Gecko + IE
+        return confirmationMessage; //Gecko + Webkit, Safari, Chrome etc.
+      });
+      window.alert = function(e) {console.log(e)};
+    </script>
+	
+    <link rel="shortcut icon" type="image/png" href="https://1v1.school/favicon.png?v2">
+    <link rel="stylesheet" href="./1v1lol_files/style.css">
+
+  <style type="text/css"><br>    @media screen and (max-width: 1200px) { <br>		.ad-leaderboard-bottom {<br>			display: none !important;<br>		}<br>	}<br></style></head>
+  <body>
+    <!-- <div id="interAdsContainer" style="display: none;"></div> -->
+  <div id="gameContainer">
+	<canvas id="canvas" width="1920" height="845" style="cursor: default;"></canvas>
+    <div id="loader" style="display: none;">
+      <img class="logo" src="./1v1lol_files/logo.png">
+      <div class="spinner" style="display: none;"></div>
+      <div id="unity-progress-bar-empty" style="">
+        <div id="unity-progress-bar-full" style="width: 100%;"></div>
+      </div>
+      <div id="percentDiv" style="color: white;"></div>
+    </div>
+  </div>	
+
+    <script>
+      var buildUrl = getBuildUrl(); //%buildUrl
+      var loaderUrl = buildUrl + "/WebGL.loader.js";
+
+      var config = {
+        dataUrl: buildUrl + "/WebGL.data.unityweb",
+        frameworkUrl: buildUrl + "/WebGL.framework.js.unityweb",
+        codeUrl: buildUrl + "/WebGL.wasm.unityweb",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "JustPlay.LOL"
+        // productName: "1v1.LOL Dev",
+        // productVersion: "4.0",
+      };
+
+      var container = document.querySelector("#gameContainer");
+      var canvas = document.querySelector("#canvas");
+      var loadingBar = document.querySelector("#loader");
+      var spinner = loadingBar.querySelector(".spinner")
+      var progressBarEmpty = document.querySelector("#unity-progress-bar-empty");
+      var progressBarFull = document.querySelector("#unity-progress-bar-full");
+      var mobileWarning = document.querySelector("#unity-mobile-warning");
+
+      // By default Unity keeps WebGL canvas render target size matched with
+      // the DOM size of the canvas element (scaled by window.devicePixelRatio)
+      // Set this to false if you want to decouple this synchronization from
+      // happening inside the engine, and you would instead like to size up
+      // the canvas DOM size and WebGL render target sizes yourself.
+      // config.matchWebGLToCanvasSize = false;
+
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        container.className = "unity-mobile";
+        // Avoid draining fillrate performance on mobile devices,
+        // and default/override low DPI mode on mobile browsers.
+        config.devicePixelRatio = 1;
+        mobileWarning.style.display = "block";
+        setTimeout(() => {
+          mobileWarning.style.display = "none";
+        }, 5000);
+      }
+
+      let gameInstance;
+      var script = document.createElement("script");
+      script.src = loaderUrl;
+      script.onload = () => {
+        createUnityInstance(canvas, config, (progress) => {
+          spinner.style.display = "none"
+          progressBarEmpty.style.display = "";
+          progressBarFull.style.width = `${100 * progress}%`;
+        }).then((unityInstance) => {
+          loadingBar.style.display = "none";
+          window.unityInstance = unityInstance;
+          gameInstance = unityInstance;
+          window.gameInstance = unityInstance;
+        }).catch((message) => {
+          alert(message);
+        });
+      };
+      document.body.appendChild(script);
+
+      document.onkeydown = function (e) {
+			if (e.altKey || e.ctrlKey || e.key == "F1" || e.key == "F2" || e.key == "F3" || e.key == "F4") {
+				e.preventDefault();
+			}
+		}
+
+		document.onmouseup = function (e) {
+			e.preventDefault();
+		}
+
+		document.addEventListener('pointerlockchange', lockChangeAlert, false);
+		document.addEventListener('mozpointerlockchange', lockChangeAlert, false);
+    
+    let lockedOccured = false;
+		function lockChangeAlert() {
+			if (!lockedOccured && document.pointerLockElement)
+				lockedOccured = true;
+			if (!document.pointerLockElement && lockedOccured){
+				lockedOccured = false;
+				window.unityInstance.SendMessage("Pause Menu", "OnCursorUnlocked");
+			}
+		}
+		
+		window.addEventListener('resize', injectAdByWindowSize);
+		
+		function injectAdByWindowSize() {
+		}
+		
+		injectAdByWindowSize();
+
+		var refreshNextTime = true;
+
+		function showAds() {
+		}
+
+		function hideAds() {
+		}
+
+		function refresh() {
+
+			//console.log("time since ads refresh = " + timeSinceRefresh + " seconds");
+			//console.log("time ads visible = " + timeAdsVisible + " seconds");
+
+			if (timeSinceRefresh <= 30 || timeAdsVisible <= 2) {
+				//console.log("don't refresh");
+				return;
+			}
+
+			timeSinceRefresh = 0;
+			timeAdsVisible = 0;
+			//console.log("refresh ads");
+		}
+
+		window.onfocus = function () {
+			//console.log("onfocus");
+			resumeCounter();
+			refresh();
+		};
+
+		window.onblur = function () {
+			//console.log("onblur");
+			pauseCounter();
+		};
+
+		var timeSinceRefresh = 0;
+		var timeAdsVisible = 0;
+		var counter;
+		var adsVisible = false;
+
+		function startCounter() {
+			timeSinceRefresh++;
+			if (adsVisible)
+				timeAdsVisible++;
+
+			counter = setTimeout(function () {
+				startCounter();
+			}, 1000);
+		}
+
+		function resumeCounter() {
+			adsVisible = true;
+		}
+
+		function pauseCounter() {
+			adsVisible = false;
+		}
+	</script><script src="./1v1lol_files/WebGL.loader.js.download"></script>
+	<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+	<script src="./1v1lol_files/firebase-app.js.download"></script>
+
+	<!-- Add Firebase products that you want to use -->
+	<script src="./1v1lol_files/firebase-analytics.js.download"></script>
+	<script src="./1v1lol_files/firebase-auth.js.download"></script>
+	<script src="./1v1lol_files/firebase-firestore.js.download"></script>
+	<script src="./1v1lol_files/firebase-remote-config.js.download"></script>
+
+	<script src="./1v1lol_files/firebase.js.download"></script>
+	<script src="./1v1lol_files/login.js.download"></script>
+	<script src="./1v1lol_files/firebase-config.js.download"></script>
+
+	<script>
+		var hostname = window.location.hostname;
+		if(hostname.indexOf("dev1v1") >= 0 || hostname.indexOf("dev.1v1") >= 0 || hostname.indexOf("test1v1") >= 0 || hostname.indexOf("test.1v1") >= 0 || hostname.indexOf("localhost") >= 0) {
+			initializeFireBaseDev();
+		} else{
+			initializeFireBase();
+		}
+
+		initRemoteConfig();
+	</script>
+
+	<script src="./1v1lol_files/windowResize.js.download"></script>
+	<script src="./1v1lol_files/adblockManager.js.download"></script>
+	<script src="./1v1lol_files/macUserAgent.js.download"></script>
+	<script src="./1v1lol_files/visibilityChangeListener.js.download"></script>
+	<script>
+		function onUnityReady() {
+			checkAdBlock();
+			sendConfig();
+		}
+		
+		fixMacUserAgent();
+	</script>
+	<!--<script src="js/IronSourceInter.js"></script>-->
+    
+  
+
+<script src="blob:https://1v1.school/d5859046-5272-4f82-afc7-a5a45e4dcb61"></script></body></html>
