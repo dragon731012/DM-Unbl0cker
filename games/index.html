@@ -1,0 +1,250 @@
+<link rel="stylesheet" type="text/css" href="/style.css"/>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<img src="/img/IMG_2996.gif" class="bg"/> 
+<img class="back" id="back" src = "/img/back.png" onclick="reroutetohome();"/>
+<h1 id="title1" class="title1">games</h1> 
+
+<img src="/img/black.jpeg" id="black" class="black"/> <img src="/img/loading.gif" id="loadimg" class="loadimg"/> <style> @keyframes fadeout{ 0%{ opacity:1; pointer-events: none;} 100%{ opacity:0; display:none; }} .black{ position:absolute; left:0px; opacity:1; display:block; top:0px; width:100%; z-index:999999999999999999999999999999999999999999999; height:100%; } .loadimg{ position:absolute; opacity:1; display:block; width:125px; z-index:9999999999999999999999999999999999999999999999; height:125px; top:50%; left:50%; transform:translate(-50%, -50%); } </style> <script> function fade(){ document.getElementById("loadimg").style.animation="linear 1.5s 1 running fadeout"; document.getElementById("loadimg").addEventListener("animationend", () => { document.getElementById("black").style.animation="linear 1.5s 1 running fadeout"; document.getElementById("black").addEventListener("animationend", () => { document.getElementById("black").remove(); }); document.getElementById("loadimg").remove(); }); } setTimeout(fade,1200); </script> 
+<input type="text" placeholder="Search..." id="searchbar">
+<div class="buttons" align="center" id="buttons"> 
+  <button class="games" data-sort="" onclick="paperio();">paper.io</button>
+  <button class="games" data-sort="" onclick="rooftopsnipers();">rooftop snipers 1</button>
+  <button class="games" data-sort="" onclick="rooftopsnipers2();">rooftop snipers 2</button>
+  <button class="games" data-sort="" onclick="vex6();">vex 6</button>  
+  <button class="games" data-sort="" onclick="bbs();">basketball stars</button>  
+  <button class="games" data-sort="" onclick="twentyfortyeight();">2048</button>
+  <button class="games" data-sort="" onclick="stabfish();">stabfish.io</button>
+  <button class="games" data-sort="" onclick="cookieclicker();">cookie clicker</button>
+  <button class="games" data-sort="" onclick="dragonjoust();">dragonjoust.io</button>
+  <button class="games" data-sort="" onclick="subwaysurfers();">subway surfers</button>
+  <button class="games" data-sort="" onclick="chromedino();">chrome dino</button>
+  <button class="games" data-sort="" onclick="zr();">zombsroyale.io</button>
+  <button class="games" data-sort="" onclick="basketbros();">basket bros</button>
+  <button class="games" data-sort="" onclick="slitherio();">slither io</button>
+  <button class="games" data-sort="" onclick="motox3m();">motox3m</button>
+  <button class="games" data-sort="" onclick="mcars();">madalin cars multiplayer</button>
+  <button class="games" data-sort="" onclick="lol();">1v1.lol</button>
+  <button class="games" data-sort="" onclick="slope();">slope</button>
+  <button class="games" data-sort="" onclick="eglr();">eaglercraft (minecraft)</button>
+  <button class="games" data-sort="" onclick="bp();">blockpost</button>
+  <button class="games" data-sort="" onclick="yohoho();">yohoho.io</button>
+</div>
+<a href="https://github.com/3kh0">
+  <h4 class="credits">credit to 3kh0 for a few games</h4>
+</a>
+<style>
+  #searchbar{
+    position: absolute;
+    width: 40%;
+    left: 30%;
+    height: 8%;
+    top: 40%;
+    text-align: center;
+    background: transparent;
+    border-radius: 18px;
+    border: 2px solid #FFFFFF;
+    color: #FFFFFF;
+  }
+  .credits{
+    position: absolute;
+    bottom:0px;
+    right:5px;
+    color:#FFFFFF;
+  }
+  .bg{
+    top: 0%;
+    left: 0%;
+    position: absolute;
+    width:100%;
+    height:100%;
+  }
+  .buttons{
+    position: absolute;
+    overflow-y:scroll;
+    width: 60%;
+    left: 20%;
+    height: 40%;
+    top: 50%;
+  }
+  ::placeholder{
+    color:white;
+  }
+  .title1{
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    top:7%;
+    float: center;
+    align: center;
+    text-align: center;
+    color: #FFFFFF;
+  }
+  .games{
+    font-size: 12px;text-align:center;border:5px solid white;
+    border-radius: 25px;
+    background-color: transparent;
+    color: #FFFFFF;
+    width:120px;
+    height:70px;
+    vertical-align:top;
+    margin:6px;
+    transition: width .5s, height .5s;
+  }
+  .games:hover{
+    width: 90px;
+    height: 52px;
+  }
+  .back{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top:1%;
+    left:1%;
+  }
+</style>
+<script>
+  jQuery(document).ready(function($){
+    $('.buttons [data-sort]').sort(function(a, b) {  
+      $(a).data("sort",$(a).text());
+      $(b).data("sort",$(b).text());
+      
+      if ($(a).data("sort") < $(b).data("sort")) {
+        return -1;
+      } else {
+        return 1;
+      }
+    }).appendTo('.buttons');
+  });
+  
+  var fontsize2=2560/screen.width*7.5;
+  searchbar.style.fontSize = fontsize2+"px";
+
+  
+  function searchfunct(){
+    for (var i=0;i<document.getElementsByClassName("games").length;i++){
+      if (document.getElementsByClassName("games")[i].innerText.includes(document.getElementById("searchbar").value.toLowerCase())){
+        document.getElementsByClassName("games")[i].style.display="inline-block";
+      }
+      else{
+        document.getElementsByClassName("games")[i].style.display="none";
+      }
+    }
+  }
+    
+  setInterval(searchfunct,5);
+  
+  function get_cookie(cookie_name) { const value = "; " + document.cookie; const parts = value.split("; " + cookie_name + "="); if (parts.length === 2) return parts.pop().split(";").shift(); } 
+  
+  var title2=get_cookie("title2");
+  var favicon=get_cookie("favicon");
+  
+  if (favicon==null || favicon==undefined || favicon==""){
+        favicon="/img/logo.png";
+        document.cookie="favicon="+favicon+"; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/";
+        (function() {
+           var link=document.querySelector("link[rel*='icon']") || document.createElement('link');
+           link.type='image/x-icon';
+           link.rel='shortcut icon';
+           link.href=favicon;
+           document.getElementsByTagName('head')[0].appendChild(link);
+       })();
+    }
+    else{
+        (function() {
+           var link=document.querySelector("link[rel*='icon']") || document.createElement('link');
+           link.type='image/x-icon';
+           link.rel='shortcut icon';
+           link.href=favicon;
+           document.getElementsByTagName('head')[0].appendChild(link);
+       })();
+    }
+    if (title2==null || title2==undefined || title2==""){
+        title2="DM Unbl0cker";
+        document.cookie="title2="+title2+"; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/";
+        document.title=title2;
+    }
+    else{
+        document.title=title2;
+    }
+</script>
+<script>
+  var fontsize1=2560/screen.width*18;
+  title1.style.fontSize = fontsize1+"px";
+</script>
+<script>
+  var script1 = document.createElement('script');script1.src="/cursor.js"; document.body.appendChild(script1);
+  
+  function reroutetohome(){
+    window.location.href=window.location.origin;
+  }
+  function paperio(){
+    window.location.href=window.location.origin+"/games/gfiles/paperio.html";
+  }
+  function rooftopsnipers(){
+    window.location.href=window.location.origin+"/games/gfiles/rooftopsnipers.html";
+  }
+  function vex6(){
+    window.location.href=window.location.origin+"/games/gfiles/vex6.html";
+  }
+  function twentyfortyeight(){
+    window.location.href=window.location.origin+"/games/gfiles/2048.html";
+  }
+  function cookieclicker(){
+    window.location.href=window.location.origin+"/games/gfiles/cookieclicker.html";
+  }
+  function subwaysurfers(){
+    window.location.href=window.location.origin+"/games/gfiles/subwaysurfers.html";
+  }
+  function chromedino(){
+    window.location.href=window.location.origin+"/games/gfiles/chromedino.html";
+  }
+  function zr(){
+    window.location.href=window.location.origin+"/games/gfiles/z0mbsr0y@le.html";
+  }
+  function raze(){
+    window.location.href=window.location.origin+"/games/gfiles/raze.html";
+  }
+  function slitherio(){
+    window.location.href=window.location.origin+"/games/gfiles/slitherio.html";
+  }
+  function basketbros(){
+    window.location.href=window.location.origin+"/games/gfiles/basketbros.html";
+  }
+  function stabfish(){
+    window.location.href=window.location.origin+"/games/gfiles/st@bfish.html";
+  }
+  function motox3m(){
+    window.location.href=window.location.origin+"/games/gfiles/motox3m.html";
+  }
+  function lol(){
+    window.location.href=window.location.origin+"/games/gfiles/1v1lol.html";
+  }
+  function bbs(){
+    window.location.href=window.location.origin+"/games/gfiles/b@sketb@llst@rs.html";
+  }
+  function slope(){
+    window.location.href=window.location.origin+"/games/gfiles/slope.html";
+  }
+  function eglr(){
+    window.location.href=window.location.origin+"/games/gfiles/e@glrcr@ft.html";
+  }
+  function bp(){
+    window.location.href=window.location.origin+"/games/gfiles/bl0ckp0st.html";
+  }
+  function rooftopsnipers2(){
+    window.location.href=window.location.origin+"/games/gfiles/rooftopsnipers2.html";
+  }
+  function mcars(){
+    window.location.href=window.location.origin+"/games/gfiles/mcars.html";
+  }
+  function dragonjoust(){
+    window.location.href=window.location.origin+"/games/gfiles/dr@g0nj0ust.html";
+  }
+  function ss(){
+    window.location.href=window.location.origin+"/games/gfiles/she11sh0ckers.html";
+  }
+  function yohoho(){
+    window.location.href=window.location.origin+"/games/gfiles/y0h0h0.html";
+  }
+</script>
