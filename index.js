@@ -10,7 +10,7 @@ const address = document.getElementById("search");
 /**
  * @type {HTMLInputElement}
  */
-const searchEngine = document.getElementById("uv-search-engine");
+const searchEngine = document.getElementById("searchengine");
 
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
