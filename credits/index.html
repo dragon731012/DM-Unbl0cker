@@ -1,0 +1,95 @@
+<link rel="stylesheet" type="text/css" href="/style.css"/>
+
+<img src="/img/IMG_2996.gif" class="bg"/>
+<img class="back" id="back" src = "/img/back.png" onclick="reroutetohome();"/>
+<div class="title">
+    <h1 id="title1">Credits</h1>
+</div>
+<div class="paragraph" id="paragraph">
+  <h2 class="text" id="text">Thank you so much to TIW for giving us this amazing static proxy, and letting me customize it.</h2>
+</div>
+<style>
+  .back{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top:1%;
+    left:1%;
+  }
+  .text{
+    text-align: center;
+    background: transparent;
+    color: #FFFFFF;
+    width:100%;
+    height:100%;
+    }
+  .paragraph{
+    width:47%;
+    height:7%;
+    color: #FFFFFF;
+    position: absolute;
+    left:26.5%;
+    top:45%;
+    }
+  .title{
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    top:17%;
+    float: center;
+    align: center;
+    text-align: center;
+    color: #FFFFFF;
+    }
+  .bg{
+    top: 0%;
+    left: 0%;
+    position: absolute;
+    width:100%;
+    height:100%;
+    }
+</style>
+<script>
+  function reroutetohome(){
+      window.location.pathname="/";
+  }
+    
+  var title2=get_cookie("title2");
+  var favicon=get_cookie("favicon");
+
+  var fontsize2=2560/screen.width*7.5;
+  text.style.fontSize = fontsize2+"px";
+
+  var fontsize1=2560/screen.width*18;
+  title1.style.fontSize = fontsize1+"px";
+
+  if (favicon==null || favicon==undefined || favicon==""){
+        favicon="/img/logo.png";
+        document.cookie="favicon="+favicon+"; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/";
+        (function() {
+           var link=document.querySelector("link[rel*='icon']") || document.createElement('link');
+           link.type='image/x-icon';
+           link.rel='shortcut icon';
+           link.href=favicon;
+           document.getElementsByTagName('head')[0].appendChild(link);
+       })();
+    }
+    else{
+        (function() {
+           var link=document.querySelector("link[rel*='icon']") || document.createElement('link');
+           link.type='image/x-icon';
+           link.rel='shortcut icon';
+           link.href=favicon;
+           document.getElementsByTagName('head')[0].appendChild(link);
+       })();
+    }
+    if (title2==null || title2==undefined || title2==""){
+        title2="DM Unbl0cker";
+        document.cookie="title2="+title2+"; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/";
+        document.title=title2;
+    }
+    else{
+        document.title=title2;
+    }
+</script>

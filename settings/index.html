@@ -1,0 +1,342 @@
+<img src="/img/IMG_2996.gif" class="bg"/>
+<img class="back" id="back" src = "/img/back.png" onclick="reroutetohome();"/>
+<div class="importingbox" id="importingbox">
+    <input id='importing' class='importing' placeholder='import from website' type='text' align="center"/>
+</div>
+<input id='url1' class='url1' placeholder='favicon url' type='text'/>
+<input id='title' class='title' placeholder='website title' type='text'/>
+
+<img src="/img/black.jpeg" id="black" class="black"/> <img src="/img/loading.gif" id="loadimg" class="loadimg"/> <style> @keyframes fadeout{ 0%{ opacity:1; pointer-events: none;} 100%{ opacity:0; display:none; }} .black{ position:absolute; left:0px; opacity:1; display:block; top:0px; width:100%; z-index:999999999999999999999999999999999999999999999; height:100%; } .loadimg{ position:absolute; opacity:1; display:block; width:125px; z-index:9999999999999999999999999999999999999999999999; height:125px; top:50%; left:50%; transform:translate(-50%, -50%); } </style> <script> function fade(){ document.getElementById("loadimg").style.animation="linear 1.5s 1 running fadeout"; document.getElementById("loadimg").addEventListener("animationend", () => { document.getElementById("black").style.animation="linear 1.5s 1 running fadeout"; document.getElementById("black").addEventListener("animationend", () => { document.getElementById("black").remove(); }); document.getElementById("loadimg").remove(); }); } setTimeout(fade,1200); </script> 
+<select name="browser1" id="browser1" class="browser1"> 
+    <option value="bing">bing</option> 
+    <option value="google">google</option> 
+    <option value="yahoo!">yahoo!</option> 
+</select>
+
+<label for="cursoractivate" class="label1" id="label1">cursor: </label>
+<input type="checkbox" id="cursoractivate" class="cursoractivate">
+<label for="autoblank" class="label2" id="label2">auto blank: </label>
+<input type="checkbox" id="autoblank" class="autoblank">
+
+<style>
+  .bg{
+      position:absolute;
+      height:100%;
+      top:0px;
+      left:0px;
+      width:100%;
+  }
+  .cursoractivate{
+        position:absolute;
+        top:30%;
+        height: 20px;
+        width:20px;
+    }
+    .autoblank{
+        position:absolute;
+        top:42%;
+        height: 20px;
+    }
+    .label1{
+        color: white;
+        position:absolute;
+        top:30%;
+        width:50px;
+        height:20px;
+    }
+    .label2{
+        color: white;
+        position:absolute;
+        top:42%;
+        width:50px;
+        height:20px;
+    }
+    .back{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top:1%;
+    left:1%;
+  }
+    .button1{
+        position: absolute;
+        width: 10%;
+        height: 5%;
+        bottom: 1%;
+        right: 45%;
+        border-radius: 25px;
+        border: 2px solid white;
+        color: white;
+        background:transparent;
+        text-align: center;
+        font-size: 1em;
+        opacity: 0.5;
+    }
+    .button1:hover{
+        opacity: 1;
+    }
+    .top{
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 30px;
+        text-align: center;
+    }
+    .importingbox{
+        position: absolute;
+        height:6%;
+        left:30%;
+        width: 40%;
+        top: 5px;
+    }
+    .importing{
+        background:transparent;
+        color: white;
+        border: 2px solid white;
+        height:100%;
+        width: 100%;
+        text-align: center;
+    }
+    .importing::placeholder{
+        color: white;
+    }
+    .url1::placeholder{
+        color: white;
+    }
+    .title::placeholder{
+        color: white;
+    }
+    .url1{
+        background:transparent;
+        color: white;
+        border: 2px solid white;
+        position: absolute;
+        height:6%;
+        width: 40%;
+        right: 5%;
+        top: 8%;
+        text-align: center;
+    }
+    .title{
+        background:transparent;
+        color: white;
+        border: 2px solid white;
+        position: absolute;
+        height:6%;
+        width: 40%;
+        left: 5%;
+        top: 8%;
+        text-align: center;
+    }
+    .browser1{
+        background:transparent;
+        color: white;
+        border: 2px solid white;
+        position:absolute;
+        width:70px;
+        height:40px;
+        top: 20%;
+    }
+</style>
+
+<script>
+browser1.style.left=screen.width/2-70/2;
+cursoractivate.style.left=screen.width/2-20/2+50/2;
+label1.style.left=screen.width/2-50/2-50/2;
+autoblank.style.left=screen.width/2-20/2+50/2;
+label2.style.left=screen.width/2-50/2-50/2;
+    
+var script1 = document.createElement('script');script1.src="/cursor.js"; document.body.appendChild(script1);
+    
+function get_cookie(cookie_name) { const value = "; " + document.cookie; const parts = value.split("; " + cookie_name + "="); if (parts.length === 2) return parts.pop().split(";").shift(); } 
+var title2=get_cookie("title2");
+var favicon=get_cookie("favicon");
+var browser2=get_cookie("browser3");
+var cursor2=get_cookie("cursor");
+var abcookie=get_cookie("autoblank");
+
+if (title2!=undefined){
+    title.value=title2;
+    document.title=title2;
+}
+    
+if (cursor2!=undefined){
+    if (cursor2=="on"){
+        cursoractivate.checked=true;
+    }
+    if (cursor2=="off"){
+        cursoractivate.checked=false;
+    }
+}
+else{
+    document.cookie="cursor=on; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/";
+    cursoractivate.checked=true;
+}
+
+if (abcookie!=undefined){
+    if (abcookie=="on"){
+        autoblank.checked=true;
+    }
+    if (abcookie=="off"){
+        autoblank.checked=false;
+    }
+}
+else{
+    document.cookie="autoblank=off; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/";
+    autoblank.checked=false;
+}
+    
+if (browser2!=undefined){
+    browser1.value=browser2;
+}
+else{
+    document.cookie="browser3=google; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/";
+    browser1.value="google";
+}
+    
+if (favicon!=undefined){
+    url1.value=favicon;
+    var t = document.querySelector('head');
+    var f = document.createElement('link');
+    f.setAttribute('rel','shortcut icon');
+    f.setAttribute('href',favicon);
+    t.appendChild(f);
+}
+    
+function whileloop(){
+    if (importing.value!=""){
+        url1.value="";
+        title.value="";
+    }
+}
+    
+setInterval(whileloop,15);
+    
+var fontsize1=2560/screen.width*8;
+url1.style.fontSize = fontsize1+"px";
+var fontsize2=2560/screen.width*8;
+title.style.fontSize = fontsize2+"px";
+var fontsize3=2560/screen.width*8;
+importing.style.fontSize = fontsize3+"px";
+    
+   
+function settitle(titlename){
+   document.title=titlename;
+}
+   
+function settandf(){
+var url=importing.innerText;
+var originalurl=url;
+   
+settitle(originalurl);
+
+if (url.includes("https://")==false){
+    url="https://"+url;
+}
+
+url="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url="+url;
+   
+document.cookie="icon="+url+"; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/";
+
+setfavicon(url); 
+}
+function setfavicon(favicon){
+(function() {
+       var link=document.querySelector("link[rel*='icon']") || document.createElement('link');
+       link.type='image/x-icon';
+       link.rel='shortcut icon';
+       link.href=favicon;
+       document.getElementsByTagName('head')[0].appendChild(link);
+   })();
+}
+function reroutetohome(){
+    window.location.href=window.location.origin;
+  }
+</script>
+
+<a onclick="
+            
+var imported=document.getElementById('importing').value;
+var title2=document.getElementById('title').value;
+var favicon=document.getElementById('url1').value;
+var browser4=document.getElementById('browser1').value;
+var cursor3=document.getElementById('cursoractivate').checked;
+var autoblanker=document.getElementById('autoblank').checked;
+           
+if (imported==''){
+    if (cursor3==true){
+        document.cookie='cursor=on; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/';
+    }
+
+    if (cursor3==false){
+        document.cookie='cursor=off; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/';
+    }
+
+    if (autoblanker==true){
+        document.cookie='autoblank=on; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/';
+    }
+
+    if (autoblanker==false){
+        document.cookie='autoblank=off; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/';
+    }
+
+    document.cookie='browser3='+browser4+'; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/';
+    document.title=title2;
+    document.cookie='title2='+title2+'; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/';
+            
+    var t = document.querySelector('head');
+    var f = document.createElement('link');
+    f.setAttribute('rel','shortcut icon');
+    f.setAttribute('href',favicon);
+    t.appendChild(f);
+    document.cookie='favicon='+favicon+'; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/';
+                        
+    window.location.pathname='/';
+}
+else{
+    if (cursor3==true){
+        document.cookie='cursor=on; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/';
+    }
+
+    if (cursor3==false){
+        document.cookie='cursor=off; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/';
+    }
+
+    if (autoblanker==true){
+        document.cookie='autoblank=on; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/';
+    }
+
+    if (autoblanker==false){
+        document.cookie='autoblank=off; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/';
+    }
+
+            
+    var url=importing.value;
+    var originalurl=url;
+
+    document.cookie='browser3='+browser4+'; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/';
+    document.title=originalurl;
+    document.cookie='title2='+originalurl+'; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/';
+
+    if (url.includes('https://')==false){
+        url='https://'+url;
+    }
+
+    url='https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url='+url;
+            
+    document.cookie='favicon='+url+'; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/';
+            
+    var t = document.querySelector('head');
+    var f = document.createElement('link');
+    f.setAttribute('rel','shortcut icon');
+    f.setAttribute('href',url);
+    t.appendChild(f);
+    function waitf(){
+        window.location.pathname='/';
+    }
+    setTimeout(waitf,15);
+}
+            
+">
+    <button class='button1' id='button1'>done</button>
+</a>

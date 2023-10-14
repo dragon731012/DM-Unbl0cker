@@ -1,0 +1,126 @@
+<link rel="stylesheet" type="text/css" href="/style.css"/>
+<img src="/img/IMG_2996.gif" class="bg"/>
+<img class="back" id="back" src = "/img/back.png" onclick="reroutetohome();"/>
+<h1 id="title1" class="title1">apps</h1>
+
+<img src="/img/black.jpeg" id="black" class="black"/> <img src="/img/loading.gif" id="loadimg" class="loadimg"/> <style> @keyframes fadeout{ 0%{ opacity:1; pointer-events: none;} 100%{ opacity:0; display:none; }} .black{ position:absolute; left:0px; opacity:1; display:block; top:0px; width:100%; z-index:999999999999999999999999999999999999999999999; height:100%; } .loadimg{ position:absolute; opacity:1; display:block; width:125px; z-index:9999999999999999999999999999999999999999999999; height:125px; top:50%; left:50%; transform:translate(-50%, -50%); } </style> <script> function fade(){ document.getElementById("loadimg").style.animation="linear 1.5s 1 running fadeout"; document.getElementById("loadimg").addEventListener("animationend", () => { document.getElementById("black").style.animation="linear 1.5s 1 running fadeout"; document.getElementById("black").addEventListener("animationend", () => { document.getElementById("black").remove(); }); document.getElementById("loadimg").remove(); }); } setTimeout(fade,1200); </script> 
+<div class="buttons" align="center">
+  <img class="apps" src="/img/spotify.png" onclick="spotify();"/>
+  <img class="apps" src="/img/youtube.png" onclick="youtube();"/>
+  <img class="apps" src="/img/discord2.png" onclick="discord();"/>
+  <img class="apps" src="/img/reddit.png" onclick="reddit();"/>
+  <img class="apps" src="/img/stack-overflow.png" onclick="stackoverflow();"/>
+  <img class="apps" src="/img/githublogo.png" onclick="github();"/>
+</div>
+<style>
+  .bg{
+    top: 0%;
+    left: 0%;
+    position: absolute;
+    width:100%;
+    height:100%;
+  }
+  .buttons{
+    position: absolute;
+    width: 40%;
+    left: 30%;
+    height: 70%;
+    top: 30%;
+  }
+  .title1{
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    top:7%;
+    float: center;
+    align: center;
+    text-align: center;
+    color: #FFFFFF;
+  }
+  .apps{
+    width: 150px;
+    height: 150px;
+    border-radius: 25px;
+    background-color: #000000;
+    color: #FFFFFF;
+    margin:6px;
+    transition: width .5s, height .5s;
+  }
+  .apps:hover{
+    width: 163px;
+    height: 163px;
+  }
+  .back{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top:1%;
+    left:1%;
+  }
+</style>
+<script>
+  var script1 = document.createElement('script');script1.src="/cursor.js"; document.body.appendChild(script1);
+  
+  function get_cookie(cookie_name) { const value = "; " + document.cookie; const parts = value.split("; " + cookie_name + "="); if (parts.length === 2) return parts.pop().split(";").shift(); } 
+  
+  var title2=get_cookie("title2");
+  var favicon=get_cookie("favicon");
+  
+  if (favicon==null || favicon==undefined || favicon==""){
+        favicon="/img/logo.png";
+        document.cookie="favicon="+favicon+"; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/";
+        (function() {
+           var link=document.querySelector("link[rel*='icon']") || document.createElement('link');
+           link.type='image/x-icon';
+           link.rel='shortcut icon';
+           link.href=favicon;
+           document.getElementsByTagName('head')[0].appendChild(link);
+       })();
+    }
+    else{
+        (function() {
+           var link=document.querySelector("link[rel*='icon']") || document.createElement('link');
+           link.type='image/x-icon';
+           link.rel='shortcut icon';
+           link.href=favicon;
+           document.getElementsByTagName('head')[0].appendChild(link);
+       })();
+    }
+    if (title2==null || title2==undefined || title2==""){
+        title2="DM Unbl0cker";
+        document.cookie="title2="+title2+"; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/";
+        document.title=title2;
+    }
+    else{
+        document.title=title2;
+    }
+</script>
+<script>
+  var fontsize1=2560/screen.width*18;
+  title1.style.fontSize = fontsize1+"px";
+</script>
+<script>
+
+  function reroutetohome(){
+    window.location.href=window.location.origin;
+  }
+  function spotify(){
+    window.location.href=window.location.origin+"/apps/afiles/spotify.html";
+  }
+  function youtube(){
+    window.location.href=window.location.origin+"/apps/afiles/youtube.html";
+  }
+  function discord(){
+    window.location.href=window.location.origin+"/apps/afiles/discord.html";
+  }
+  function reddit(){
+    window.location.href=window.location.origin+"/apps/afiles/reddit.html";
+  }
+function stackoverflow(){
+    window.location.href=window.location.origin+"/apps/afiles/stackoverflow.html";
+  }
+  function github(){
+    window.location.href=window.location.origin+"/apps/afiles/github.html";
+  }
+</script>

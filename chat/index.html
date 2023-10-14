@@ -1,0 +1,403 @@
+<img src="/img/black.jpeg" id="black" class="black"/> <img src="/img/loading.gif" id="loadimg" class="loadimg"/> <style> @keyframes fadeout{ 0%{ opacity:1; pointer-events: none;} 100%{ opacity:0; display:none; }} .black{ position:absolute; left:0px; opacity:1; display:block; top:0px; width:100%; z-index:999999999999999999999999999999999999999999999; height:100%; } .loadimg{ position:absolute; opacity:1; display:block; width:125px; z-index:9999999999999999999999999999999999999999999999; height:125px; top:50%; left:50%; transform:translate(-50%, -50%); } </style> <script> function fade(){ document.getElementById("loadimg").style.animation="linear 1.5s 1 running fadeout"; document.getElementById("loadimg").addEventListener("animationend", () => { document.getElementById("black").style.animation="linear 1.5s 1 running fadeout"; document.getElementById("black").addEventListener("animationend", () => { document.getElementById("black").remove(); }); document.getElementById("loadimg").remove(); }); } setTimeout(fade,1200); </script> 
+
+<script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
+
+<div id="banalert" style="opacity:0;animation-name: none;animation-duration: 1s;animation-iteration-count: 1; z-index:8;display:none; text-align:center;background-color:white;border:3px solid black; position:absolute;left:50%;width:400px;height:180px;top:50%;transform: translate(-50%, -50%);"><h2 style="margin-top:5px;">You have been banned!</h2><img src="/img/banimg.png" style="position:absolute;width:160px;left:50%;top:50%;transform: translate(-50%, -50%);"><button onclick="hidea();" style="position:absolute;left:50%;transform: translate(-50%, 0%);bottom:5px;border-radius:25px;background:transparent;">ok</button></div>
+<div id="rulesalert" style="z-index:8;opacity:0;animation-name: none;animation-duration: 1s;animation-iteration-count: 1; display:none; text-align:center;background-color:white;border:3px solid black; position:absolute;left:50%;width:400px;height:180px;top:50%;transform: translate(-50%, -50%);"><h5 style="margin-top:5px;">rules - <br>1. No impersonating others.<br>2. No inappropriate links.<br>3. No bullying.<br>4. Just be nice!<br>5. Try NOT to swear. Everyone can see what you send!<br>BREAKING ANY OF THESE RULES WILL RESULT IN A PERMANENT BAN</h5><button onclick="hider();" style="position:absolute;left:50%;transform: translate(-50%, 0%);bottom:5px;border-radius:25px;background:transparent;">ok</button></div>
+
+<style>.cactus-container{display:flex;flex-direction:column;gap:1em;color:var(--cactus-text-color);background-color:var(--cactus-background-color)}.cactus-error{padding:.5em;padding-inline-end:1.5em;border:var(--cactus-border-width) solid var(--cactus-error-color);border-radius:var(--cactus-border-radius);position:relative}.cactus-error-close{position:absolute;right:.2em;top:0;border:none}.cactus-error-close:hover:not([disabled]){cursor:pointer}.cactus-error-close:active:not([disabled]){cursor:pointer}.cactus-error-close-icon{inline-size:20px;block-size:20px}.cactus-error-text{color:var(--cactus-error-color);font-weight:700;margin:0}.cactus-editor{display:flex;flex-direction:column;gap:.5em}.cactus-editor-below{display:flex;flex-wrap:wrap;gap:.5em;justify-content:flex-end}.cactus-editor-name{display:flex;flex:1}.cactus-editor-name>span{display:flex;flex:1;min-inline-size:20ch;max-inline-size:40ch}.cactus-editor-name>span>input{inline-size:100%;border-radius:var(--cactus-border-radius);border:solid var(--cactus-border-width) var(--cactus-border-color);padding:.5em;background-color:transparent;color:inherit;font-size:inherit}.cactus-editor-name>span>input::placeholder{color:var(--cactus-text-color--soft)}.cactus-editor-buttons{display:flex;gap:.5em}.cactus-matrixdotto-only{align-self:center;text-decoration:none}.cactus-login-form-wrapper{position:fixed;top:0;bottom:0;left:0;right:0;z-index:1;display:flex;align-items:center;justify-content:center}.cactus-login-form{display:flex;flex-direction:column;gap:2em;padding:2rem;border-radius:var(--cactus-border-radius);background-color:var(--cactus-background-color--strong);color:var(--cactus-login-form-text-color);box-shadow:0 .5em 1em .5em var(--cactus-box-shadow-color);box-sizing:border-box;inline-size:100%;max-inline-size:300px}.cactus-login-close{align-self:flex-end;position:relative;margin:-2em;padding:0;color:var(--cactus-button-color);scale:2;background-color:transparent;border:none}.cactus-login-close:hover:not([disabled]){color:var(--cactus-button-color--strong);cursor:pointer}.cactus-login-close:active:not([disabled]){color:var(--cactus-button-color--stronger);cursor:pointer}.cactus-login-close-icon{inline-size:20px;block-size:20px}.cactus-login-title{align-self:center;font-size:1.17em;font-weight:700;margin:0}.cactus-login-client{display:flex;flex-direction:column;gap:1em}.cactus-login-client-title{font-size:1em;font-weight:700;margin:0}.cactus-matrixdotto-button{justify-content:center;text-decoration:none}.cactus-login-credentials{display:flex;flex-direction:column;gap:1em}.cactus-login-credentials-title{font-size:1em;font-weight:700;margin:0}.cactus-login-field{display:flex;flex-direction:column;gap:.25em}.cactus-login-label{font-size:1em;padding-bottom:.25em;color:var(--cactus-text-color--soft)}.cactus-login-error{margin:0;font-size:.8em;color:var(--cactus-text-color--soft)}.cactus-login-field>input{border-radius:var(--cactus-border-radius);border:solid var(--cactus-border-width) var(--cactus-border-color);padding:.5em;background-color:transparent;color:inherit;font-size:inherit}.cactus-login-field>input::placeholder{color:var(--cactus-text-color--soft)}.cactus-login-credentials-button{justify-content:center}.cactus-comments-container{position:absolute;width:100%;height:70%;left:0px;top:5%;overflow: auto;display:flex;flex-direction: column-reverse;}.cactus-comments-list{display:flex;flex-direction:column-reverse;gap:.5em}.cactus-comment{display:flex;flex-direction:row;gap:1em;padding-block-end:.5em;border-block-end:var(--cactus-border-width) solid var(--cactus-border-color)}.cactus-comment-avatar{display:flex}.cactus-comment-avatar>*{width:2.5rem;height:2.5rem;border-radius:50%;margin:0}.cactus-comment-avatar-placeholder{display:flex;justify-content:center;align-items:center;background-color:var(--cactus-border-color);color:var(--cactus-text-color--soft)}.cactus-comment-avatar-placeholder:before{content:"?"}.cactus-comment-content{display:flex;flex-direction:column;gap:.5em}.cactus-comment-header{display:flex;gap:.5em;flex-wrap:wrap}.cactus-comment-displayname{font-weight:700;cursor:pointer;text-decoration:none;color:inherit}.cactus-comment-time{color:var(--cactus-text-color--soft)}.cactus-message-text>:first-child{margin-block-start:0}.cactus-message-text>:last-child{margin-block-end:0}.cactus-message-emote{padding-top:.5em;color:var(--cactus-text-color--soft)}.cactus-message-image{max-width:100%;height:auto}.cactus-message-file{line-height:3em;margin-left:1em}.cactus-message-video{max-width:100%}.cactus-button{display:flex;align-items:center;padding-block:.6em;padding-inline:1em;background-color:var(--cactus-button-color);font-weight:700;border-radius:var(--cactus-border-radius);color:var(--cactus-button-text-color);font-size:inherit;border:none}.cactus-button:hover:not([disabled]){background-color:var(--cactus-button-color--strong);cursor:pointer}.cactus-button:active:not([disabled]){background-color:var(--cactus-button-color--stronger);cursor:pointer}.cactus-view-more{display:flex;justify-content:center}.spinner{align-self:center;width:2em;height:2em;display:flex;gap:.3em}.spinner>div{flex:1;background-color:var(--cactus-border-color);animation:sk-stretchdelay 2.4s ease-in-out infinite}.spinner .rect2{animation-delay:-2.2s}.spinner .rect3{animation-delay:-2s}.spinner .rect4{animation-delay:-1.8s}@keyframes sk-stretchdelay{0%,40%,to{transform:scaleY(.4)}20%{transform:scaleY(1)}}</style>
+<div id="title" style="animation-name: none;animation-duration: 1s;animation-iteration-count: 1; position:absolute;top:-95%;left:0px;z-index:5;font-size:100%;height:100%;background-color:white;text-align:left;width:100%;">
+  <div id="chats" style="background-color:black;border-bottom:5px solid white;position:absolute;bottom:5%;right:0px;z-index:6;font-size:100%;height:95%;text-align:left;width:100%;">
+    <a onclick="gohome();" style="text-decoration: none;cursor: pointer !important;pointer-events: auto !important;">
+      <img src="/img/home.png" style="width:50px; height:50px; margin-top:5px; margin-left:5px;">
+    </a> 
+    <button onclick="rules();" class="cactus-button" id="rules">rules</button>
+  </div>
+  <a onclick="menuclick();" style="cursor: pointer !important;pointer-events: auto !important;">
+    <img src="/img/image.png" id="menuimg">
+  </a>
+</div>
+<div id="comment-section"></div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+  initComments({
+    node: document.getElementById("comment-section"),
+    defaultHomeserverUrl: "https://matrix.cactus.chat:8448",
+    serverName: "cactus.chat",
+    siteName: "dmunblockerpublic",
+    commentSectionId: "public",
+    updateInterval: 5,
+    pageSize: 7
+  })
+</script>
+<style>
+  #rules{
+    position:absolute;
+    right:0px;
+    top:0px;
+  }
+  #b{
+    position:absolute;
+    left:0px;
+    bottom:0px;
+  }
+  :root {
+    --parent-height: 300%;
+  }
+  .divtext{
+    line-height: 300%;
+    width:100%;
+    height:100%;
+    display: table;
+    font-size: 7vw;
+    text-align:center;
+  }
+  .cactus-login-button{
+      display:none !important;
+    }
+    button:disabled{
+      opacity:0.5;
+    }
+  @keyframes slide-down{
+    0%{top:-95%;}
+    100%{top:0%;}
+  }
+  @keyframes slide-up{
+    0%{top:0%;}
+    100%{top:-95%;}
+  }
+  @keyframes alertfadein{
+    0%{
+      opacity:0;
+    }
+    100%{
+      opacity:1;
+    }
+  }
+  @keyframes alertfadeout{
+    0%{
+      opacity:1;
+    }
+    100%{
+      opacity:0;
+    }
+  }
+      
+  #menuimg{
+    height:5%;
+    display:block;
+    position:absolute;
+    bottom:0px;
+    left:0px;
+  }
+  .cactus-comment-avatar{
+    display:none;
+  }
+  .cactus-comment-content{
+    margin-left:2%;
+  }
+  label {
+    cursor: default;
+    position: absolute;
+    height: 0px !important;
+    width: 0px !important;
+    overflow: hidden;
+    margin: 0px !important;
+    padding: 0px;
+    border: 0px;
+  }
+  .cactus-comment {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    font-size:28px;
+    padding-block-end: 0.5em;
+    border-block-end: 3px solid white;
+}
+  .cactus-button {
+      display: flex;
+      align-items: center;
+      writing-mode: horizontal-tb;
+      padding-block: 0.6em;
+      padding-inline: 1em;
+      font-weight: 700;
+      border-radius:35px;
+      background-color:transparent;
+      border:5px solid white;
+      color:white;
+      font-size: inherit;
+  }
+  body{
+    background-color:black;
+    overflow:hidden;
+  }
+  .cactus-login-form {
+    background-color:white;
+    border:5px solid;
+  }
+  .cactus-editor{    
+    position:absolute;
+    bottom:3%;
+    height:10%;
+    width:100%;
+  }
+  .cactus-editor-buttons{
+    height:100%;
+    position:relative;
+    bottom:0px;
+  }
+  .cactus-editor>span{
+    height: 100%;
+    position: relative;
+    display: inline-block;
+    width: 61%;
+  }
+  .cactus-editor>span>textarea {
+    border-radius: 35px 0% 0% 35px;
+    resize: none;
+    line-height: 190%;
+    white-space: nowrap;
+    box-sizing: border-box;
+    font-size: 200%;
+    background-color: transparent;
+    border: 5px solid white;
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    bottom: 0px;
+    resize: none;
+    overflow: hidden;
+    height: 100%;
+    color: white;
+    left: 2%;
+    margin-left: 10px;
+  }
+  .cactus-editor-name>span>input::placeholder {
+    color: white;
+    line-height: 190%;
+    opacity: 1;
+    font-size:100%;
+  }
+  .cactus-editor-textarea::placeholder {
+    color: white;
+    opacity: 1;
+  }
+  .cactus-editor-name {
+    height:100%;
+    position:relative;
+    bottom:0px;
+  }
+  .cactus-editor-name>span {
+    width:100%;
+    height:100%;
+  }
+  cactus-editor-textarea{
+    border-radius: 35px 0% 0% 35px;
+    resize: none;
+    line-height: 190%;
+    white-space: nowrap;
+    box-sizing: border-box;
+    font-size: 300%;
+    background-color: transparent;
+    border: 5px solid white;
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    bottom: 0px;
+    resize: none;
+    overflow: hidden;
+    color: white;
+    left: 2%;
+    margin-left: 10px;
+  }
+  .cactus-editor-name>span>input{
+    width:100%;
+    height:100%;
+    font-size:200%;
+    border-radius:0% 35px 35px 0%;
+    border:5px solid white;
+    color:white;
+  }
+  .cactus-editor-name{
+    height:100%;
+    position:relative;
+    bottom:0px;
+  }
+  
+  .cactus-editor-below {
+    position: absolute;
+    width:35%;
+    height:100%;
+    right:2%;
+    bottom:0px;
+  }
+  .cactus-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    color: white;
+    background-color: transparent;
+}
+</style>
+<script> 
+  function getdate(sec){
+       var seconds = sec;
+       var dateNow = new Date();
+       var datesecago = new Date(dateNow.getTime() - seconds*1000);
+       let month = datesecago.getUTCMonth() + 1;
+       let day = datesecago.getUTCDate();
+       let year = datesecago.getUTCFullYear();
+       return (month+"/"+day+"/"+year);
+  }
+  var script1 = document.createElement('script');script1.src="/cursor.js"; document.body.appendChild(script1);
+  
+  function get_cookie(cookie_name) { const value = "; " + document.cookie; const parts = value.split("; " + cookie_name + "="); if (parts.length === 2) return parts.pop().split(";").shift(); } 
+    
+  var title2=get_cookie("title2");
+  var favicon=get_cookie("favicon");
+  if (favicon==null || favicon==undefined || favicon==""){
+        favicon="/img/logo.png";
+        document.cookie="favicon="+favicon+"; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/";
+        (function() {
+           var link=document.querySelector("link[rel*='icon']") || document.createElement('link');
+           link.type='image/x-icon';
+           link.rel='shortcut icon';
+           link.href=favicon;
+           document.getElementsByTagName('head')[0].appendChild(link);
+       })();
+    }
+    else{
+        (function() {
+           var link=document.querySelector("link[rel*='icon']") || document.createElement('link');
+           link.type='image/x-icon';
+           link.rel='shortcut icon';
+           link.href=favicon;
+           document.getElementsByTagName('head')[0].appendChild(link);
+       })();
+    }
+    if (title2==null || title2==undefined || title2==""){
+        title2="DM Unbl0cker";
+        document.cookie="title2="+title2+"; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/";
+        document.title=title2;
+    }
+    else{
+        document.title=title2;
+    }
+
+
+  
+  function hidea(){
+    document.getElementById("banalert").style.animationName="alertfadeout";
+      document.getElementById("banalert").addEventListener("animationend", (event) => {
+        document.getElementById("banalert").style.opacity="0";
+        document.getElementById("banalert").style.display="none"; 
+        document.getElementById("banalert").style.animationName="none";
+        document.getElementById("banalert").addEventListener("animationend", (event) => {});
+      });
+  }
+
+  function hider(){
+    document.getElementById("rulesalert").style.animationName="alertfadeout";
+      document.getElementById("rulesalert").addEventListener("animationend", (event) => {
+        document.getElementById("rulesalert").style.opacity="0";
+        document.getElementById("rulesalert").style.animationName="none";
+        document.getElementById("rulesalert").addEventListener("animationend", (event) => {});
+      });
+  }
+  
+  function rules(){
+    document.getElementById("rulesalert").style.display="block";
+    document.getElementById("rulesalert").style.animationName="alertfadein";
+    document.getElementById("rulesalert").addEventListener("animationend", (event) => {
+      document.getElementById("rulesalert").style.opacity="1";
+      document.getElementById("rulesalert").style.display="block";
+      document.getElementById("rulesalert").style.animationName="none";
+      document.getElementById("rulesalert").addEventListener("animationend", (event) => {});
+    });
+  }
+  
+  if (localStorage.getItem("read")==null){
+    rules();
+    localStorage.setItem("read", "true");
+  }
+  
+  document.getElementsByClassName("cactus-editor-textarea")[0].scrollTo(0,(document.getElementsByClassName("cactus-editor-textarea")[0].scrollHeight/2)-(Math.ceil(document.getElementsByClassName("cactus-editor-textarea")[0].clientHeight/2)));
+  function menuclick(){
+    if (title.style.top=="-95%"){
+      title.style.animationName="slide-down";
+      title.addEventListener("animationend", (event) => {
+        title.style.top="0%";
+        title.style.animationName="none";
+        title.addEventListener("animationend", (event) => {});
+      });
+    }
+    else if (title.style.top=="0%"){
+      title.style.animationName="slide-up";
+      title.addEventListener("animationend", (event) => {
+        title.style.top="-95%";
+        title.style.animationName="none";
+        title.addEventListener("animationend", (event) => {});
+      });
+    }
+    else{
+      console.log(title.style.top);
+    }
+  }
+  
+  function gohome(){
+    title.style.animationName="slide-up";
+      title.addEventListener("animationend", (event) => {
+        title.style.top="-95%";
+        title.style.animationName="none";
+        window.location.href=window.location.origin;
+        title.addEventListener("animationend", (event) => {});
+      });
+  }
+  
+  window.addEventListener('keydown',function(e) {
+      if (e.keyIdentifier=='U+000A' || e.keyIdentifier=='Enter' || e.keyCode==13) {
+        e.preventDefault();
+        return false;
+      }
+  }, true);
+
+  function loop(){
+    /*
+    for (var i=0;i<document.getElementsByClassName("cactus-comment").length;i++){
+      if (document.getElementsByClassName("cactus-comment")[i]!=null && document.getElementsByClassName("cactus-comment")[i+1]!=null){
+        if (document.getElementsByClassName("cactus-message-text")[0].querySelector("p").innerText==document.getElementsByClassName("cactus-message-text")[i+1].querySelector("p").innerText && document.getElementsByClassName("cactus-comment-displayname")[i].innerText==document.getElementsByClassName("cactus-comment-displayname")[i+1].innerText){
+          document.getElementsByClassName("cactus-comment")[i].style.display="none";
+        }
+      }
+    }
+    */
+    
+    if (document.getElementsByClassName("cactus-errors")[0]!=null){
+      if (document.getElementsByClassName("cactus-error-text")[0].innerText.includes("banned")){
+        document.getElementById("banalert").style.display="block";
+        document.getElementById("banalert").style.animationName="alertfadein";
+          document.getElementById("banalert").addEventListener("animationend", (event) => {
+            document.getElementById("banalert").style.opacity="1";
+            document.getElementById("banalert").style.display="block";
+            document.getElementById("banalert").style.animationName="none";
+            document.getElementById("banalert").addEventListener("animationend", (event) => {});
+          });
+        document.getElementsByClassName("cactus-errors")[0].remove();
+      }
+    }
+   
+    if (document.getElementsByClassName("cactus-editor-name")[0].querySelector("span").querySelector("input").value==""){
+      document.getElementsByClassName("cactus-send-button")[0].disabled=true;
+    }
+    if (document.getElementsByClassName("cactus-editor-textarea")[0].value==""){
+      document.getElementsByClassName("cactus-send-button")[0].disabled=true;
+    }
+    if (document.getElementsByClassName("cactus-editor-textarea")[0].value!="" && document.getElementsByClassName("cactus-editor-name")[0].querySelector("span").querySelector("input").value!=""){
+      document.getElementsByClassName("cactus-send-button")[0].disabled=false;
+    }
+  }
+  setInterval(loop,0);
+</script>

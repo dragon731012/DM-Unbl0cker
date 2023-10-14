@@ -1,0 +1,400 @@
+<link rel="stylesheet" type="text/css" href="/main.css"/>
+<script src="uv/uv.bundle.js" defer></script>
+<script src="uv/uv.config.js" defer></script>
+<script src="register-sw.js" defer></script>
+<script src="scripts/index.js" defer></script> 
+
+<img src="/img/black.jpeg" id="black" class="black"/>
+<img src="/img/loading.gif" id="loadimg" class="loadimg"/>
+<script>
+    var link=document.querySelector("link[rel*='icon']") || document.createElement('link');
+    link.type='image/x-icon';
+    link.rel='shortcut icon';
+    link.href="https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://google.com&size=16";
+    document.title="Google";
+    document.getElementsByTagName('head')[0].appendChild(link);
+    
+    function get_cookie(cookie_name) { const value = "; " + document.cookie; const parts = value.split("; " + cookie_name + "="); if (parts.length === 2) return parts.pop().split(";").shift(); } 
+    function blank(){
+      (function () {var url = document.URL; var urlObj = new window.URL(window.location.href); win = window.open(); win.document.body.style.margin = "0"; win.document.body.style.height = "100vh"; var iframe = win.document.createElement("iframe"); iframe.style.border = "none"; iframe.style.width = "100%"; iframe.style.height = "100%"; iframe.style.margin = "0"; iframe.referrerpolicy = "no-referrer"; iframe.allow = "fullscreen"; iframe.src = url.toString(); win.document.body.appendChild(iframe);window.location.href="https://google.com";})();
+    }
+</script>
+<img src="/img/IMG_2996.gif" class="bg"/>
+<div class="title">
+    <h1 id="title1">DM Unblocker</h1>
+</div>
+<form class="searchbox" id="searchbox">
+    <input class="search" id="search" placeholder='Search the web freely' type='text'/>
+</form>
+<a onclick="window.location.pathname='/settings';">
+    <img src="/img/settings.png" class="settings" id="settings"/>
+</a>
+<a onclick="window.location.pathname='/games';">
+    <img src="/img/games.png" class="games" id="games"/>
+</a>
+<a onclick="window.location.pathname='/apps';">
+    <img src="/img/apps.png" class="apps" id="apps"/>
+</a>
+<a onclick="window.location.pathname='/chat';">
+    <img src="/img/message.png" class="chat" id="chat"/>
+</a>
+<div class="icons">
+    <a onclick="blank();">
+    <img src="/img/IMG_3024.png" class="blank" id="blank"/>
+    </a>
+    <a href="https://github.com/dragon731012" target="_blank" rel="noopener">
+    <img src="/img/github.png" class="github" id="github"/>
+    </a>
+    <a href="https://discord.gg/hrXXUeWgrn" target="_blank" rel="noopener">
+    <img src="/img/discord.png" class="discord" id="discord"/>
+    </a>
+</div>
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap");
+    .black{
+        position:absolute;
+        left:0px;
+        opacity:1;
+        display:block;
+        top:0px;
+        width:100%;
+        z-index:999999999999999999999999999999999999999999999;
+        height:100%;
+    }
+    .loadimg{
+        position:absolute;
+        opacity:1;
+        display:block;
+        width:125px;
+        z-index:9999999999999999999999999999999999999999999999;
+        height:125px;
+        top:50%;
+        left:50%;
+        transform:translate(-50%, -50%);
+    }
+    @keyframes fadeout{
+        0%{
+            opacity:1;
+            pointer-events: none;
+        }
+        100%{
+            opacity:0;
+            display:none;
+        }
+    }
+    .bg{
+    top: 0%;
+    left: 0%;
+    position: absolute;
+    width:100%;
+    height:100%;
+    }
+    .iframe1{
+    border: none;
+    }
+    .searchbox{
+    width:47%;
+    height:7%;
+    color: #FFFFFF;
+    position: absolute;
+    left:26.5%;
+    top:50%;
+    }
+    .apps{
+    position: absolute;
+    height:100%;
+    width:70px;
+    height:70px;
+    right:90px;
+    top:1%;
+    opacity:1;
+    }
+    .chat{
+    position: absolute;
+    height:100%;
+    width:70px;
+    height:70px;
+    right:180px;
+    top:1%;
+    opacity:1;
+    }
+    .search{
+    text-align: center;
+    background: transparent;
+    border-radius: 18px;
+    border-radius: 18px;
+    border: 2px solid #FFFFFF;
+    color: #FFFFFF;
+    width:100%;
+    height:100%;
+    }
+    .title{
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    top:17%;
+    float: center;
+    align: center;
+    text-align: center;
+    color: #FFFFFF;
+    }
+    ::placeholder {
+    margin: auto;
+    color: #FFFFFF;
+    font-size: 1.2em;
+    }
+    .icons{
+    align: center;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    height: 70px;
+    bottom: 0%;
+    left: 0%;
+    }
+    .github{
+    position: absolute;
+    width:70px;
+    height:70px;
+    right:40%;
+    opacity:1;
+    }
+    .blank{
+    position: absolute;
+    height:100%;
+    width:70px;
+    height:70px;
+    right:0%;
+    opacity:1;
+    }
+    .settings{
+    position: absolute;
+    height:100%;
+    width:70px;
+    height:70px;
+    left:1%;
+    top:1%;
+    opacity:1;
+    }
+    .games{
+    position: absolute;
+    height:100%;
+    width:70px;
+    height:70px;
+    right:1%;
+    top:1%;
+    opacity:1;
+    }
+    .discord{
+    position: absolute;
+    height:100%;
+    width:70px;
+    height:58px;
+    opacity:1;
+    left:40%;
+    top:8%;
+    }
+    .discord:hover{
+    opacity:0.5;
+    }
+    .github:hover{
+    opacity:0.5;
+    }
+    .blank:hover{
+    opacity:0.5;
+    }
+    .settings:hover{
+    opacity:0.5;
+    }
+    .games:hover{
+    opacity:0.5;
+    }
+    .x{
+    position: absolute;
+    width:70px;
+    height:70px;
+    top:0px;
+    right:0px;
+    }
+    .apps:hover{
+    opacity:0.5;
+    }
+    .chat:hover{
+    opacity:0.5;
+    }
+
+    .apps,.games,.settings,.blank,.github,.discord,.chat{
+        transition: all 0.7s ease-out;
+    }
+</style>
+<script>
+    var script1 = document.createElement('script');script1.src="/cursor.js"; document.body.appendChild(script1);
+
+    if (get_cookie("autoblank")=="on"){
+        if (window.top !== window) {
+            var title2=get_cookie("title2");
+            var favicon=get_cookie("favicon");
+
+            if (favicon==null || favicon==undefined || favicon==""){
+                favicon="/img/logo.png";
+                document.cookie="favicon="+favicon+"; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/";
+                (function() {
+                   var link=parent.document.createElement('link');
+                   link.type='image/x-icon';
+                   link.rel='shortcut icon';
+                   link.href=favicon;
+                   parent.document.getElementsByTagName('head')[0].appendChild(link);
+               })();
+            }
+            else{
+                (function() {
+                   var link=parent.document.createElement('link');
+                   link.type='image/x-icon';
+                   link.rel='shortcut icon';
+                   link.href=favicon;
+                   parent.document.getElementsByTagName('head')[0].appendChild(link);
+               })();
+            }
+            if (title2==null || title2==undefined || title2==""){
+                title2="DM Unbl0cker";
+                document.cookie="title2="+title2+"; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/";
+                parent.document.title=title2;
+            }
+            else{
+                parent.document.title=title2;
+            }
+        }
+        else{
+            blank();
+        }
+    }
+    
+    var title2=get_cookie("title2");
+    var favicon=get_cookie("favicon");
+    
+    var fontsize1=2560/screen.width*18;
+    var fontsize2=2560/screen.width*7.5;
+    
+    title1.style.fontSize = fontsize1+"px";
+    search.style.fontSize = fontsize2+"px";
+    
+    if (favicon==null || favicon==undefined || favicon==""){
+        favicon="/img/logo.png";
+        document.cookie="favicon="+favicon+"; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/";
+        (function() {
+           var link=document.querySelector("link[rel*='icon']") || document.createElement('link');
+           link.type='image/x-icon';
+           link.rel='shortcut icon';
+           link.href=favicon;
+           document.getElementsByTagName('head')[0].appendChild(link);
+       })();
+    }
+    else{
+        (function() {
+           var link=document.querySelector("link[rel*='icon']") || document.createElement('link');
+           link.type='image/x-icon';
+           link.rel='shortcut icon';
+           link.href=favicon;
+           document.getElementsByTagName('head')[0].appendChild(link);
+       })();
+    }
+    if (title2==null || title2==undefined || title2==""){
+        title2="DM Unbl0cker";
+        document.cookie="title2="+title2+"; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/";
+        document.title=title2;
+    }
+    else{
+        document.title=title2;
+    }
+</script>
+<script>
+    window.navigator.serviceWorker.register('./sw.js');
+    var script1 = document.createElement('script');script1.src="/scripts/cursor.js"; document.body.appendChild(script1);
+    
+    var title2=get_cookie("title2");
+    var browsertype=get_cookie("browser3");
+    var favicon=get_cookie("favicon");
+    
+    var fontsize1=2560/screen.width*18;
+    var fontsize2=2560/screen.width*7.5;
+    var fontsize3=2560/screen.width*6.8;
+    
+    title1.style.fontSize = fontsize1+"px";
+    search.style.fontSize = fontsize2+"px";
+    credits.style.fontSize = fontsize3+"px";
+
+    if (browsertype==null || browsertype==undefined || browsertype==""){
+        browsertype="google";
+        searchengine.value="https://www.google.com/search?q=";
+        document.cookie="browser3="+browsertype+"; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/";
+    }
+    else{
+        if (browsertype=="google"){
+            searchengine.value="https://www.google.com/search?q=";
+        }
+        if (browsertype=="bing"){
+            searchengine.value="https://www.bing.com/search?q=";
+        }
+        if (browsertype=="yahoo"){
+            searchengine.value="https://search.yahoo.com/search?p=";
+        }
+        document.cookie="browser3="+browsertype+"; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/";
+    }
+        
+    if (favicon==null || favicon==undefined || favicon==""){
+        favicon="/img/logo.png";
+        document.cookie="favicon="+favicon+"; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/";
+        (function() {
+           var link=document.querySelector("link[rel*='icon']") || document.createElement('link');
+           link.type='image/x-icon';
+           link.rel='shortcut icon';
+           link.href=favicon;
+           document.getElementsByTagName('head')[0].appendChild(link);
+       })();
+    }
+    else{
+        (function() {
+           var link=document.querySelector("link[rel*='icon']") || document.createElement('link');
+           link.type='image/x-icon';
+           link.rel='shortcut icon';
+           link.href=favicon;
+           document.getElementsByTagName('head')[0].appendChild(link);
+       })();
+    }
+    if (title2==null || title2==undefined || title2==""){
+        title2="DM Unbl0cker";
+        document.cookie="title2="+title2+"; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/";
+        document.title=title2;
+    }
+    else{
+        document.title=title2;
+    }
+</script>
+
+<script>
+function isUrl(val = '') {
+        if (/^http(s?):\/\//.test(val) || val.includes('.') && val.substr(0, 1) !== ' ') return true;
+        return false;
+    };
+    
+   document.addEventListener("DOMContentLoaded", function() {
+  var searchEngine = document.getElementById("searchengine").value;
+  var searchInput = document.getElementById("search").value;
+       
+  searchInput.value = searchEngine || "https://www.google.com/search?q=";
+});
+
+    function fade(){
+        document.getElementById("loadimg").style.animation="linear 1.5s 1 running fadeout";
+        document.getElementById("loadimg").addEventListener("animationend", () => {
+            document.getElementById("black").style.animation="linear 1.5s 1 running fadeout";
+            document.getElementById("black").addEventListener("animationend", () => {
+                document.getElementById("black").remove();
+            });
+            document.getElementById("loadimg").remove();
+        });
+
+    }
+    setTimeout(fade,1200);
+</script>
