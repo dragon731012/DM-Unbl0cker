@@ -104,6 +104,8 @@
   }
 </style>
 <script>
+  var script1 = document.createElement('script');script1.src="/scripts/cursor.js"; document.body.appendChild(script1);
+  
   jQuery(document).ready(function($){
     $('.buttons [data-sort]').sort(function(a, b) {  
       $(a).data("sort",$(a).text());
