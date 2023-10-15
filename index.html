@@ -25,9 +25,7 @@
     <h1 id="title1">DM Unblocker</h1>
 </div>
 <div class="credits" onclick="gotocredits();">
-    <h4 id="credits">
-        credits
-    </h4>
+    <h4 id="creditstext" class="creditstext">credits</h4>
 </div>
 <form class="searchbox" id="searchbox">
     <input id="searchengine" value="" type="hidden"/>
@@ -100,11 +98,16 @@
     border: none;
     }
     .credits{
-    position:absolute;
-    left:7px;
-    bottom:0px;
-    color:blue;
+      font-family: "Roboto", Arial, Helvetica, sans-serif;
+      position: absolute;
+      left:1%;
+      bottom:1%;
+      text-align: center;
+      color: #FFFFFF;
     }
+    .creditstext{
+    color: blue;
+  }
     .searchbox{
     width:47%;
     height:7%;
