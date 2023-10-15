@@ -24,9 +24,9 @@
 <div class="title">
     <h1 id="title1">DM Unblocker</h1>
 </div>
-<div class="credits">
+<div class="credits" onclick="gotocredits();">
     <h4 id="credits">
-        credit to TIW for the static unblocker
+        credits
     </h4>
 </div>
 <form class="searchbox" id="searchbox">
@@ -242,6 +242,10 @@
     }
 </style>
 <script>
+    function gotocredits(){
+    window.location.href=window.location.origin+"/credits";
+  }
+    
     if (get_cookie("autoblank")=="on"){
         if (window.top !== window) {
             var title2=get_cookie("title2");
