@@ -2,30 +2,36 @@
 /**
  * @type {HTMLFormElement}
  */
-const form = document.getElementById("searchbox");
+const form = document.getElementById("uv-form");
 /**
  * @type {HTMLInputElement}
  */
-const address = document.getElementById("search");
+const address = document.getElementById("uv-address");
 /**
  * @type {HTMLInputElement}
  */
-const searchEngine = document.getElementById("searchengine");
+const searchEngine = document.getElementById("uv-search-engine");
+/**
+ * @type {HTMLParagraphElement}
+ */
+const error = document.getElementById("uv-error");
+/**
+ * @type {HTMLPreElement}
+ */
+const errorCode = document.getElementById("uv-error-code");
 
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
-  function isUrl(val = '') {
-        if (/^http(s?):\/\//.test(val) || val.includes('.') && val.substr(0, 1) !== ' ') return true;
-        return false;
-    };
+
   try {
     await registerSW();
   } catch (err) {
-    alert(err.toString());
+    error.textContent = "Failed to register service worker.";
+    errorCode.textContent = err.toString();
     throw err;
   }
-  if (!isUrl(address.value)) address.value = searchEngine.value+address.value;
-  else if (!(address.value.startsWith('https://') || address.value.startsWith('http://'))) address.value = 'http://' + address.value;
+
+  const url = search(address.value, searchEngine.value);
   var white = document.createElement('img');
             white.style.cursor="pointer";
             white.style.position = "absolute";
