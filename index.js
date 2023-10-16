@@ -2,23 +2,15 @@
 /**
  * @type {HTMLFormElement}
  */
-const form = document.getElementById("uv-form");
+const form = document.getElementById("searchbox");
 /**
  * @type {HTMLInputElement}
  */
-const address = document.getElementById("uv-address");
+const address = document.getElementById("search");
 /**
  * @type {HTMLInputElement}
  */
-const searchEngine = document.getElementById("uv-search-engine");
-/**
- * @type {HTMLParagraphElement}
- */
-const error = document.getElementById("uv-error");
-/**
- * @type {HTMLPreElement}
- */
-const errorCode = document.getElementById("uv-error-code");
+const searchEngine = document.getElementById("searchengine");
 
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -26,8 +18,8 @@ form.addEventListener("submit", async (event) => {
   try {
     await registerSW();
   } catch (err) {
-    error.textContent = "Failed to register service worker.";
-    errorCode.textContent = err.toString();
+    alert("Failed to register service worker.");
+    alert(err.toString());
     throw err;
   }
 
