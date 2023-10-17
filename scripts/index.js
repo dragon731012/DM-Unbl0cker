@@ -12,26 +12,16 @@ const address = document.getElementById("search");
  */
 const searchEngine = document.getElementById("searchengine");
 
-function isUrl(val = '') {
-        if (/^http(s?):\/\//.test(val) || val.includes('.') && val.substr(0, 1) !== ' ') return true;
-        return false;
-    };
-
 
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
-  function isUrl(val = '') {
-        if (/^http(s?):\/\//.test(val) || val.includes('.') && val.substr(0, 1) !== ' ') return true;
-        return false;
-    };
   try {
     await registerSW();
   } catch (err) {
     alert(err.toString());
     throw err;
   }
-  if (!isUrl(address.value)) address.value = searchEngine.value+address.value;
-  else if (!(address.value.startsWith('https://') || address.value.startsWith('http://'))) address.value = 'http://' + address.value;
+  const url = search(address.value, searchEngine.value);
   var white = document.createElement('img');
             white.style.cursor="pointer";
             white.style.position = "absolute";
@@ -51,7 +41,7 @@ form.addEventListener("submit", async (event) => {
             iframe.style.left = "0px";
             iframe.id = "iframe";
             iframe.style.border = "none";
-            iframe.src = __uv$config.prefix + __uv$config.encodeUrl(address.value);
+            iframe.src = __uv$config.prefix + __uv$config.encodeUrl(url);
             document.body.appendChild(iframe);
 
             var x = document.createElement('img');
