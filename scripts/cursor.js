@@ -9,7 +9,7 @@ if (isenabled=="on"){
   ring.style.pointerEvents = "none";
   ring.style.userdrag="none";
   ring.style.userselect="none";
-  ring.style.zIndex="999999999999999999999999999999999999";
+  ring.style.zIndex="2147483647";
   ring.style.display="none";
   ring.style.position="absolute";
   ring.style.width="45px";
