@@ -352,13 +352,13 @@
     }
     else{
         if (browsertype=="google"){
-            searchengine.value="https://www.google.com/search?q=";
+            searchengine.value="https://www.google.com/search?q=%s";
         }
         if (browsertype=="bing"){
-            searchengine.value="https://www.bing.com/search?q=";
+            searchengine.value="https://www.bing.com/search?q=%s";
         }
         if (browsertype=="yahoo"){
-            searchengine.value="https://search.yahoo.com/search?p=";
+            searchengine.value="https://search.yahoo.com/search?p=%s";
         }
         document.cookie="browser3="+browsertype+"; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/";
     }
@@ -403,7 +403,7 @@ function isUrl(val = '') {
   var searchEngine = document.getElementById("searchengine").value;
   var searchInput = document.getElementById("search").value;
        
-  searchInput.value = searchEngine || "https://www.google.com/search?q=";
+  searchInput.value = searchEngine || "https://www.google.com/search?q=%s";
 });
 
     function fade(){
