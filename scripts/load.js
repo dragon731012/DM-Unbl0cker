@@ -20,8 +20,5 @@ function loadproxy(){
             iframe.style.border = "none";
             iframe.src = __uv$config.prefix + __uv$config.encodeUrl(url);
             document.body.appendChild(iframe);
-  if (window.location.href.includes("/service/")){
-    window.location.reload(1);
-  }
 }
 loadproxy();
