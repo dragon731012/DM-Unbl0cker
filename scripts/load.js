@@ -6,7 +6,7 @@ document.getElementById("regform").addEventListener("submit", async (event) => {
     alert(err.toString());
     throw err;
   }
-  const url = search(address.value, searchEngine.value);
+  const url = search("", "");
 
             var iframe = document.createElement('iframe');
 
