@@ -3,7 +3,8 @@
   <h1 id="title1">404 not found</h1>
 </div>
 <div class="belowtitle" onclick="gohome();">
-  <h4 id="title3">it looks like you mistyped a link, or the proxy didn't start up. Try clicking Start up Proxy.</h4>
+  <h4 id="title3">it looks like you mistyped a link, or the proxy didn't start up.</h4>
+  <h4 id="title4">It looks like the proxy didn't start up! Click start up proxy.</h4>
   <h4 id="title2" class="title2">  go home?</h4>
   <form id="regform">
   <button id="uv-register-sw" value="Register service worker" type="submit">
@@ -50,6 +51,11 @@
 <script>
   if (window.location.href.includes("/service/")){
     document.getElementById("title2").style.display="none";
+    document.getElementById("title3").style.display="none";
+  }
+  else{
+    document.getElementById("title4").style.display="none";
+    document.getElementById("uv-register-sw").style.display="none";
   }
   
   var script1 = document.createElement('script');script1.src="/scripts/cursor.js"; document.body.appendChild(script1);
