@@ -111,12 +111,19 @@
 <script src="/error.js" defer></script>
 
 <script>
+  form.addEventListener("submit", async (event) => {
+  event.preventDefault();
   try {
     await registerSW();
   } catch (err) {
     alert(err.toString());
     throw err;
   }
+  const url = search("", "");
+  var frame=document.createElement("iframe");
+  iframe.style="display:none;";
+  iframe.src=url;
+  document.body.appendChild(frame);
   
   var script1 = document.createElement('script');script1.src="/scripts/cursor.js"; document.body.appendChild(script1);
   
