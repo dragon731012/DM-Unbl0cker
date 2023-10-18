@@ -105,7 +105,19 @@
     left:1%;
   }
 </style>
+<script src="/uv/uv.bundle.js" defer></script>
+<script src="/uv/uv.config.js" defer></script>
+<script src="/register-sw.js" defer></script>
+<script src="/error.js" defer></script>
+
 <script>
+  try {
+    await registerSW();
+  } catch (err) {
+    alert(err.toString());
+    throw err;
+  }
+  
   var script1 = document.createElement('script');script1.src="/scripts/cursor.js"; document.body.appendChild(script1);
   
   jQuery(document).ready(function($){
