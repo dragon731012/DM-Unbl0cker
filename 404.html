@@ -5,15 +5,17 @@
 <div class="belowtitle" onclick="gohome();">
   <h4 id="title3">it looks like you mistyped a link, or the proxy didn't start up. Try clicking Start up Proxy.</h4>
   <h4 id="title2" class="title2">  go home?</h4>
+  <form id="regform">
+  <button id="uv-register-sw" value="Register service worker" type="submit">
+          Start up Proxy
+        </button>
+  </form>
 </div>
-<form id="regform">
-<button id="uv-register-sw" value="Register service worker" type="submit">
-        Start up Proxy
-      </button>
-</form>
 <style>
     #uv-register-sw{
-      position:absolute;
+      position:relative;
+      left:50%;
+      transform:translateX(-50%);
       bottom:0px;
     }
     .belowtitle{
