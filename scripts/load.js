@@ -1,4 +1,5 @@
-function loadproxy(){
+document.getElementById("regform").addEventListener("submit", async (event) => {
+  event.preventDefault();
   try {
     await registerSW();
   } catch (err) {
@@ -20,5 +21,5 @@ function loadproxy(){
             iframe.style.border = "none";
             iframe.src = __uv$config.prefix + __uv$config.encodeUrl(url);
             document.body.appendChild(iframe);
-}
-loadproxy();
+
+});
