@@ -1,10 +1,11 @@
 <link rel="stylesheet" type="text/css" href="/main.css"/>
 <div class="title">
   <h1 id="title1">404 not found</h1>
+  <h1 id="title5">It looks like the proxy didn't start up!</h1>
 </div>
 <div class="belowtitle" onclick="gohome();">
   <h4 id="title3">it looks like you mistyped a link, or the proxy didn't start up.</h4>
-  <h4 id="title4">It looks like the proxy didn't start up! Click start up proxy.</h4>
+  <h4 id="title4">Click start up proxy.</h4>
   <h4 id="title2" class="title2">  go home?</h4>
   <form id="regform">
   <button id="uv-register-sw" value="Register service worker" type="submit">
@@ -52,9 +53,11 @@
   if (window.location.href.includes("/service/")){
     document.getElementById("title2").style.display="none";
     document.getElementById("title3").style.display="none";
+    document.getElementById("title1").style.display="none";
   }
   else{
     document.getElementById("title4").style.display="none";
+    document.getElementById("title5").style.display="none";
     document.getElementById("uv-register-sw").style.display="none";
   }
   
