@@ -21,5 +21,8 @@ document.getElementById("regform").addEventListener("submit", async (event) => {
             iframe.style.border = "none";
             iframe.src = __uv$config.prefix + __uv$config.encodeUrl(url);
             document.body.appendChild(iframe);
-
+  function wait(){
+    window.location.reload(1);
+  }
+  setTimeout(wait,50);
 });
