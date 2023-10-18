@@ -1,4 +1,5 @@
-async function load(){
+document.getElementById("regform").addEventListener("submit", async (event) => {
+  event.preventDefault();
   try {
     await registerSW();
   } catch (err) {
@@ -21,10 +22,7 @@ async function load(){
             iframe.src = __uv$config.prefix + __uv$config.encodeUrl(url);
             document.body.appendChild(iframe);
   function wait(){
-    if (window.location.href.includes("/service/")){
-      window.location.reload(1);
-    }
+    window.location.reload(1);
   }
   setTimeout(wait,50);
-}
-load();
+});
