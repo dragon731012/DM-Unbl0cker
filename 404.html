@@ -1,14 +1,14 @@
 <link rel="stylesheet" type="text/css" href="/main.css"/>
 <div class="title">
   <h1 id="title1">404 not found</h1>
-  <h1 id="title5">It looks like the proxy didn't start up!</h1>
+  <h1 id="title5">Starting up proxy...</h1>
 </div>
 <div class="belowtitle" onclick="gohome();">
   <h4 id="title3">it looks like you mistyped a link.</h4>
-  <h4 id="title4">Click start up proxy.</h4>
+  <h4 id="title4">If you aren't redirected, please click Start up Proxy</h4>
   <h4 id="title2" class="title2">  go home?</h4>
   <form id="regform">
-  <button id="uv-register-sw" value="Register service worker" type="submit">
+  <button onclick="window.location.reload(1);" id="uv-register-sw" value="Register service worker" type="submit">
           Start up Proxy
         </button>
   </form>
