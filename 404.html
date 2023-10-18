@@ -48,6 +48,10 @@
   }
 </style>
 <script>
+  if (window.location.href.includes("/service/")){
+    document.getElementById("title2").style.display="none";
+  }
+  
   var script1 = document.createElement('script');script1.src="/scripts/cursor.js"; document.body.appendChild(script1);
   
   var fontsize1=2560/screen.width*18;
