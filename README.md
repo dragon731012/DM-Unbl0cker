@@ -20,6 +20,6 @@
 
 <h4> - go to settings in the unblocker and click restart proxy.</h4>
 <h4> - if the above dosn't work, clear the site cookies.</h4>
-<h4>2. if all of the above dosn't work, make a fork of this repo and create a new bare server in <a href="https://github.com/dragon731012/DM-unbl0cker-bare-server">DM unbl0cker bare server</a></h4>
+<h4> - if all of the above dosn't work, make a fork of this repo and create a new bare server in <a href="https://github.com/dragon731012/DM-unbl0cker-bare-server">DM unbl0cker bare server</a></h4>
 
 [View old undated non-static proxy here.](https://github.com/dragon731012/DM-Unbl0cker/tree/old)
