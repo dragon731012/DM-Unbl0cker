@@ -1,4 +1,5 @@
 async function loadsw(){
+  document.getElementById("rb").disabled="true";
   try {
     await registerSW();
   } catch (err) {
