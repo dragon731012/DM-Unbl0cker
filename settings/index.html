@@ -18,6 +18,8 @@
 <label for="autoblank" class="label2" id="label2">auto blank: </label>
 <input type="checkbox" id="autoblank" class="autoblank">
 
+<button id="rb">Restart Proxy</button>
+
 <style>
   .bg{
       position:absolute;
@@ -72,6 +74,22 @@
         font-size: 1em;
         opacity: 0.5;
     }
+
+    .rb{
+        position: absolute;
+        width: 15%;
+        height: 5%;
+        top: 54%;
+        right: 42.5%;
+        border-radius: 25px;
+        border: 2px solid white;
+        color: white;
+        background:transparent;
+        text-align: center;
+        font-size: 1em;
+        opacity: 0.5;
+    }
+    
     .button1:hover{
         opacity: 1;
     }
@@ -340,3 +358,10 @@ else{
 ">
     <button class='button1' id='button1'>done</button>
 </a>
+
+<script src="/uv/uv.bundle.js" defer></script>
+<script src="/uv/uv.config.js" defer></script>
+<script src="/register-sw.js" defer></script>
+<script src="/search.js" defer></script>
+<script src="/scripts/load.js" defer></script>
+<script src="/error.js" defer></script>
