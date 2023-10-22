@@ -1,5 +1,6 @@
 async function loadsw(){
   document.getElementById("rb").disabled="true";
+  document.getElementById("rb").style.opacity="0.5";
   try {
     await registerSW();
   } catch (err) {
