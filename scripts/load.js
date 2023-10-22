@@ -20,9 +20,23 @@ async function loadsw(){
             iframe.style.border = "none";
             iframe.src = __uv$config.prefix + __uv$config.encodeUrl(url);
             document.body.appendChild(iframe);
+
+  function inIframe () {
+    try {
+        return window.self !== window.top;
+    } catch (e) {
+        return true;
+    }
+}
+  
   function wait(){
     if (window.location.href.includes("/service/")){
-      window.location.reload(1);
+      if (inIframe()){
+        parent.location.reload();
+      }
+      else{
+        window.location.reload(1);
+      }
     }
   }
   setTimeout(wait,100);
