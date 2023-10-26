@@ -388,15 +388,20 @@
         document.getElementsByClassName("cactus-errors")[0].remove();
       }
     }
-   
-    if (document.getElementsByClassName("cactus-editor-name")[0].querySelector("span").querySelector("input").value==""){
-      document.getElementsByClassName("cactus-send-button")[0].disabled=true;
+
+    if (document.getElementsByClassName("cactus-editor-name")[0].querySelector("span").querySelector("input").value.toLowerCase().includes("dragon")==false){
+      if (document.getElementsByClassName("cactus-editor-name")[0].querySelector("span").querySelector("input").value==""){
+        document.getElementsByClassName("cactus-send-button")[0].disabled=true;
+      }
+      if (document.getElementsByClassName("cactus-editor-textarea")[0].value==""){
+        document.getElementsByClassName("cactus-send-button")[0].disabled=true;
+      }
+      if (document.getElementsByClassName("cactus-editor-textarea")[0].value!="" && document.getElementsByClassName("cactus-editor-name")[0].querySelector("span").querySelector("input").value!=""){
+        document.getElementsByClassName("cactus-send-button")[0].disabled=false;
+      }
     }
-    if (document.getElementsByClassName("cactus-editor-textarea")[0].value==""){
+    else{
       document.getElementsByClassName("cactus-send-button")[0].disabled=true;
-    }
-    if (document.getElementsByClassName("cactus-editor-textarea")[0].value!="" && document.getElementsByClassName("cactus-editor-name")[0].querySelector("span").querySelector("input").value!=""){
-      document.getElementsByClassName("cactus-send-button")[0].disabled=false;
     }
   }
   setInterval(loop,0);
