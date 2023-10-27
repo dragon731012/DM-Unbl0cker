@@ -46,6 +46,20 @@
 <a onclick="window.location.pathname='/chat';">
     <img src="/img/message.png" class="chat" id="chat"/>
 </a>
+
+<a onclick="window.location.pathname='/settings';">
+    <div class="labels" id="settingslabel">Settings</div>
+</a>
+<a onclick="window.location.pathname='/games';">
+    <div class="labels" id="gameslabel">Games</div>
+</a>
+<a onclick="window.location.pathname='/apps';">
+    <div class="labels" id="appslabel">Apps</div>
+</a>
+<a onclick="window.location.pathname='/chat';">
+    <div class="labels" id="chatlabel">Chat</div>
+</a>
+
 <div class="icons">
     <a onclick="blank();">
     <img src="/img/IMG_3024.png" class="blank" id="blank"/>
@@ -179,6 +193,26 @@
     height:70px;
     right:40%;
     opacity:1;
+    }
+    .labels{
+    width:70px;
+    height:20px;
+    color:white;
+    position:absolute;
+    top:calc(1% + 70px);
+    text-align:center;
+    }
+    #chatlabel{
+    right:180px;
+    }
+    #gameslabel{
+    right:1%;
+    }
+    #appslabel{
+    right:90px;
+    }
+    #settingslabel{
+    left:1%;
     }
     .blank{
     position: absolute;
