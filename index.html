@@ -71,6 +71,17 @@
     <img src="/img/discord.png" class="discord" id="discord"/>
     </a>
 </div>
+<div class="iconslabel">
+    <a onclick="blank();">
+    <div class="labels" id="blanklabel"><b>about:blank</b></div>
+    </a>
+    <a href="https://github.com/dragon731012" target="_blank" rel="noopener">
+    <div class="labels" id="githublabel"><b>my github</b></div>
+    </a>
+    <a href="https://discord.gg/hrXXUeWgrn" target="_blank" rel="noopener">
+    <div class="labels" id="discordlabel"><b>my discord</b></div>
+    </a>
+</div>
 <style>
     @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap");
     .black{
@@ -116,7 +127,7 @@
     }
     .credits{
       z-index:100;
-      font-family: "Roboto", Arial, Helvetica, sans-serif;
+      font-family: 'Brush Script MT', cursive;
       position: absolute;
       left:1%;
       bottom:1%;
@@ -184,7 +195,16 @@
     position: absolute;
     width: 100%;
     height: 70px;
-    bottom: 0%;
+    bottom: 30px;
+    left: 0%;
+    }
+    .iconslabel{
+    align: center;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    bottom: 5px;
     left: 0%;
     }
     .github{
@@ -214,6 +234,16 @@
     }
     #settingslabel{
     left:1%;
+    }
+
+    #discordlabel{
+    left:40%;
+    }
+    #githublabel{
+    right:40%;
+    }
+    #blanklabel{
+    right:0%;
     }
     .blank{
     position: absolute;
