@@ -9,6 +9,54 @@
 <img src="/img/black.jpeg" id="black" class="black"/>
 <img src="/img/loading.gif" id="loadimg" class="loadimg"/>
 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<div id="particlebox"></div>
+<script>
+    $(document).ready(function () {
+    setInterval(() => {
+      var particle = document.createElement("div");
+      particle.className = "particle";
+      document.getElementById("particlebox").appendChild(particle);
+      var x = Math.floor(Math.random() * window.innerWidth);
+      var y = Math.floor(Math.random() * window.innerHeight);
+
+      var speed = Math.floor(Math.random() * 4000);
+      var size = Math.floor(Math.random() * 25);
+
+      if (Math.floor(Math.random() * 2) == 1) {
+        if (y > x) {
+          x = -50;
+        } else {
+          y = -50;
+        }
+      } else {
+        if (y > x) {
+          x = window.innerWidth + 50;
+        } else {
+          y = window.innerHeight + 50;
+        }
+      }
+      $(particle).animate(
+        {
+          left: x + "px",
+          top: y + "px",
+          opacity: "0.2",
+          display: "none",
+          height: 10 + size + "px",
+          width: 10 + size + "px"
+        },
+        3000 + speed,
+        function () {
+          particle.remove();
+        }
+      );
+    }, 50);
+  });
+</script>
+
+
+
 <script>
     var link=document.querySelector("link[rel*='icon']") || document.createElement('link');
     link.type='image/x-icon';
@@ -23,7 +71,6 @@
       (function () {var url = document.URL; var urlObj = new window.URL(window.location.href); win = window.open(); win.document.body.style.margin = "0"; win.document.body.style.height = "100vh"; var iframe = win.document.createElement("iframe"); iframe.style.border = "none"; iframe.style.width = "100%"; iframe.style.height = "100%"; iframe.style.margin = "0"; iframe.referrerpolicy = "no-referrer"; iframe.allow = "fullscreen"; iframe.src = url.toString(); win.document.body.appendChild(iframe);window.location.href="https://google.com";})();
     }
 </script>
-<img src="/img/IMG_2996.gif" class="bg"/>
 <div class="title">
     <h1 id="title1">DM Unblocker</h1>
 </div>
