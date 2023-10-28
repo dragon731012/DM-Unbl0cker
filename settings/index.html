@@ -17,8 +17,6 @@
     <option value="yahoo!">yahoo!</option> 
 </select>
 
-<label for="cursoractivate" class="label1" id="label1">cursor: </label>
-<input type="checkbox" id="cursoractivate" class="cursoractivate">
 <label for="autoblank" class="label2" id="label2">auto blank: </label>
 <input type="checkbox" id="autoblank" class="autoblank">
 
@@ -163,7 +161,6 @@
 
 <script>
 browser1.style.left=screen.width/2-70/2;
-cursoractivate.style.left=screen.width/2-20/2+50/2;
 label1.style.left=screen.width/2-50/2-50/2;
 autoblank.style.left=screen.width/2-20/2+50/2;
 label2.style.left=screen.width/2-50/2-50/2;
@@ -173,7 +170,6 @@ function get_cookie(cookie_name) { const value = "; " + document.cookie; const p
 var title2=get_cookie("title2");
 var favicon=get_cookie("favicon");
 var browser2=get_cookie("browser3");
-var cursor2=get_cookie("cursor");
 var abcookie=get_cookie("autoblank");
 
 if (title2!=undefined){
@@ -181,18 +177,7 @@ if (title2!=undefined){
     document.title=title2;
 }
     
-if (cursor2!=undefined){
-    if (cursor2=="on"){
-        cursoractivate.checked=true;
-    }
-    if (cursor2=="off"){
-        cursoractivate.checked=false;
-    }
-}
-else{
-    document.cookie="cursor=on; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/";
-    cursoractivate.checked=true;
-}
+
 
 if (abcookie!=undefined){
     if (abcookie=="on"){
@@ -281,17 +266,10 @@ var imported=document.getElementById('importing').value;
 var title2=document.getElementById('title').value;
 var favicon=document.getElementById('url1').value;
 var browser4=document.getElementById('browser1').value;
-var cursor3=document.getElementById('cursoractivate').checked;
 var autoblanker=document.getElementById('autoblank').checked;
            
 if (imported==''){
-    if (cursor3==true){
-        document.cookie='cursor=on; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/';
-    }
-
-    if (cursor3==false){
-        document.cookie='cursor=off; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/';
-    }
+    
 
     if (autoblanker==true){
         document.cookie='autoblank=on; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/';
@@ -313,13 +291,7 @@ if (imported==''){
     document.cookie='favicon='+favicon+'; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/';
 }
 else{
-    if (cursor3==true){
-        document.cookie='cursor=on; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/';
-    }
-
-    if (cursor3==false){
-        document.cookie='cursor=off; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/';
-    }
+    
 
     if (autoblanker==true){
         document.cookie='autoblank=on; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/';
