@@ -34,7 +34,7 @@
     <h1 id="title1">DM Unblocker</h1>
 </div>
 <div class="credits" onclick="gotocredits();">
-    <h4 id="creditstext" class="creditstext">credits</h4>
+    <div id="creditstext" class="creditstext">credits</div>
 </div>
 <form class="searchbox" id="searchbox">
     <input id="searchengine" value="" type="hidden"/>
@@ -408,11 +408,9 @@
     
     var fontsize1=2560/screen.width*18;
     var fontsize2=2560/screen.width*7.5;
-    var fontsize3=2560/screen.width*6.8;
     
     title1.style.fontSize = fontsize1+"px";
     search.style.fontSize = fontsize2+"px";
-    creditstext.style.fontSize = fontsize3+"px";
 
     if (browsertype==null || browsertype==undefined || browsertype==""){
         browsertype="google";
