@@ -49,7 +49,7 @@
 <iframe id="frame" src="home.html"></iframe>
 <script>
   var frame=document.getElementById("frame");
-  setInerval(() => {
+  setInterval(() => {
     if (window.location.href.includes("#home")){
       frame.src="/home.html";
       window.location.href.replace("#home","");
