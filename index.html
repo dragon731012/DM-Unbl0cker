@@ -49,7 +49,7 @@
 <iframe id="frame" src="home.html"></iframe>
 <script>
   var frame=document.getElementById("frame");
-  frame.style.height=window.innerHeight-document.getElementsByClassName("navbar")[0].offsetHeight;
+  frame.style.height=(window.innerHeight-document.getElementsByClassName("navbar")[0].offsetHeight+5)+"px";
         
   function home(){
     frame.src="/home.html";
