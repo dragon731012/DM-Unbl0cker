@@ -25,6 +25,12 @@ $(document).ready(function () {
         var hovercolor="#06c22b";
         var navcolor="#017819";
     }
+    else if (get_cookie("theme")=="patriot"){
+        var particlecolor="white";
+        var backgroundcolor="blue";
+        var hovercolor="white";
+        var navcolor="red";
+    }
     else{
         var particlecolor="white";
         var backgroundcolor="black";
