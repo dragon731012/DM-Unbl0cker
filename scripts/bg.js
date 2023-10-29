@@ -20,7 +20,7 @@ $(document).ready(function () {
     
     var style = document.createElement('style');
     style.type = 'text/css';
-    style.innerHTML = ".search{ background-color:"+backgroundcolor+"; } .particle { width: 0px; opacity: 1; border-radius: 50%; height: 0px; left: 50%; top: 50%; background-color: "+particlecolor+"; position: absolute; } #particlebox { color: transparent; z-index: -9999999999; background: transparent; position: absolute; left: 0px; top: 0px; overflow: hidden; width: 100%; height: 100%; } body { background-color: "+backgroundcolor+"; overflow:hidden; }";
+    style.innerHTML = ".search{ background-color:"+backgroundcolor+" !important; } .particle { width: 0px; opacity: 1; border-radius: 50%; height: 0px; left: 50%; top: 50%; background-color: "+particlecolor+"; position: absolute; } #particlebox { color: transparent; z-index: -9999999999; background: transparent; position: absolute; left: 0px; top: 0px; overflow: hidden; width: 100%; height: 100%; } body { background-color: "+backgroundcolor+"; overflow:hidden; }";
     document.getElementsByTagName('head')[0].appendChild(style);
 
 
