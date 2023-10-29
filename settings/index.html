@@ -318,7 +318,7 @@ if (imported==''){
     document.cookie='favicon='+favicon+'; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/';
 
     setTimeout(() => {
-        window.location.reload(1);
+        window.top.location.reload();
     },50);
 }
 else{
@@ -356,7 +356,7 @@ else{
     t.appendChild(f);
 
     setTimeout(() => {
-        window.location.reload(1);
+        window.top.location.reload();
     },50);
 }
             
