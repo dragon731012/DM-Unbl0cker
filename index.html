@@ -58,9 +58,11 @@
         left:0px;
       }
     #fsbutton{
+      display:block;
       position:absolute;
       background-color:#333;
       width:100px;
+      cursor: pointer !important;
       z-index:3;
       height:25px;
       left:calc(50% - 50px);
@@ -93,7 +95,7 @@
   var frame=document.getElementById("frame");
   var fsbutton=document.getElementById("fsbutton");
 
-  fsbutton.style.top=(document.getElementsByClassName("navbar")[0].offsetHeight-12.5)+"px";
+  fsbutton.style.top=(document.getElementsByClassName("navbar")[0].offsetHeight-19)+"px";
   
   frame.style.height=(window.innerHeight-document.getElementsByClassName("navbar")[0].offsetHeight+5)+"px";
 
