@@ -43,6 +43,12 @@ $(document).ready(function () {
         var hovercolor="yellow";
         var navcolor="#ebad05";
     }
+    else if (get_cookie("theme")=="halloween"){
+        var particlecolor="green";
+        var backgroundcolor="#f29d13";
+        var hovercolor="#a6a6a6";
+        var navcolor="black";
+    }
     else{
         var particlecolor="white";
         var backgroundcolor="black";
