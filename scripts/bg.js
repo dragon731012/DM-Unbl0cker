@@ -10,8 +10,8 @@ $(document).ready(function () {
     else if (get_cookie("theme")=="ocean"){
         var particlecolor="#87CEFA";
         var backgroundcolor="#2b4fff";
-        var hovercolor="#c4e9ff";
-        var navcolor="#0075ba";
+        var hovercolor="#0075ba";
+        var navcolor="#024edb";
     }
     else if (get_cookie("theme")=="cotton candy"){
         var particlecolor="#fab3ff";
@@ -28,7 +28,7 @@ $(document).ready(function () {
     
     var style = document.createElement('style');
     style.type = 'text/css';
-    style.innerHTML = "ul.navbar {background-color: "+navcolor+" !important;} li.nav-item2 a:hover,li.nav-item a:hover { background-color: "+hovercolor+" !important; } .black{ background-color:"+backgroundcolor+" !important; } .search{ background-color:"+backgroundcolor+" !important; } .particle { width: 0px; opacity: 1; border-radius: 50%; height: 0px; left: 50%; top: 50%; background-color: "+particlecolor+"; position: absolute; } #particlebox { color: transparent; z-index: -9999999999; background: transparent; position: absolute; left: 0px; top: 0px; overflow: hidden; width: 100%; height: 100%; } body { background-color: "+backgroundcolor+"; overflow:hidden; }";
+    style.innerHTML = "#fsbutton{background-color:"+navcolor+" !important;} ul.navbar {background-color: "+navcolor+" !important;} li.nav-item2 a:hover,li.nav-item a:hover { background-color: "+hovercolor+" !important; } .black{ background-color:"+backgroundcolor+" !important; } .search{ background-color:"+backgroundcolor+" !important; } .particle { width: 0px; opacity: 1; border-radius: 50%; height: 0px; left: 50%; top: 50%; background-color: "+particlecolor+"; position: absolute; } #particlebox { color: transparent; z-index: -9999999999; background: transparent; position: absolute; left: 0px; top: 0px; overflow: hidden; width: 100%; height: 100%; } body { background-color: "+backgroundcolor+"; overflow:hidden; }";
     document.getElementsByTagName('head')[0].appendChild(style);
 
 
