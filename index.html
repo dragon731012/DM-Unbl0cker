@@ -126,7 +126,7 @@ function credits(){
     frame.src="/credits";
   }
 
-  setTimeout(() => {
+  setTimeout(function(){
           document.cookie="location="+frame.src.replace(window.location.origin,"")+"; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/";
   },100);
         
