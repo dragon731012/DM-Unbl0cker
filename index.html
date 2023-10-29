@@ -100,7 +100,7 @@ function get_cookie(cookie_name) { const value = "; " + document.cookie; const p
       (function () {var url = document.URL; var urlObj = new window.URL(window.location.href); win = window.open(); win.document.body.style.margin = "0"; win.document.body.style.height = "100vh"; var iframe = win.document.createElement("iframe"); iframe.style.border = "none"; iframe.style.width = "100%"; iframe.style.height = "100%"; iframe.style.margin = "0"; iframe.referrerpolicy = "no-referrer"; iframe.allow = "fullscreen"; iframe.src = url.toString(); win.document.body.appendChild(iframe);window.location.href="https://google.com";})();
     }
 
-     if (get_cookie("location")!=null && get_cookie("location")!=undefined){
+     if (get_cookie("location")!=null){
           frame.src=get_cookie("location");
   }
         
@@ -136,7 +136,7 @@ function credits(){
     frame.src="/credits";
   }
 
-  setTimeout(function(){
+  setInterval(function(){
           document.cookie="location="+frame.contentWindow.location.href.replace(window.location.origin,"")+"; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/";
   },100);
         
@@ -219,7 +219,6 @@ function credits(){
     }
 
    window.navigator.serviceWorker.register('./sw.js');
-    var script1 = document.createElement('script');script1.src="/scripts/cursor.js"; document.body.appendChild(script1);
 
 if (favicon==null || favicon==undefined || favicon==""){
         favicon="/img/logo.png";
