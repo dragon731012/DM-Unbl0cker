@@ -13,6 +13,12 @@ $(document).ready(function () {
         var hovercolor="#0075ba";
         var navcolor="#024edb";
     }
+    else if (get_cookie("theme")=="beach"){
+        var particlecolor="#dbd446";
+        var backgroundcolor="#c7bda3";
+        var hovercolor="#dbd446";
+        var navcolor="#65aceb";
+    }
     else if (get_cookie("theme")=="cotton candy"){
         var particlecolor="#fab3ff";
         var backgroundcolor="#e247ed";
