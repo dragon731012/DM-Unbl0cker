@@ -177,9 +177,9 @@
     .browserlabel{
         background:transparent;
         color: white;
-        border: 2px solid white;
         position:absolute;
         width:70px;
+        text-align:center;
         height:40px;
         top: 20%;
     }
@@ -188,6 +188,7 @@
         background:transparent;
         color: white;
         position:absolute;
+        border: 2px solid white;
         width:70px;
         height:40px;
         top: 30%;
@@ -196,6 +197,7 @@
     .themelabel{
         background:transparent;
         color: white;
+        text-align:center;
         position:absolute;
         width:70px;
         height:40px;
@@ -204,12 +206,12 @@
 </style>
 
 <script>
-browser1.style.left=screen.width/2+5;
-browserlabel.style.right=screen.width/2+5;
-theme.style.left=screen.width/2+5;
-themelabel.style.right=screen.width/2+5;
-autoblank.style.left=screen.width/2-20/2+50/2;
-label2.style.left=screen.width/2-50/2-50/2;
+browser1.style.left=window.innerWidth/2;
+browserlabel.style.right=window.innerWidth/2;
+theme.style.left=window.innerWidth/2;
+themelabel.style.right=window.innerWidth/2;
+autoblank.style.left=window.innerWidth/2-20/2+50/2;
+label2.style.left=window.innerWidth/2-50/2-50/2;
     
     
 function get_cookie(cookie_name) { const value = "; " + document.cookie; const parts = value.split("; " + cookie_name + "="); if (parts.length === 2) return parts.pop().split(";").shift(); } 
@@ -273,11 +275,11 @@ function whileloop(){
     
 setInterval(whileloop,15);
     
-var fontsize1=2560/screen.width*8;
+var fontsize1=2560/window.innerWidth*8;
 url1.style.fontSize = fontsize1+"px";
-var fontsize2=2560/screen.width*8;
+var fontsize2=2560/window.innerWidth*8;
 title.style.fontSize = fontsize2+"px";
-var fontsize3=2560/screen.width*8;
+var fontsize3=2560/window.innerWidth*8;
 importing.style.fontSize = fontsize3+"px";
     
    
