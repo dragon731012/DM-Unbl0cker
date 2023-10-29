@@ -19,6 +19,12 @@ $(document).ready(function () {
         var hovercolor="#ffd1ff";
         var navcolor="#dd16e0";
     }
+    else if (get_cookie("theme")=="rainforest"){
+        var particlecolor="#4788ff";
+        var backgroundcolor="#06c92d";
+        var hovercolor="#06c22b";
+        var navcolor="#017819";
+    }
     else{
         var particlecolor="white";
         var backgroundcolor="black";
