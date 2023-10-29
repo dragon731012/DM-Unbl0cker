@@ -80,6 +80,7 @@
     <li class="nav-item"><a onclick="apps();">Apps</a></li>
     <li class="nav-item"><a onclick="settings();">Settings</a></li>
     <li class="nav-item"><a onclick="credits();">Credits</a></li>
+    <li class="nav-item"><a onclick="blank();">About:blank</a></li>
 
     <li class="nav-item2"><a href="https://github.com/dragon731012">My Github</a></li>
     <li class="nav-item2"><a href="https://discord.gg/Vd5sJVqVzH">Discord Server</a></li>
@@ -98,6 +99,7 @@
   
   frame.style.height=(window.innerHeight-document.getElementsByClassName("navbar")[0].offsetHeight+5)+"px";
 
+                  
   function fullscreen(){
     if (frame.requestFullscreen) {
       frame.requestFullscreen();
@@ -124,7 +126,10 @@ function credits(){
     frame.src="/credits";
   }
 
-
+  setTimeout(() => {
+          document.cookie="location="+frame.src.replace(window.location.origin,"")+"; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/";
+  },100);
+        
   var link=document.querySelector("link[rel*='icon']") || document.createElement('link');
     link.type='image/x-icon';
     link.rel='shortcut icon';
@@ -137,6 +142,10 @@ function credits(){
     function blank(){
       (function () {var url = document.URL; var urlObj = new window.URL(window.location.href); win = window.open(); win.document.body.style.margin = "0"; win.document.body.style.height = "100vh"; var iframe = win.document.createElement("iframe"); iframe.style.border = "none"; iframe.style.width = "100%"; iframe.style.height = "100%"; iframe.style.margin = "0"; iframe.referrerpolicy = "no-referrer"; iframe.allow = "fullscreen"; iframe.src = url.toString(); win.document.body.appendChild(iframe);window.location.href="https://google.com";})();
     }
+
+     if (get_cookie("location")!=null && get_cookie("location")!=undefined){
+          frame.src=get_cookie("location");
+  }
 
     if (get_cookie("autoblank")=="on"){
         if (window.top !== window) {
