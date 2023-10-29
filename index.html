@@ -92,6 +92,15 @@
   
 <iframe id="frame" src="home.html"></iframe>
 <script>
+function get_cookie(cookie_name) { const value = "; " + document.cookie; const parts = value.split("; " + cookie_name + "="); if (parts.length === 2) return parts.pop().split(";").shift(); } 
+    function blank(){
+      (function () {var url = document.URL; var urlObj = new window.URL(window.location.href); win = window.open(); win.document.body.style.margin = "0"; win.document.body.style.height = "100vh"; var iframe = win.document.createElement("iframe"); iframe.style.border = "none"; iframe.style.width = "100%"; iframe.style.height = "100%"; iframe.style.margin = "0"; iframe.referrerpolicy = "no-referrer"; iframe.allow = "fullscreen"; iframe.src = url.toString(); win.document.body.appendChild(iframe);window.location.href="https://google.com";})();
+    }
+
+     if (get_cookie("location")!=null && get_cookie("location")!=undefined){
+          frame.src=get_cookie("location");
+  }
+        
   var frame=document.getElementById("frame");
   var fsbutton=document.getElementById("fsbutton");
 
@@ -137,15 +146,6 @@ function credits(){
     document.title="Google";
     document.getElementsByTagName('head')[0].appendChild(link);
     
-    
-    function get_cookie(cookie_name) { const value = "; " + document.cookie; const parts = value.split("; " + cookie_name + "="); if (parts.length === 2) return parts.pop().split(";").shift(); } 
-    function blank(){
-      (function () {var url = document.URL; var urlObj = new window.URL(window.location.href); win = window.open(); win.document.body.style.margin = "0"; win.document.body.style.height = "100vh"; var iframe = win.document.createElement("iframe"); iframe.style.border = "none"; iframe.style.width = "100%"; iframe.style.height = "100%"; iframe.style.margin = "0"; iframe.referrerpolicy = "no-referrer"; iframe.allow = "fullscreen"; iframe.src = url.toString(); win.document.body.appendChild(iframe);window.location.href="https://google.com";})();
-    }
-
-     if (get_cookie("location")!=null && get_cookie("location")!=undefined){
-          frame.src=get_cookie("location");
-  }
 
     if (get_cookie("autoblank")=="on"){
         if (window.top !== window) {
