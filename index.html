@@ -127,7 +127,7 @@ function credits(){
   }
 
   setTimeout(function(){
-          document.cookie="location="+frame.src.replace(window.location.origin,"")+"; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/";
+          document.cookie="location="+frame.contentWindow.location.href.replace(window.location.origin,"")+"; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/";
   },100);
         
   var link=document.querySelector("link[rel*='icon']") || document.createElement('link');
