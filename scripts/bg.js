@@ -25,11 +25,17 @@ $(document).ready(function () {
         var hovercolor="#06c22b";
         var navcolor="#017819";
     }
-    else if (get_cookie("theme")=="patriot"){
+    else if (get_cookie("theme")=="patriotic"){
         var particlecolor="white";
         var backgroundcolor="blue";
         var hovercolor="white";
         var navcolor="red";
+    }
+    else if (get_cookie("theme")=="sunshine"){
+        var particlecolor="white";
+        var backgroundcolor="#ffce47";
+        var hovercolor="yellow";
+        var navcolor="#ebad05";
     }
     else{
         var particlecolor="white";
