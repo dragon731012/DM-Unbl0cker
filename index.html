@@ -56,6 +56,16 @@
         bottom:0px;
         left:0px;
       }
+    #fsbutton{
+      position:absolute;
+      background-color:#333;
+      width:100px;
+      height:50px;
+      left:calc(50% - 50px);
+      border-radius:25px;
+      border:3px solid white;
+      color:white;
+    }
     </style>
 </head>
 <body>
@@ -70,11 +80,30 @@
     <li class="nav-item2"><a href="https://github.com/dragon731012">My Github</a></li>
     <li class="nav-item2"><a href="https://discord.gg/Vd5sJVqVzH">Discord Server</a></li>
 </ul>
+
+<a onclick="fullscreen();">
+  <div id="fsbutton">Fullscreen</div>
+</a>
+  
 <iframe id="frame" src="home.html"></iframe>
 <script>
   var frame=document.getElementById("frame");
+  var fsbutton=document.getElementById("fsbutton");
+
+  fsbutton.style.top=(document.getElementsByClassName("navbar")[0].offsetHeight-25)+"px";
+  
   frame.style.height=(window.innerHeight-document.getElementsByClassName("navbar")[0].offsetHeight+5)+"px";
 
+  function fullscreen(){
+    if (frame.requestFullscreen) {
+      frame.requestFullscreen();
+    } else if (frame.webkitRequestFullscreen) {
+      frame.webkitRequestFullscreen();
+    } else if (frame.msRequestFullscreen) {
+      frame.msRequestFullscreen();
+    }
+  }
+  
   function home(){
     frame.src="/home.html";
   }
