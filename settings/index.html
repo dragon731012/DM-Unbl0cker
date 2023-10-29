@@ -15,6 +15,11 @@
     <option value="google">google</option> 
     <option value="yahoo!">yahoo!</option> 
 </select>
+<select name="theme" id="theme" class="theme"> 
+    <option value="space">Space</option> 
+    <option value="ocean">Ocean</option> 
+    <option value="cotton candy">Cotton Candy</option> 
+</select>
 
 <label for="autoblank" class="label2" id="label2">auto blank: </label>
 <input type="checkbox" id="autoblank" class="autoblank">
@@ -159,10 +164,20 @@
         height:40px;
         top: 20%;
     }
+    .theme{
+        background:transparent;
+        color: white;
+        border: 2px solid white;
+        position:absolute;
+        width:70px;
+        height:40px;
+        top: 30%;
+    }
 </style>
 
 <script>
 browser1.style.left=screen.width/2-70/2;
+theme.style.left=screen.width/2-70/2;
 autoblank.style.left=screen.width/2-20/2+50/2;
 label2.style.left=screen.width/2-50/2-50/2;
     
@@ -171,6 +186,7 @@ function get_cookie(cookie_name) { const value = "; " + document.cookie; const p
 var title2=get_cookie("title2");
 var favicon=get_cookie("favicon");
 var browser2=get_cookie("browser3");
+var themecookie=get_cookie("theme");
 var abcookie=get_cookie("autoblank");
 
 if (title2!=undefined){
@@ -191,6 +207,14 @@ if (abcookie!=undefined){
 else{
     document.cookie="autoblank=off; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/";
     autoblank.checked=false;
+}
+
+if (theme!=undefined){
+    theme.value=themecookie;
+}
+else{
+    document.cookie="theme=space; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/";
+    theme.value="space";
 }
     
 if (browser2!=undefined){
@@ -267,6 +291,7 @@ var imported=document.getElementById('importing').value;
 var title2=document.getElementById('title').value;
 var favicon=document.getElementById('url1').value;
 var browser4=document.getElementById('browser1').value;
+var themeval=document.getElementById('theme').value;
 var autoblanker=document.getElementById('autoblank').checked;
            
 if (imported==''){
@@ -281,6 +306,7 @@ if (imported==''){
     }
 
     document.cookie='browser3='+browser4+'; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/';
+    document.cookie='theme='+themeval+'; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/';
     document.title=title2;
     document.cookie='title2='+title2+'; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/';
             
@@ -311,6 +337,7 @@ else{
     var originalurl=url;
 
     document.cookie='browser3='+browser4+'; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/';
+    document.cookie='theme='+themeval+'; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/';
     document.title=originalurl;
     document.cookie='title2='+originalurl+'; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/';
 
