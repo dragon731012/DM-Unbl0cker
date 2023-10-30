@@ -8,8 +8,8 @@ $(document).ready(function () {
         var navcolor="#333";
     }
     else if (get_cookie("theme")=="ocean"){
-        var particlecolor="#87CEFA";
-        var backgroundcolor="#2b4fff";
+        var particlecolor="white";
+        var backgroundcolor="#65aceb";
         var hovercolor="#0075ba";
         var navcolor="#024edb";
     }
@@ -34,7 +34,7 @@ $(document).ready(function () {
     else if (get_cookie("theme")=="patriotic"){
         var particlecolor="white";
         var backgroundcolor="blue";
-        var hovercolor="white";
+        var hovercolor="#a6a6a6";
         var navcolor="red";
     }
     else if (get_cookie("theme")=="sunshine"){
