@@ -9,9 +9,9 @@ $(document).ready(function () {
     }
     else if (get_cookie("theme")=="ocean"){
         var particlecolor="white";
-        var backgroundcolor="#65aceb";
+        var backgroundcolor="#1440C2";
         var hovercolor="#0075ba";
-        var navcolor="#024edb";
+        var navcolor="#00578A";
     }
     else if (get_cookie("theme")=="beach"){
         var particlecolor="#dbd446";
