@@ -22,14 +22,14 @@ form.addEventListener("submit", async (event) => {
     throw err;
   }
   const url = search(address.value, searchEngine.value);
-      var white = document.createElement('img');
+      var white = document.createElement('div');
             white.style.cursor="pointer";
             white.style.position = "absolute";
             white.style.width = "100%";
             white.style.height = "100%";
             white.style.zIndex="2147483647";
-            white.src = "/img/black.jpeg";
             white.style.right = "0px";
+            white.className="black";
             white.style.top = "0px";
             document.body.appendChild(white);
 
