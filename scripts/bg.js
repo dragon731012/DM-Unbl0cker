@@ -11,7 +11,7 @@ $(document).ready(function () {
         var particlecolor="white";
         var backgroundcolor="#1440C2";
         var hovercolor="#0075ba";
-        var navcolor="#00578A";
+        var navcolor="#0066FF";
     }
     else if (get_cookie("theme")=="beach"){
         var particlecolor="#dbd446";
