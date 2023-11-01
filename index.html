@@ -2,14 +2,7 @@
 <div id="ads" style="width:100%;position:absolute;left:0px;bottom:0px;height:70px;overflow:scroll;z-index:100;border-top:2px solid white;background-color:white;">
 	<div id="container-c4405d55887b1ed5f6a0d1689ec58a35"></div>
 </div>
-<button id="xb" onclick="document.getElementById('ads').style.display='none';document.getElementById('xb').style.display='none';" style="position:absolute;bottom:70px;right:0px;border:3px solid black;border-radius:50%;background-color:white;z-index:101;">X</button>
-
-<script>
-function autoclicker(){
-  var DELAY = 0;var autoClickerStyleElement = document.createElement("style");autoClickerStyleElement.innerHTML="*{cursor: crosshair !important;}";document.body.appendChild(autoClickerStyleElement);function addClicker(e) {if(!e.isTrusted) {return;}if(e.target.classList.contains("auto-clicker-target")) {e.target.classList.remove("auto-clicker-target");} else {e.target.classList.add("auto-clicker-target");}document.body.removeChild(autoClickerStyleElement);document.body.removeEventListener("click", addClicker);e.preventDefault();autoClick(e.target);}function autoClick(element) {if(element.classList.contains("auto-clicker-target")) {element.click();setTimeout(function(){ autoClick(element); }, DELAY);}}document.body.addEventListener("click", addClicker, 0);
-}
-</script>
-	
+<button id="xb" onclick="document.getElementById('ads').style.top='200%';document.getElementById('xb').style.top='200%';" style="position:absolute;bottom:70px;right:0px;border:3px solid black;border-radius:50%;background-color:white;z-index:101;">X</button>
 <style>
         body{
                 background-color:black;
@@ -85,45 +78,13 @@ function autoclicker(){
       width:100px;
       cursor: pointer !important;
       z-index:3;
-      left:calc(50% + 3px);
+      left:calc(50% - 50px);
       text-align:center;
       border-radius:25px;
       border:2px solid white;
       box-shadow: 0 6px 2px -2px white;
       color:white;
     }
-    #cheats{
-      display:block;
-      position:absolute;
-      background-color:#333;
-      width:100px;
-      cursor: pointer !important;
-      z-index:3;
-      right:calc(50% + 3px);
-      text-align:center;
-      border-radius:25px;
-      border:2px solid white;
-      box-shadow: 0 6px 2px -2px white;
-      color:white;
-    }
-	  .cheat{
-			background: transparent;
-			color:white;
-		  	border:4px solid white;
-			border-radius:10px;
-		  	display:block;
-		  	margin: auto;
-		    width:50px;
-		    height:30px;
-		}
-	  #cheatsbox{
-			width:100%;
-			height:100%;
-			position:absolute;
-			left:0px;
-			top:0px;
-			text-align:center;
-		}
     </style>
 </head>
 <body>
@@ -147,29 +108,12 @@ function autoclicker(){
 <a onclick="fullscreen();">
   <div id="fsbutton">Fullscreen</div>
 </a>
-<a onclick="opencheats();">
-  <div id="cheats">Cheats</div>
-</a>
-<div id="cheatsbox" style="display:none;">
-  <div id="autoclicker" class="cheat">Autoclicker</div>
-</div>
   
 <iframe id="frame" src="home.html"></iframe>
 <script>
   var frame=document.getElementById("frame");
   var fsbutton=document.getElementById("fsbutton");
-  var cheats=document.getElementById("cheats");
-  var cheatsbox=document.getElementById("cheatsbox");
-	
-  function opencheats(){
-    if (cheatsbox.style.display=="none"){
-      cheatsbox.style.display="block";
-    } 
-    else{
-	    cheatsbox.style.display="none";
-		}
-  }
-	
+        
 function get_cookie(cookie_name) { const value = "; " + document.cookie; const parts = value.split("; " + cookie_name + "="); if (parts.length === 2) return parts.pop().split(";").shift(); } 
     function blank(){
       (function () {var url = document.URL; var urlObj = new window.URL(window.location.href); win = window.open(); win.document.body.style.margin = "0"; win.document.body.style.height = "100vh"; var iframe = win.document.createElement("iframe"); iframe.style.border = "none"; iframe.style.width = "100%"; iframe.style.height = "100%"; iframe.style.margin = "0"; iframe.referrerpolicy = "no-referrer"; iframe.allow = "fullscreen"; iframe.src = url.toString(); win.document.body.appendChild(iframe);window.location.href="https://google.com";})();
@@ -181,7 +125,6 @@ function get_cookie(cookie_name) { const value = "; " + document.cookie; const p
         
 
   fsbutton.style.top=(document.getElementsByClassName("navbar")[0].offsetHeight-16)+"px";
-  cheats.style.top=(document.getElementsByClassName("navbar")[0].offsetHeight-16)+"px";
   
   frame.style.height=(window.innerHeight-document.getElementsByClassName("navbar")[0].offsetHeight+5)+"px";
 
