@@ -3,9 +3,6 @@ $(document).ready(function () {
 
     /*
     if (window.location.pathname!="/chat" && window.location.pathname!="/settings"){
-        var style1 = document.createElement('style');
-        style1.type = 'text/css';
-        style1.innerHTML = "@import url('https://fonts.googleapis.com/css2?family=Ultra&display=swap');";
         document.body.appendChild(style1);
         var all = document.getElementsByTagName("*");
     
@@ -16,6 +13,10 @@ $(document).ready(function () {
         }
     }
     */
+
+    var style1 = document.createElement('style');
+        style1.type = 'text/css';
+        style1.innerHTML = "@import url('https://fonts.googleapis.com/css2?family=Ultra&display=swap');";
     
     if (get_cookie("theme")=="space"){
         var particlecolor="white";
