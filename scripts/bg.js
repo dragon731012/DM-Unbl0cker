@@ -1,7 +1,18 @@
 $(document).ready(function () {
     function get_cookie(cookie_name) { const value = "; " + document.cookie; const parts = value.split("; " + cookie_name + "="); if (parts.length === 2) return parts.pop().split(";").shift(); } 
 
-    function a(e){var n=e.childNodes;for(var i in n){a(n[i]);if(n[i].style) n[i].style.fontFamily="'Ultra', serif !important";}}a(document);
+    var style1 = document.createElement('style');
+    style1.type = 'text/css';
+    style1.innerHTML = "@import url('https://fonts.googleapis.com/css2?family=Ultra&display=swap');";
+    document.body.appendChild(style1);
+    var all = document.getElementsByTagName("*");
+
+    for (var i=0, max=all.length; i < max; i++) {
+        alert(all[i].tagName);
+        if (all[i].tagName!="BODY" && all[i].tagName!="HTML" && all[i].tagName!="HEAD"){
+            all[i].style.fontFamily="'Ultra', serif";
+        }
+    }
     
     if (get_cookie("theme")=="space"){
         var particlecolor="white";
