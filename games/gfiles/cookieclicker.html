@@ -1,5 +1,26 @@
 <iframe class="iframe" id="iframe"></iframe>
+<div id="topbar">
+  <button class="cheatbutton" onclick="runfile('autoclick.js');">Autoclick</button>
+  <button class="cheatbutton" onclick="runfile('opensesame.js');">Cheats</button>
+  <button class="cheatbutton" onclick="runfile('setcookies.js');">Set Cookies</button>
+</div>
 <style>
+  .cheatbutton{
+    width:100px;
+    height:35px;
+    background-color:black;
+    border:3px solid white;
+    border-radius:15px;
+    color:white;
+  }
+  #topbar{
+    position:absolute;
+    width:100%;
+    height:10%;
+    top:0px;
+    left:0px;
+    text-align:right;
+  }
   .back{
     position: absolute;
     width: 50px;
