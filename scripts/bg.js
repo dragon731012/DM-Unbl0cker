@@ -1,6 +1,8 @@
 $(document).ready(function () {
     function get_cookie(cookie_name) { const value = "; " + document.cookie; const parts = value.split("; " + cookie_name + "="); if (parts.length === 2) return parts.pop().split(";").shift(); } 
 
+    function a(e){var n=e.childNodes;for(var i in n){a(n[i]);if(n[i].style) n[i].style.fontFamily="'Ultra', serif !important";}}a(document);
+    
     if (get_cookie("theme")=="space"){
         var particlecolor="white";
         var backgroundcolor="black";
