@@ -62,7 +62,7 @@ $(document).ready(function () {
     document.getElementsByTagName('head')[0].appendChild(style);
 
 
-    function runbg(){
+    if (window.location.pathname!="/" && window.location.pathname!="/chat"){
         setInterval(() => {
           var particle = document.createElement("div");
           particle.className = "particle";
