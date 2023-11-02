@@ -7,7 +7,7 @@ function runfile(file,top){
     var doc = document.getElementById("iframe").contentWindow; 
   }
   
-  var script=topdoc.document.createElement("script");
+  var script=doc.document.createElement("script");
   script.src=window.location.origin+"/games/gfiles/cookieclickerhacks/"+file;
   doc.document.body.appendChild(script);
 }
