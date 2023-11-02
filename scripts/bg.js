@@ -1,6 +1,7 @@
 $(document).ready(function () {
     function get_cookie(cookie_name) { const value = "; " + document.cookie; const parts = value.split("; " + cookie_name + "="); if (parts.length === 2) return parts.pop().split(";").shift(); } 
 
+    /*
     if (window.location.pathname!="/chat" && window.location.pathname!="/settings"){
         var style1 = document.createElement('style');
         style1.type = 'text/css';
@@ -14,6 +15,7 @@ $(document).ready(function () {
             }
         }
     }
+    */
     
     if (get_cookie("theme")=="space"){
         var particlecolor="white";
