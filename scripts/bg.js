@@ -16,7 +16,7 @@ $(document).ready(function () {
 
     var style1 = document.createElement('style');
         style1.type = 'text/css';
-        style1.innerHTML = "@import url('https://fonts.googleapis.com/css2?family=Ultra&display=swap');";
+        style1.innerHTML = "@import url('https://fonts.googleapis.com/css2?family=Ultra&display=swap'); body{font-family:Ultra, serif !important;}";
     
     if (get_cookie("theme")=="space"){
         var particlecolor="white";
