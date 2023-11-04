@@ -26,6 +26,12 @@ $(document).ready(function () {
         var hovercolor="#0075ba";
         var navcolor="#0066FF";
     }
+    else if (get_cookie("theme")=="thanksgiving"){
+        var particlecolor="#870020";
+        var backgroundcolor="#856100";
+        var hovercolor="#c29723";
+        var navcolor="#fc9003";
+    }
     else if (get_cookie("theme")=="beach"){
         var particlecolor="#dbd446";
         var backgroundcolor="#c7bda3";
