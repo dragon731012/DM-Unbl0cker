@@ -16,6 +16,7 @@ $(document).ready(function () {
     
     if (get_cookie("theme")=="space"){
         var particlecolor="white";
+        var opacitychange="0.2";
         var backgroundcolor="black";
         var hovercolor="#444";
         var navcolor="#333";
@@ -23,6 +24,7 @@ $(document).ready(function () {
     }
     else if (get_cookie("theme")=="ocean"){
         var particlecolor="white";
+        var opacitychange="0.2";
         var backgroundcolor="#1440C2";
         var hovercolor="#0075ba";
         var navcolor="#0066FF";
@@ -30,6 +32,7 @@ $(document).ready(function () {
     }
     else if (get_cookie("theme")=="fire and ice"){
         var particlecolor="black";
+        var opacitychange="0.2";
         var backgroundcolor="linear-gradient(90deg, rgb(255, 0, 0) 0%, rgba(0,0,0,1) 51%, rgb(34, 181, 255) 100%);";
         var hovercolor="#a6a6a6";
         var navcolor="black";
@@ -38,6 +41,7 @@ $(document).ready(function () {
     else if (get_cookie("theme")=="thanksgiving"){
         var particlecolor="#870020";
         var backgroundcolor="#856100";
+        var opacitychange="0.2";
         var hovercolor="#c29723";
         var navcolor="#fc9003";
         var glow="0 0 0px 0px rgb(255, 255, 255)";
@@ -46,6 +50,7 @@ $(document).ready(function () {
         var particlecolor="#dbd446";
         var backgroundcolor="#c7bda3";
         var hovercolor="#dbd446";
+        var opacitychange="0.2";
         var navcolor="#65aceb";
         var glow="0 0 0px 0px rgb(255, 255, 255)";
     }
@@ -54,18 +59,21 @@ $(document).ready(function () {
         var backgroundcolor="#433834";
         var hovercolor="#f6a93c";
         var navcolor="#b85e30";
+        var opacitychange="0.2";
         var glow="0 0 0px 0px rgb(255, 255, 255)";
     }
     else if (get_cookie("theme")=="cotton candy"){
         var particlecolor="#fab3ff";
         var backgroundcolor="#e247ed";
         var hovercolor="#ffd1ff";
+        var opacitychange="0.2";
         var navcolor="#dd16e0";
         var glow="0 0 0px 0px rgb(255, 255, 255)";
     }
     else if (get_cookie("theme")=="rainforest"){
         var particlecolor="#4788ff";
         var backgroundcolor="#06c92d";
+        var opacitychange="0.2";
         var hovercolor="#06c22b";
         var navcolor="#017819";
         var glow="0 0 0px 0px rgb(255, 255, 255)";
@@ -75,12 +83,14 @@ $(document).ready(function () {
         var backgroundcolor="blue";
         var hovercolor="#a6a6a6";
         var navcolor="red";
+        var opacitychange="0.2";
         var glow="0 0 0px 0px rgb(255, 255, 255)";
     }
     else if (get_cookie("theme")=="sunshine"){
         var particlecolor="white";
         var backgroundcolor="#ffce47";
         var hovercolor="yellow";
+        var opacitychange="0.2";
         var navcolor="#ebad05";
         var glow="0 0 0px 0px rgb(255, 255, 255)";
     }
@@ -88,12 +98,14 @@ $(document).ready(function () {
         var particlecolor="green";
         var backgroundcolor="#f29d13";
         var hovercolor="#a6a6a6";
+        var opacitychange="0.2";
         var navcolor="black";
         var glow="0 0 0px 0px rgb(255, 255, 255)";
     }
     else if (get_cookie("theme")=="heavenly light"){
         var particlecolor="white";
         var backgroundcolor="black";
+        var opacitychange="0";
         var hovercolor="#444";
         var navcolor="#333";
         var glow="0 0 100px 100px rgb(255, 255, 255)";
@@ -149,7 +161,7 @@ $(document).ready(function () {
                 {
                   left: x + "px",
                   top: y + "px",
-                  opacity: "0.2",
+                  opacity: opacitychange,
                   display: "none",
                   height: 10 + size + "px",
                   width: 10 + size + "px"
