@@ -27,7 +27,7 @@ $(document).ready(function () {
         var navcolor="#0066FF";
     }
     else if (get_cookie("theme")=="fire and ice"){
-        var particlecolor="multi";
+        var particlecolor="black";
         var backgroundcolor="linear-gradient(90deg, rgb(255, 0, 0) 0%, rgba(0,0,0,1) 51%, rgb(34, 181, 255) 100%);";
         var hovercolor="#a6a6a6";
         var navcolor="black";
@@ -102,9 +102,9 @@ $(document).ready(function () {
               particle.className = "particle";
               var rancolor=Math.floor(Math.random() * 2);
               if (rancolor==1){
-                  particle.style.backgroundColor=multicolor1+"!important";
+                  particle.style.backgroundColor=multicolor1+" !important";
               } else{
-                  particle.style.backgroundColor=multicolor2+"!important";
+                  particle.style.backgroundColor=multicolor2+" !important";
               }
               document.getElementById("particlebox").appendChild(particle);
               var x = Math.floor(Math.random() * window.innerWidth);
