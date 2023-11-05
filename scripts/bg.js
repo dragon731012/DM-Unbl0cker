@@ -31,6 +31,7 @@ $(document).ready(function () {
         var backgroundcolor="linear-gradient(90deg, rgb(255, 0, 0) 0%, rgba(0,0,0,1) 51%, rgb(34, 181, 255) 100%);";
         var hovercolor="#a6a6a6";
         var navcolor="black";
+        var multi=true;
         var multicolor1="rgb(255, 123, 0)";
         var multicolor2="rgb(35, 168, 235)";
     }
@@ -96,7 +97,7 @@ $(document).ready(function () {
 
 
     if (window.location.pathname!="/" && window.location.pathname!="/chat"){
-        if (particlecolor=="multi"){
+        if (multi){
             setInterval(() => {
               var particle = document.createElement("div");
               particle.className = "particle";
