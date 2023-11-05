@@ -39,10 +39,10 @@ $(document).ready(function () {
         var navcolor="#65aceb";
     }
     else if (get_cookie("theme")=="wildfire"){
-        var particlecolor="#fca93c";
+        var particlecolor="#f6a93c";
         var backgroundcolor="#433834";
-        var hovercolor="#dbd446";
-        var navcolor="#b44991";
+        var hovercolor="#fad450";
+        var navcolor="#b85e30";
     }
     else if (get_cookie("theme")=="cotton candy"){
         var particlecolor="#fab3ff";
