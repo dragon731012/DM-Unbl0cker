@@ -31,9 +31,6 @@ $(document).ready(function () {
         var backgroundcolor="linear-gradient(90deg, rgb(255, 0, 0) 0%, rgba(0,0,0,1) 51%, rgb(34, 181, 255) 100%);";
         var hovercolor="#a6a6a6";
         var navcolor="black";
-        var multi=true;
-        var multicolor1="rgb(255, 123, 0)";
-        var multicolor2="rgb(35, 168, 235)";
     }
     else if (get_cookie("theme")=="thanksgiving"){
         var particlecolor="#870020";
@@ -97,52 +94,6 @@ $(document).ready(function () {
 
 
     if (window.location.pathname!="/" && window.location.pathname!="/chat"){
-        if (multi){
-            setInterval(() => {
-              var particle = document.createElement("div");
-              particle.className = "particle";
-              var rancolor=Math.floor(Math.random() * 2);
-              if (rancolor==1){
-                  particle.style.backgroundColor=multicolor1+" !important";
-              } else{
-                  particle.style.backgroundColor=multicolor2+" !important";
-              }
-              document.getElementById("particlebox").appendChild(particle);
-              var x = Math.floor(Math.random() * window.innerWidth);
-              var y = Math.floor(Math.random() * window.innerHeight);
-        
-              var speed = Math.floor(Math.random() * 4000);
-              var size = Math.floor(Math.random() * 25);
-        
-              if (Math.floor(Math.random() * 2) == 1) {
-                if (y > x) {
-                  x = -50;
-                } else {
-                  y = -50;
-                }
-              } else {
-                if (y > x) {
-                  x = window.innerWidth + 50;
-                } else {
-                  y = window.innerHeight + 50;
-                }
-              }
-              $(particle).animate(
-                {
-                  left: x + "px",
-                  top: y + "px",
-                  opacity: "0.2",
-                  display: "none",
-                  height: 10 + size + "px",
-                  width: 10 + size + "px"
-                },
-                4500 + speed,
-                function () {
-                  particle.remove();
-                }
-              );
-            }, 100);
-        } else{
             setInterval(() => {
               var particle = document.createElement("div");
               particle.className = "particle";
@@ -181,6 +132,5 @@ $(document).ready(function () {
                 }
               );
             }, 100);
-        }
     }
   });
