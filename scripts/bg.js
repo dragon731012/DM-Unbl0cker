@@ -38,6 +38,12 @@ $(document).ready(function () {
         var hovercolor="#dbd446";
         var navcolor="#65aceb";
     }
+    else if (get_cookie("theme")=="wildfire"){
+        var particlecolor="#fca93c";
+        var backgroundcolor="#433834";
+        var hovercolor="#dbd446";
+        var navcolor="#b44991";
+    }
     else if (get_cookie("theme")=="cotton candy"){
         var particlecolor="#fab3ff";
         var backgroundcolor="#e247ed";
