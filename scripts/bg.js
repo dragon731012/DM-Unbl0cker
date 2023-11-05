@@ -109,7 +109,7 @@ $(document).ready(function () {
 
     var style = document.createElement('style');
     style.type = 'text/css';
-    style.innerHTML = "@import url('https://fonts.googleapis.com/css2?family=Ultra&display=swap');#chats { background:"+backgroundcolor+" !important; } #fsbutton{background-color:"+navcolor+" !important;} ul.navbar {background-color: "+navcolor+" !important;} li.nav-item2 a:hover,li.nav-item a:hover { background-color: "+hovercolor+" !important; } .black{ background:"+backgroundcolor+" !important; } .search{ background:"+backgroundcolor+" !important; } .particle { width: 0px; opacity: 1; border-radius: 50%; height: 0px; left: 50%; top: 50%; background-color: "+particlecolor+"; position: absolute; } #particlebox { color: transparent; z-index: -9999999999; background: transparent; position: absolute; left: 0px; top: 0px; overflow: hidden; width: 100%; height: 100%; } body { background: "+backgroundcolor+" !important; overflow:hidden;font-family:Ultra, serif !important;}";
+    style.innerHTML = "@import url('https://fonts.googleapis.com/css2?family=Ultra&display=swap');#chats { background:"+backgroundcolor+" !important; } #fsbutton{background-color:"+navcolor+" !important;} ul.navbar {background-color: "+navcolor+" !important;} li.nav-item2 a:hover,li.nav-item a:hover { background-color: "+hovercolor+" !important; } .black{ background:"+backgroundcolor+" !important; } .search{ background:"+backgroundcolor+" !important; } .particle { width: 0px; opacity: 1; border-radius: 50%; height: 0px; left: 50%; top: 50%; box-shadow: "+glow+"; background-color: "+particlecolor+"; position: absolute; } #particlebox { color: transparent; z-index: -9999999999; background: transparent; position: absolute; left: 0px; top: 0px; overflow: hidden; width: 100%; height: 100%; } body { background: "+backgroundcolor+" !important; overflow:hidden;font-family:Ultra, serif !important;}";
     document.getElementsByTagName('head')[0].appendChild(style);
 
     if (textcolor!=null && textcolor!=undefined){
@@ -125,7 +125,6 @@ $(document).ready(function () {
             setInterval(() => {
               var particle = document.createElement("div");
               particle.className = "particle";
-              particle.style.boxShadow=glow+" !important";
               document.getElementById("particlebox").appendChild(particle);
               var x = Math.floor(Math.random() * window.innerWidth);
               var y = Math.floor(Math.random() * window.innerHeight);
