@@ -39,9 +39,9 @@ $(document).ready(function () {
         var navcolor="#65aceb";
     }
     else if (get_cookie("theme")=="wildfire"){
-        var particlecolor="#f6a93c";
+        var particlecolor="#fad450";
         var backgroundcolor="#433834";
-        var hovercolor="#fad450";
+        var hovercolor="#f6a93c";
         var navcolor="#b85e30";
     }
     else if (get_cookie("theme")=="cotton candy"){
