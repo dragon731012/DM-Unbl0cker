@@ -96,7 +96,7 @@ $(document).ready(function () {
         var backgroundcolor="black";
         var hovercolor="#444";
         var navcolor="#333";
-        var glow="0 0 90px 90px rgb(255, 255, 255)";
+        var glow="0 0 100px 100px rgb(255, 255, 255)";
         var textcolor="#878787";
     }
     else{
