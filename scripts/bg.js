@@ -1,6 +1,6 @@
 $(document).ready(function () {
     function get_cookie(cookie_name) { const value = "; " + document.cookie; const parts = value.split("; " + cookie_name + "="); if (parts.length === 2) return parts.pop().split(";").shift(); } 
-
+    var running=true;
     /*
     if (window.location.pathname!="/chat" && window.location.pathname!="/settings"){
         document.body.appendChild(style1);
@@ -132,45 +132,51 @@ $(document).ready(function () {
          all[i].style.borderColor = textcolor;
         }
     }
+
+    function stopbg(){
+        running=false;
+    }
     
     if (window.location.pathname!="/" && window.location.pathname!="/chat"){
             setInterval(() => {
-              var particle = document.createElement("div");
-              particle.className = "particle";
-              document.getElementById("particlebox").appendChild(particle);
-              var x = Math.floor(Math.random() * window.innerWidth);
-              var y = Math.floor(Math.random() * window.innerHeight);
-        
-              var speed = Math.floor(Math.random() * 4000);
-              var size = Math.floor(Math.random() * 25);
-        
-              if (Math.floor(Math.random() * 2) == 1) {
-                if (y > x) {
-                  x = -50;
-                } else {
-                  y = -50;
-                }
-              } else {
-                if (y > x) {
-                  x = window.innerWidth + 50;
-                } else {
-                  y = window.innerHeight + 50;
-                }
+              if (running){
+                  var particle = document.createElement("div");
+                  particle.className = "particle";
+                  document.getElementById("particlebox").appendChild(particle);
+                  var x = Math.floor(Math.random() * window.innerWidth);
+                  var y = Math.floor(Math.random() * window.innerHeight);
+            
+                  var speed = Math.floor(Math.random() * 4000);
+                  var size = Math.floor(Math.random() * 25);
+            
+                  if (Math.floor(Math.random() * 2) == 1) {
+                    if (y > x) {
+                      x = -50;
+                    } else {
+                      y = -50;
+                    }
+                  } else {
+                    if (y > x) {
+                      x = window.innerWidth + 50;
+                    } else {
+                      y = window.innerHeight + 50;
+                    }
+                  }
+                  $(particle).animate(
+                    {
+                      left: x + "px",
+                      top: y + "px",
+                      opacity: opacitychange,
+                      display: "none",
+                      height: 10 + size + "px",
+                      width: 10 + size + "px"
+                    },
+                    4500 + speed,
+                    function () {
+                      particle.remove();
+                    }
+                  );
               }
-              $(particle).animate(
-                {
-                  left: x + "px",
-                  top: y + "px",
-                  opacity: opacitychange,
-                  display: "none",
-                  height: 10 + size + "px",
-                  width: 10 + size + "px"
-                },
-                4500 + speed,
-                function () {
-                  particle.remove();
-                }
-              );
             }, 100);
     }
   });
