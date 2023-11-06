@@ -137,7 +137,7 @@ $(document).ready(function () {
         const form = document.getElementById("searchbox");
         form.addEventListener("submit", async (event) => {
             running=false;
-        }
+        });
     }
     
     if (window.location.pathname!="/" && window.location.pathname!="/chat"){
