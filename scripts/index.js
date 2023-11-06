@@ -15,6 +15,7 @@ const searchEngine = document.getElementById("searchengine");
 
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
+  stopbg();
   try {
     await registerSW();
   } catch (err) {
