@@ -133,8 +133,11 @@ $(document).ready(function () {
         }
     }
 
-    function stopbg(){
-        running=false;
+    if (window.location.pathname=="/home.html"){
+        const form = document.getElementById("searchbox");
+        form.addEventListener("submit", async (event) => {
+            running=false;
+        }
     }
     
     if (window.location.pathname!="/" && window.location.pathname!="/chat"){
