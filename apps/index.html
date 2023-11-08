@@ -6,12 +6,30 @@
 
 <div id="black" class="black"></div> <img src="/img/loading.gif" id="loadimg" class="loadimg"/> <style> @keyframes fadeout{ 0%{ opacity:1; pointer-events: none;} 100%{ opacity:0; display:none; }} .black{ position:absolute; left:0px; opacity:1; display:block; top:0px; width:100%; z-index:999999999999999999999999999999999999999999999; height:100%; } .loadimg{ position:absolute; opacity:1; display:block; width:125px; z-index:9999999999999999999999999999999999999999999999; height:125px; top:50%; left:50%; transform:translate(-50%, -50%); } </style> <script> function fade(){ document.getElementById("loadimg").style.animation="linear 1.5s 1 running fadeout"; document.getElementById("loadimg").addEventListener("animationend", () => { document.getElementById("black").style.animation="linear 1.5s 1 running fadeout"; document.getElementById("black").addEventListener("animationend", () => { document.getElementById("black").remove(); }); document.getElementById("loadimg").remove(); }); } setTimeout(fade,1200); </script> 
 <div class="buttons" align="center">
-  <img class="apps" src="/img/youtube.png" onclick="youtube();"/>
-  <img class="apps" src="https://blogs.nvidia.com/wp-content/uploads/2021/02/GFN.png" onclick="gforce();"/>
-  <img class="apps" src="/img/reddit.png" onclick="reddit();"/>
-  <img class="apps" src="/img/stack-overflow.png" onclick="stackoverflow();"/>
-  <img class="apps" src="/img/githublogo.png" onclick="github();"/>
-  <img class="apps" src="https://movie-web.app/apple-touch-icon.png" onclick="mo();"/>
+  <div class="appcont">
+    <img class="apps" src="/img/youtube.png" onclick="youtube();"/>
+    <h4>Youtube</h4>
+  </div>
+  <div class="appcont">
+    <img class="apps" src="https://blogs.nvidia.com/wp-content/uploads/2021/02/GFN.png" onclick="gforce();"/>
+    <h4>GForce Now</h4>
+  </div>
+  <div class="appcont">
+    <img class="apps" src="/img/reddit.png" onclick="reddit();"/>
+    <h4>Reddit</h4>
+  </div>
+  <div class="appcont">
+    <img class="apps" src="/img/stack-overflow.png" onclick="stackoverflow();"/>
+    <h4>Stack Overflow</h4>
+  </div>
+  <div class="appcont">
+    <img class="apps" src="/img/githublogo.png" onclick="github();"/>
+    <h4>Github</h4>
+  </div>
+  <div class="appcont">
+    <img class="apps" src="https://movie-web.app/apple-touch-icon.png" onclick="mo();"/>
+    <h4>Movie Web</h4>
+  </div>
 </div>
 <style>
   .bg{
@@ -51,6 +69,21 @@
   .apps:hover{
     width: 163px;
     height: 163px;
+  }
+  .appcont{
+    width: 163px;
+    height: 183px;
+    color:white;
+    background-color:black;
+  }
+  h4{
+    width:100%;
+    color:white;
+    position:absolute;
+    left:0px;
+    bottom:0px;
+    height:20px;
+    text-align:center;
   }
   .back{
     position: absolute;
