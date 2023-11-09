@@ -5,6 +5,19 @@
 <h1>use this page to watch ads and support dm unblocker!</h1>
 <script>
   setTimeout(() => {
-    window.location.reload();
+    if (!checkingerrors){
+      window.location.reload();
+    }
   },3000);
+  var checkingerrors=false;
+  document.addEventListener('keyup', event => {
+    if (event.code === 'Space') {
+      if (checkingerrors){
+        checkingerrors=false;
+      }
+      else{
+        checkingerrors=true;
+      }
+    }
+  })
 </script>
