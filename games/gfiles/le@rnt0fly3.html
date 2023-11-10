@@ -1,0 +1,64 @@
+<iframe class="iframe" id="iframe"></iframe>
+<style>
+  .back{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top:1%;
+    left:1%;
+  }
+  .iframe{
+    position: absolute;
+    width:100%;
+    height: 100%;
+    left:0px;
+    top:0px;
+    border: none;
+  }
+</style>
+
+<script>
+  window.navigator.serviceWorker.register('/sw.js');
+  function get_cookie(cookie_name) { const value = "; " + document.cookie; const parts = value.split("; " + cookie_name + "="); if (parts.length === 2) return parts.pop().split(";").shift(); } 
+  
+  var title2=get_cookie("title2");
+  var favicon=get_cookie("favicon");
+  
+  if (favicon==null || favicon==undefined || favicon==""){
+        favicon="/img/logo.png";
+        document.cookie="favicon="+favicon+"; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/";
+        (function() {
+           var link=document.querySelector("link[rel*='icon']") || document.createElement('link');
+           link.type='image/x-icon';
+           link.rel='shortcut icon';
+           link.href=favicon;
+           document.getElementsByTagName('head')[0].appendChild(link);
+       })();
+    }
+    else{
+        (function() {
+           var link=document.querySelector("link[rel*='icon']") || document.createElement('link');
+           link.type='image/x-icon';
+           link.rel='shortcut icon';
+           link.href=favicon;
+           document.getElementsByTagName('head')[0].appendChild(link);
+       })();
+    }
+    if (title2==null || title2==undefined || title2==""){
+        title2="DM Unbl0cker";
+        document.cookie="title2="+title2+"; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/";
+        document.title=title2;
+    }
+    else{
+        document.title=title2;
+    }
+</script>
+
+<script>
+  function reroutetogames(){
+    window.location.pathname="/games";
+  }
+</script>
+<script>
+  iframe.src=window.location.origin+"/service/hvtrs8%2F-fnaqhqtmrcgg.eaoeq%2Frlcygr-lgapn%2Ftm-dl%7B-1%3Feaoe%3F%255B'20if%2502'3C129%3A0'2A%2502laoe'20%251A'20Lgapn)Tm%2BDl%7B%2B1%2502'2A%2502qlwg'20%251A'20lgapn%2Ftm-dl%7B-1%2502'2A%2502dine'20%251A'20%257B'7%40%257C'20dmwllmaf_nilk'5A%2502'3C%257C'20gcmgs'5A%250FDLCSJJcnwapy0002'5A%250Fnecrl-vo%2Ffny%2F3%2Csuf'5A%2502'2A%257C'20opieilan_laoe'5A%2502'3C%257C'20lgapn%2Ftm-dl%7B-1.qwd%257C'20%255D'5F%2502'2A%2502clv_dine'20%251Alunl'2A%2502clv_eaoe'20%251Alunl'2A%2502uiftj%2502'3C700'2A%2502jekgjt'20%251A742%250C'20eztgnqimn'20%251A'20SUF'20%250C'20fnaqhtepskol%2502'3Cnwln%250C'20ioaee'20%251A'20gcmgs'5A%250FHule0002'5A%250FRkiK%60PMx%3Bp4CJd%60lwEhH%2Cjrg'20%250C'20pna%7Ba%60lg%2502'3C1'2A%2502peqixa%60lg%2502'3C1'2A%2502wpfavefAv%2502'3Cnwln%250C'20atm'20%251A0%250C'20fnaqhtaps'20%251Alunl'2A%2502gmwlctmr'20%251A'20rwfdlg%2502'2A%2502mrkeltctkol%2502'3C%2502naldqccpg%2502'2A%2502gm%60ef_mpvimnq%2502'3C%2502'7%40%257C'20woofe'5A%2502'3C%257C'20orasug%257C'20%250C)%257C'20anlmwLevwmriilg'5A%2502'3C%2B'5A%2502knvepncl'5A%2502'2A%2B'5A%2502clnouSarkpvAacgsq%257C'20%251A)%257C'20Nm%257C'20%255D'20%250C'20ncmg_ovib'20%251Alunl'2A%2502qt%7Blg_ovib'20%251Alunl'2A%2502nedt%5Dmtk%60%2502'3C%2502'5%40%257C'20APRMWQ%257C'20%257D'20%250C'20rkgjt%5Dmtk%60%2502'3C%2502'5%40%257C'20WCSF%257C'20%257D'20%250C'20cctggmr%7B_qlwg'20%251A'20lgapn%2Ftm-dl%7B%2502'2A%2502wpfavef_ct'20%251Alunl'2A%2502qtcr%5Duqep%2502'3C12%255D";
+</script>
