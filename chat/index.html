@@ -385,8 +385,13 @@
       if (document.getElementsByClassName("cactus-editor-textarea")[0].value==""){
         document.getElementsByClassName("cactus-send-button")[0].disabled=true;
       }
-      if (document.getElementsByClassName("cactus-editor-textarea")[0].value.length>37){
+      if (document.getElementsByClassName("cactus-editor-textarea")[0].value.length>30){
         document.getElementsByClassName("cactus-send-button")[0].disabled=true;
+      }
+      for (var l=0;l<swearlist.length;l++){
+        if (document.getElementsByClassName("cactus-editor-textarea")[0].value.includes(swearlist[l])){
+          document.getElementsByClassName("cactus-send-button")[0].disabled=true;
+        }
       }
       if (document.getElementsByClassName("cactus-editor-textarea")[0].value!="" && document.getElementsByClassName("cactus-editor-name")[0].querySelector("span").querySelector("input").value!=""){
         document.getElementsByClassName("cactus-send-button")[0].disabled=false;
