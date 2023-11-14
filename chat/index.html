@@ -364,16 +364,6 @@
   }, true);
 
   function loop(){
-    for (var i=0;i<document.getElementsByClassName("cactus-message-text").length;i++){
-      var currentmessage=document.getElementsByClassName("cactus-message-text")[i];
-
-      for (var l=0;l<swearlist.length;l++){
-        if (currentmessage.innerText.replace(" ","").toLowerCase().includes(swearlist[l])){
-          currentmessage.style.display="none";
-        }
-      }
-    }
-    
     if (document.getElementsByClassName("cactus-errors")[0]!=null){
       if (document.getElementsByClassName("cactus-error-text")[0].innerText.includes("banned")){
         document.getElementById("banalert").style.display="block";
@@ -407,4 +397,17 @@
     }
   }
   setInterval(loop,0);
+
+  setInterval(() => {
+    for (var i=0;i<document.getElementsByClassName("cactus-message-text").length;i++){
+      var currentmessage=document.getElementsByClassName("cactus-message-text")[i];
+      var text=currentmessage.innerText.replace(" ","").toLowerCase();
+
+      for (var l=0;l<swearlist.length;l++){
+        if (text.includes(swearlist[l])){
+          currentmessage.style.display="none";
+        }
+      }
+    }
+  }, 0);
 </script>
