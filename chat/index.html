@@ -364,6 +364,8 @@
   }, true);
 
   function loop(){
+    var e=false;
+    
     if (document.getElementsByClassName("cactus-errors")[0]!=null){
       if (document.getElementsByClassName("cactus-error-text")[0].innerText.includes("banned")){
         document.getElementById("banalert").style.display="block";
@@ -390,10 +392,10 @@
       }
       for (var l=0;l<swearlist.length;l++){
         if (document.getElementsByClassName("cactus-editor-textarea")[0].value.includes(swearlist[l])){
-          document.getElementsByClassName("cactus-send-button")[0].disabled=true;
+          e=true;
         }
       }
-      if (document.getElementsByClassName("cactus-editor-textarea")[0].value!="" && document.getElementsByClassName("cactus-editor-name")[0].querySelector("span").querySelector("input").value!=""){
+      if (e!=true && document.getElementsByClassName("cactus-editor-textarea")[0].value.length<=30 && document.getElementsByClassName("cactus-editor-textarea")[0].value!="" && document.getElementsByClassName("cactus-editor-name")[0].querySelector("span").querySelector("input").value!=""){
         document.getElementsByClassName("cactus-send-button")[0].disabled=false;
       }
     }
