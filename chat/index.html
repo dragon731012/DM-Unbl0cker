@@ -416,8 +416,8 @@
       var currentmessage=document.getElementsByClassName("cactus-message-text")[i];
       var text=currentmessage.innerText.replace(" ","").toLowerCase();
 
-      for (var q=0;q<currentmessage.innerText.length;q++){
-        var val=currentmessage;
+      for (var q=0;q<text.length;q++){
+        var val=text;
         if (val[q]!=" " && val[q]!="a" && val[q]!="a" && val[q]!="b" && val[q]!="c" && val[q]!="d" && val[q]!="e" && val[q]!="f" && val[q]!="g" && val[q]!="h" && val[q]!="i" && val[q]!="j" && val[q]!="k" && val[q]!="l" && val[q]!="m" && val[q]!="n" && val[q]!="o" && val[q]!="p" && val[q]!="q" && val[q]!="r" && val[q]!="s" && val[q]!="t" && val[q]!="u" && val[q]!="v" && val[q]!="w" && val[q]!="x" && val[q]!="y" && val[q]!="z"){
           currentmessage.style.display="none";
         }
