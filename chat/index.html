@@ -408,7 +408,7 @@
   setInterval(() => {
     for (var i=0;i<document.getElementsByClassName("cactus-message-text").length;i++){
       var currentmessage=document.getElementsByClassName("cactus-message-text")[i];
-      var text=currentmessage.innerText.replace(" ","").currentmessage.innerText.replace("-","").currentmessage.innerText.replace(".","").toLowerCase();
+      var text=currentmessage.innerText.replace(" ","").replace("-","").replace(".","").toLowerCase();
 
       for (var l=0;l<swearlist.length;l++){
         if (text.includes(swearlist[l])){
