@@ -390,6 +390,12 @@
       if (document.getElementsByClassName("cactus-editor-textarea")[0].value.length>30){
         document.getElementsByClassName("cactus-send-button")[0].disabled=true;
       }
+      for (var q=0;q<document.getElementsByClassName("cactus-editor-textarea")[0].value.length;q++){
+        var val=document.getElementsByClassName("cactus-editor-textarea")[0].value.toLowerCase();
+        if (val[q]!="a" && val[q]!="a" && val[q]!="b" && val[q]!="c" && val[q]!="d" && val[q]!="e" && val[q]!="f" && val[q]!="g" && val[q]!="h" && val[q]!="i" && val[q]!="j" && val[q]!="k" && val[q]!="l" && val[q]!="m" && val[q]!="n" && val[q]!="o" && val[q]!="p" && val[q]!="q" && val[q]!="r" && val[q]!="s" && val[q]!="t" && val[q]!="u" && val[q]!="v" && val[q]!="w" && val[q]!="x" && val[q]!="y" && val[q]!="z"){
+          e=true;
+        }
+      }
       for (var l=0;l<swearlist.length;l++){
         if (document.getElementsByClassName("cactus-editor-textarea")[0].value.toLowerCase().includes(swearlist[l].toLowerCase())){
           e=true;
@@ -410,6 +416,13 @@
       var currentmessage=document.getElementsByClassName("cactus-message-text")[i];
       var text=currentmessage.innerText.replace(" ","").toLowerCase();
 
+      for (var q=0;q<currentmessage.innerText.length;q++){
+        var val=currentmessage;
+        if (val[q]!=" " && val[q]!="a" && val[q]!="a" && val[q]!="b" && val[q]!="c" && val[q]!="d" && val[q]!="e" && val[q]!="f" && val[q]!="g" && val[q]!="h" && val[q]!="i" && val[q]!="j" && val[q]!="k" && val[q]!="l" && val[q]!="m" && val[q]!="n" && val[q]!="o" && val[q]!="p" && val[q]!="q" && val[q]!="r" && val[q]!="s" && val[q]!="t" && val[q]!="u" && val[q]!="v" && val[q]!="w" && val[q]!="x" && val[q]!="y" && val[q]!="z"){
+          currentmessage.style.display="none";
+        }
+      }
+      
       for (var l=0;l<swearlist.length;l++){
         if (text.includes(swearlist[l].toLowerCase())){
           currentmessage.style.display="none";
