@@ -416,6 +416,7 @@ var swearlist=[
   "chonkies",
   "chonky",
   "chonkys",
+  "títs",
   "chraa",
   "christ killer",
   "christ killers",
