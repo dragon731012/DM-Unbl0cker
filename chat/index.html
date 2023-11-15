@@ -391,7 +391,7 @@
         document.getElementsByClassName("cactus-send-button")[0].disabled=true;
       }
       for (var l=0;l<swearlist.length;l++){
-        if (document.getElementsByClassName("cactus-editor-textarea")[0].value.includes(swearlist[l])){
+        if (document.getElementsByClassName("cactus-editor-textarea")[0].value.toLowerCase().includes(swearlist[l].toLowerCase())){
           e=true;
         }
       }
@@ -411,7 +411,7 @@
       var text=currentmessage.innerText.replace(" ","").toLowerCase();
 
       for (var l=0;l<swearlist.length;l++){
-        if (text.includes(swearlist[l])){
+        if (text.includes(swearlist[l].toLowerCase())){
           currentmessage.style.display="none";
         }
       }
