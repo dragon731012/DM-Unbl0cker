@@ -9,39 +9,57 @@
 <div id="black" class="black"></div> <img src="/img/loading.gif" id="loadimg" class="loadimg"/> <style> @keyframes fadeout{ 0%{ opacity:1; pointer-events: none;} 100%{ opacity:0; display:none; }} .black{ position:absolute; left:0px; opacity:1; display:block; top:0px; width:100%; z-index:999999999999999999999999999999999999999999999; height:100%; } .loadimg{ position:absolute; opacity:1; display:block; width:125px; z-index:9999999999999999999999999999999999999999999999; height:125px; top:50%; left:50%; transform:translate(-50%, -50%); } </style> <script> function fade(){ document.getElementById("loadimg").style.animation="linear 1.5s 1 running fadeout"; document.getElementById("loadimg").addEventListener("animationend", () => { document.getElementById("black").style.animation="linear 1.5s 1 running fadeout"; document.getElementById("black").addEventListener("animationend", () => { document.getElementById("black").remove(); }); document.getElementById("loadimg").remove(); }); } setTimeout(fade,1200); </script> 
 <input type="text" placeholder="Search..." id="searchbar">
 <div class="buttons" align="center" id="buttons"> 
-  <button class="games" data-sort="" onclick="paperio();">Paper.io</button>
-  <button class="games" data-sort="" onclick="far();">Forward Assault Remix</button>
-  <button class="games" data-sort="" onclick="run3();">Run 3</button>
-  <button class="games" data-sort="" onclick="learntofly();">Learn to Fly</button>
-  <button class="games" data-sort="" onclick="bitlife();">Bitlife</button>
-  <button class="games" data-sort="" onclick="stickrpg();">Stick RPG</button>
-  <button class="games" data-sort="" onclick="rooftopsnipers();">Rooftop Snipers 1</button>
-  <button class="games" data-sort="" onclick="rooftopsnipers2();">Rooftop Snipers 2</button>
-  <button class="games" data-sort="" onclick="helixjump();">Helix Jump</button>
-  <button class="games" data-sort="" onclick="amongus();">Among Us</button>
-  <button class="games" data-sort="" onclick="rl();">Rocket League</button>
-  <button class="games" data-sort="" onclick="vex6();">Vex 6</button>  
-  <button class="games" data-sort="" onclick="vex5();">Vex 5</button>  
-  <button class="games" data-sort="" onclick="retrobowl();">Retro Bowl</button>  
-  <button class="games" data-sort="" onclick="bbs();">Basketball Stars</button>  
-  <button class="games" data-sort="" onclick="twentyfortyeight();">2048</button>
-  <button class="games" data-sort="" onclick="stabfish();">Stabfish.io</button>
-  <button class="games" data-sort="" onclick="cookieclicker();">Cookie Clicker</button>
-  <button class="games" data-sort="" onclick="dragonjoust();">Dragonjoust.io</button>
-  <button class="games" data-sort="" onclick="subwaysurfers();">Subway Surfers</button>
-  <button class="games" data-sort="" onclick="chromedino();">Chrome Dino</button>
-  <button class="games" data-sort="" onclick="zr();">Zombsroyale.io</button>
-  <button class="games" data-sort="" onclick="basketbros();">Basket Bros</button>
-  <button class="games" data-sort="" onclick="slitherio();">Slither.io</button>
-  <button class="games" data-sort="" onclick="motox3m();">Motox3m</button>
-  <button class="games" data-sort="" onclick="mcars();">Madalin Cars Multiplayer</button>
-  <button class="games" data-sort="" onclick="lol();">1v1.lol</button>
-  <button class="games" data-sort="" onclick="slope();">Slope</button>
-  <button class="games" data-sort="" onclick="eglr();">Eaglercraft (Minecraft)</button>
-  <button class="games" data-sort="" onclick="bp();">Blockpost</button>
-  <button class="games" data-sort="" onclick="yohoho();">Yohoho.io</button>
-  <button class="games" data-sort="" onclick="ltf2();">Learn to Fly 2</button>
+  <button class="games" data-sort="" onclick="playgame('paperio.html');">Paper.io</button>
+  <button class="games" data-sort="" onclick="playgame('f0rw@rd@ss@ultremix.html');">Forward Assault Remix</button>
+  <button class="games" data-sort="" onclick="playgame('run3.html');">Run 3</button>
+  <button class="games" data-sort="" onclick="playgame('le@rnt0fly.html');">Learn to Fly</button>
+  <button class="games" data-sort="" onclick="playgame('bitlife/');">Bitlife</button>
+  <button class="games" data-sort="" onclick="playgame('/stickrpg.html');">Stick RPG</button>
+  <button class="games" data-sort="" onclick="playgame('rooftopsnipers.html');">Rooftop Snipers 1</button>
+  <button class="games" data-sort="" onclick="playgame('rooftopsnipers2.html');">Rooftop Snipers 2</button>
+  <button class="games" data-sort="" onclick="playgame('helixjump.html');">Helix Jump</button>
+  <button class="games" data-sort="" onclick="playgame('@m0ngus.html);">Among Us</button>
+  <button class="games" data-sort="" onclick="playgame('Rocket-League/');">Rocket League</button>
+  <button class="games" data-sort="" onclick="playgame('vex6.html');">Vex 6</button>  
+  <button class="games" data-sort="" onclick="playgame('vex5.html');">Vex 5</button>  
+  <button class="games" data-sort="" onclick="playgame('retr0b0wl.html');">Retro Bowl</button>  
+  <button class="games" data-sort="" onclick="playgame('b@sketb@llst@rs.html);">Basketball Stars</button>  
+  <button class="games" data-sort="" onclick="playgame('2048.html');">2048</button>
+  <button class="games" data-sort="" onclick="playgame('st@bfish.html');">Stabfish.io</button>
+  <button class="games" data-sort="" onclick="playgame('cookieclicker.html');">Cookie Clicker</button>
+  <button class="games" data-sort="" onclick="playgame('dr@g0nj0ust.html);">Dragonjoust.io</button>
+  <button class="games" data-sort="" onclick="playgame('subwaysurfers.html');">Subway Surfers</button>
+  <button class="games" data-sort="" onclick="playgame('chromedino.html');">Chrome Dino</button>
+  <button class="games" data-sort="" onclick="playgame('z0mbsr0y@le.html');">Zombsroyale.io</button>
+  <button class="games" data-sort="" onclick="playgame('basketbros.html');">Basket Bros</button>
+  <button class="games" data-sort="" onclick="playgame('slitherio.html');">Slither.io</button>
+  <button class="games" data-sort="" onclick="playgame('motox3m.html');">Motox3m</button>
+  <button class="games" data-sort="" onclick="playgame('mcars.html');">Madalin Cars Multiplayer</button>
+  <button class="games" data-sort="" onclick="playgame('1v1lol.html');">1v1.lol</button>
+  <button class="games" data-sort="" onclick="playgame('slope.html');">Slope</button>
+  <button class="games" data-sort="" onclick="playgame('minecraft-15/');">Eaglercraft (Minecraft)</button>
+  <button class="games" data-sort="" onclick="playgame('bl0ckp0st.html');">Blockpost</button>
+  <button class="games" data-sort="" onclick="playgame('y0h0h0.html');">Yohoho.io</button>
+  <button class="games" data-sort="" onclick="playgame('le@rnt0fly2.html');">Learn to Fly 2</button>
 </div>
+<script>  
+  function reroutetohome(){
+    window.location.href=window.location.origin;
+  }
+  function playgame(game) {
+    window.location.href=`${window.location.orgin}/games/gfiles/${game}`
+  }
+  function raze(){
+    window.location.href=window.location.origin+"/games/gfiles/raze.html";
+  }
+  function ss(){
+    window.location.href=window.location.origin+"/games/gfiles/she11sh0ckers.html";
+  }
+  function ltf3(){
+    window.location.href=window.location.origin+"/games/gfiles/le@rnt0fly3.html";
+  }
+</script>
+
 <a href="https://github.com/3kh0">
   <h4 class="credits">credit to 3kh0 for some (a lot) of the games</h4>
 </a>
@@ -190,114 +208,4 @@
 <script>
   var fontsize1=2560/screen.width*18.5;
   title1.style.fontSize = fontsize1+"px";
-</script>
-<script>  
-  function reroutetohome(){
-    window.location.href=window.location.origin;
-  }
-  function paperio(){
-    window.location.href=window.location.origin+"/games/gfiles/paperio.html";
-  }
-  function rooftopsnipers(){
-    window.location.href=window.location.origin+"/games/gfiles/rooftopsnipers.html";
-  }
-  function rl(){
-    window.location.href=window.location.origin+"/games/gfiles/Rocket-League/index.html";
-  }
-  function amongus(){
-    window.location.href=window.location.origin+"/games/gfiles/@m0ngus.html";
-  }
-  function vex6(){
-    window.location.href=window.location.origin+"/games/gfiles/vex6.html";
-  }
-  function stickrpg(){
-    window.location.href=window.location.origin+"/games/gfiles/stickrpg.html";
-  }
-  function twentyfortyeight(){
-    window.location.href=window.location.origin+"/games/gfiles/2048.html";
-  }
-  function cookieclicker(){
-    window.location.href=window.location.origin+"/games/gfiles/cookieclicker.html";
-  }
-  function bitlife(){
-    window.location.href=window.location.origin+"/games/gfiles/bitlife";
-  }
-  function far(){
-    window.location.href=window.location.origin+"/games/gfiles/f0rw@rd@ss@ultremix.html";
-  }
-  function subwaysurfers(){
-    window.location.href=window.location.origin+"/games/gfiles/subwaysurfers.html";
-  }
-  function learntofly(){
-    window.location.href=window.location.origin+"/games/gfiles/le@rnt0fly.html";
-  }
-  function chromedino(){
-    window.location.href=window.location.origin+"/games/gfiles/chromedino.html";
-  }
-  function run3(){
-    window.location.href=window.location.origin+"/games/gfiles/run3.html";
-  }
-  function retrobowl(){
-    window.location.href=window.location.origin+"/games/gfiles/retr0b0wl.html";
-  }
-  function zr(){
-    window.location.href=window.location.origin+"/games/gfiles/z0mbsr0y@le.html";
-  }
-  function raze(){
-    window.location.href=window.location.origin+"/games/gfiles/raze.html";
-  }
-  function slitherio(){
-    window.location.href=window.location.origin+"/games/gfiles/slitherio.html";
-  }
-  function basketbros(){
-    window.location.href=window.location.origin+"/games/gfiles/basketbros.html";
-  }
-  function stabfish(){
-    window.location.href=window.location.origin+"/games/gfiles/st@bfish.html";
-  }
-  function motox3m(){
-    window.location.href=window.location.origin+"/games/gfiles/motox3m.html";
-  }
-  function lol(){
-    window.location.href=window.location.origin+"/games/gfiles/1v1lol.html";
-  }
-  function bbs(){
-    window.location.href=window.location.origin+"/games/gfiles/b@sketb@llst@rs.html";
-  }
-  function ltf2(){
-    window.location.href=window.location.origin+"/games/gfiles/le@rnt0fly2.html";
-  }
-  function slope(){
-    window.location.href=window.location.origin+"/games/gfiles/slope.html";
-  }
-  function eglr(){
-    window.location.href=window.location.origin+"/games/gfiles/minecraft-15";
-  }
-  function bp(){
-    window.location.href=window.location.origin+"/games/gfiles/bl0ckp0st.html";
-  }
-  function rooftopsnipers2(){
-    window.location.href=window.location.origin+"/games/gfiles/rooftopsnipers2.html";
-  }
-  function mcars(){
-    window.location.href=window.location.origin+"/games/gfiles/mcars.html";
-  }
-  function vex5(){
-    window.location.href=window.location.origin+"/games/gfiles/vex5.html";
-  }
-  function dragonjoust(){
-    window.location.href=window.location.origin+"/games/gfiles/dr@g0nj0ust.html";
-  }
-  function ss(){
-    window.location.href=window.location.origin+"/games/gfiles/she11sh0ckers.html";
-  }
-  function helixjump(){
-    window.location.href=window.location.origin+"/games/gfiles/helixjump.html";
-  }
-  function ltf3(){
-    window.location.href=window.location.origin+"/games/gfiles/le@rnt0fly3.html";
-  }
-  function yohoho(){
-    window.location.href=window.location.origin+"/games/gfiles/y0h0h0.html";
-  }
 </script>
