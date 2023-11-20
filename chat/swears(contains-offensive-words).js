@@ -2825,5 +2825,11 @@ var swearlist=[
   "zipperheads",
   "zoophile",
   "zoophilia",
-  "🖕"
+  "🖕",
+  "motherfucker",
+  "wtf",
+  "tf",
+  "fuck",
+  "retard",
+  "sex"
 ];
