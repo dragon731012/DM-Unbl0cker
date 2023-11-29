@@ -118,7 +118,9 @@ form.addEventListener("submit", async (event) => {
             inp.style.left="0px";
             inp.style.outline="none";
             inp.style.padding="3px";
-            inp.style.backgroundColor="white";
+            setInterval(() => {
+              inp.style.backgroundColor="white";
+            },1);
             inp.style.borderRadius="25px";
             inp.style.border="2px solid black";
             inp.style.position="relative";
