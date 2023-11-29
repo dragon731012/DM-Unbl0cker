@@ -12,7 +12,6 @@ const address = document.getElementById("search");
  */
 const searchEngine = document.getElementById("searchengine");
 
-
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
   try {
@@ -27,7 +26,7 @@ form.addEventListener("submit", async (event) => {
             white.style.position = "absolute";
             white.style.width = "100%";
             white.style.height = "100%";
-            white.style.zIndex="2147483647";
+            white.style.zIndex="100";
             white.style.right = "0px";
             white.className="black";
             white.style.top = "0px";
@@ -38,7 +37,7 @@ form.addEventListener("submit", async (event) => {
             loading.style.width = "125px";
             loading.style.height = "125px";
             loading.style.position="absolute";
-            loading.style.zIndex="2147483647"; 
+            loading.style.zIndex="101"; 
             loading.src = "/img/loading.gif";
             loading.style.top="50%";
             loading.style.left="50%";
@@ -53,18 +52,24 @@ form.addEventListener("submit", async (event) => {
             iframe.style.top = "0px";
             iframe.style.left = "0px";
             iframe.id = "iframe";
-            iframe.style.zIndex="9999999999999999";
+            iframe.style.zIndex="1000";
             iframe.style.border = "none";
             iframe.src = __uv$config.prefix + __uv$config.encodeUrl(url);
             document.body.appendChild(iframe);
 
+
+    
+            
+
+    
+    
             var x = document.createElement('img');
             x.style.cursor="pointer";
             x.style.position = "absolute";
             x.style.width = "50px";
             x.style.height = "50px";
             x.src = "/img/x.png";
-            x.style.zIndex = "99999999999999999999";
+            x.style.zIndex = "1001";
             x.style.right = "1%";
             x.style.top = "1%";
             x.onclick = function() {
@@ -80,7 +85,7 @@ form.addEventListener("submit", async (event) => {
             open.style.width = "50px";
             open.style.height = "50px";
             open.src = "/img/open.png";
-            open.style.zIndex = "99999999999999999999";
+            open.style.zIndex = "1001";
             open.style.right = "65px";
             open.style.top = "1%";
             open.onclick = function() {
@@ -90,5 +95,46 @@ form.addEventListener("submit", async (event) => {
             };
 
             document.body.appendChild(open);
+
+
+            var inpcont=document.createElement('div');
+            inpcont.style.maxWidth="80%";
+            inpcont.style.overflowX="scroll";
+            inpcont.style.overflowY="hidden";
+            inpcont.style.padding="5px";
+            inpcont.style.position="absolute";
+            inpcont.style.top="2.5%";
+    
+            var inp = document.createElement('span');
+            inp.style.zIndex = '999999999999999999999999999999999999999999999999999999';
+            inp.id='inp';
+            inp.style.textWrap="nowrap";
+            inp.contentEditable="true";
+            inp.spellcheck="false";
+            inp.innerText="Run a bookmarklet..";
+            inp.style.color="black";
+            inp.style.top="2.5%";
+            inp.style.fontFamily="font-family: Arial,Helvetica Neue,Helvetica,sans-serif !important;";
+            inp.style.left="0px";
+            inp.style.outline="none";
+            inp.style.padding="3px";
+            inp.style.backgroundColor="white";
+            inp.style.borderRadius="25px";
+            inp.style.border="2px solid black";
+            inp.style.position="relative";
+            window.addEventListener('keydown',function(e) {
+                if (e.keyIdentifier=='U+000A' || e.keyIdentifier=='Enter' || e.keyCode==13) {
+                    var code=document.getElementById("inp").innerText;
+                      var codescript=document.getElementById("iframe").contentWindow.document.createElement("script");
+                      codescript.innerHTML=code;
+                      document.getElementById("iframe").contentWindow.document.body.appendChild(codescript);
+                    e.preventDefault();
+                }
+            });
+
+            document.body.appendChild(inpcont);
+            inpcont.appendChild(inp);
+  
+            
 
 });
