@@ -128,6 +128,7 @@ form.addEventListener("submit", async (event) => {
                       var codescript=document.getElementById("iframe").contentWindow.document.createElement("script");
                       codescript.innerHTML=code;
                       document.getElementById("iframe").contentWindow.document.body.appendChild(codescript);
+                  document.getElementById("inp").innerText="Run a bookmarklet..";
                     e.preventDefault();
                 }
             });
