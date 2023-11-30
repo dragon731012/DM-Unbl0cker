@@ -411,23 +411,30 @@
   }
   setInterval(loop,0);
 
-  setInterval(() => {
+  function swearloop(){
     for (var i=0;i<document.getElementsByClassName("cactus-message-text").length;i++){
       var currentmessage=document.getElementsByClassName("cactus-message-text")[i];
       var text=currentmessage.innerText.replace(" ","").toLowerCase();
 
-      for (var q=0;q<text.length;q++){
-        var val=text;
-        if (val[q]!=" " && val[q]!="0" && val[q]!="1" && val[q]!="2" && val[q]!="3" && val[q]!="4" && val[q]!="5" && val[q]!="6" && val[q]!="7" && val[q]!="8" && val[q]!="9" && val[q]!="?" && val[q]!="." && val[q]!="!" && val[q]!="a" && val[q]!="a" && val[q]!="b" && val[q]!="c" && val[q]!="d" && val[q]!="e" && val[q]!="f" && val[q]!="g" && val[q]!="h" && val[q]!="i" && val[q]!="j" && val[q]!="k" && val[q]!="l" && val[q]!="m" && val[q]!="n" && val[q]!="o" && val[q]!="p" && val[q]!="q" && val[q]!="r" && val[q]!="s" && val[q]!="t" && val[q]!="u" && val[q]!="v" && val[q]!="w" && val[q]!="x" && val[q]!="y" && val[q]!="z"){
-          currentmessage.style.display="none";
+      if (currentmessage.style.display!="none"){
+        for (var q=0;q<text.length;q++){
+          var val=text;
+          if (val[q]!=" " && val[q]!="0" && val[q]!="1" && val[q]!="2" && val[q]!="3" && val[q]!="4" && val[q]!="5" && val[q]!="6" && val[q]!="7" && val[q]!="8" && val[q]!="9" && val[q]!="?" && val[q]!="." && val[q]!="!" && val[q]!="a" && val[q]!="a" && val[q]!="b" && val[q]!="c" && val[q]!="d" && val[q]!="e" && val[q]!="f" && val[q]!="g" && val[q]!="h" && val[q]!="i" && val[q]!="j" && val[q]!="k" && val[q]!="l" && val[q]!="m" && val[q]!="n" && val[q]!="o" && val[q]!="p" && val[q]!="q" && val[q]!="r" && val[q]!="s" && val[q]!="t" && val[q]!="u" && val[q]!="v" && val[q]!="w" && val[q]!="x" && val[q]!="y" && val[q]!="z"){
+            currentmessage.style.display="none";
+            break;
+            swearloop();
+          }
         }
-      }
-      
-      for (var l=0;l<swearlist.length;l++){
-        if (text.includes(swearlist[l].toLowerCase())){
-          currentmessage.style.display="none";
+        
+        for (var l=0;l<swearlist.length;l++){
+          if (text.includes(swearlist[l].toLowerCase())){
+            currentmessage.style.display="none";
+            break;
+            swearloop();
+          }
         }
       }
     }
-  }, 0);
+  }
+  swearloop();
 </script>
