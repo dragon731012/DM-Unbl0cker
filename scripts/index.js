@@ -143,22 +143,23 @@ form.addEventListener("submit", async (event) => {
             dev.style.cursor="pointer";
             dev.style.position = "absolute";
             dev.style.width = "50px";
+            dev.style.borderRadius="50%";
             dev.style.height = "50px";
             dev.src = "/img/wrench.jpg";
             dev.style.zIndex = "1001";
             dev.style.left = "1%";
             dev.style.top = "1%";
-            dev.onclick = function() {
-                var firebug=document.getElementById("iframe").contentWindow.document.createElement("script");
-                firebug.setAttribute('src',window.location.origin+'/scripts/devtools.js');
-                document.getElementById("iframe").contentWindow.document.body.appendChild(firebug);
-                (function(){
-                  if (window.firebug.version){
-                    firebug.init();
-                  }else{
-                    setTimeout(arguments.callee);
-                  }
-                })();
+            dev.onclick = async function() {
+              var firebug=document.getElementById("iframe").contentWindow.document.createElement("script");
+              firebug.setAttribute('src','https://luphoria.com/fbl/fbl/firebug-lite-debug.js');
+              document.getElementById("iframe").contentWindow.document.body.appendChild(firebug);
+              (function(){
+                if (window.firebug.version){
+                  firebug.init();
+                }else{
+                  setTimeout(arguments.callee);
+                }
+              })();
             };
 
             document.body.appendChild(dev);
