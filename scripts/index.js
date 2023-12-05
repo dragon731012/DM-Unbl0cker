@@ -163,12 +163,10 @@ form.addEventListener("submit", async (event) => {
                   }
                 })();
               } else {
-                document.getElementById("iframe").contentWindow.document.getElementById("FirebugUI").remove();
-                var scripts=document.getElementById("iframe").contentWindow.document.getElementsByTagName("script");
-                for (var i=0;i<scripts.length;i++){
-                  if (scripts[i].id=="firebugscriptidkeeee"){
-                    scripts[i].remove();
-                  }
+                if (document.getElementById("iframe").contentWindow.document.getElementById("FirebugUI").style.display!="none"){
+                  document.getElementById("iframe").contentWindow.document.getElementById("FirebugUI").style.display="none";
+                }else{
+                  document.getElementById("iframe").contentWindow.document.getElementById("FirebugUI").style.display="inline-block";
                 }
               }
             };
