@@ -169,6 +169,7 @@ form.addEventListener("submit", async (event) => {
                   if (scripts[i].id=="firebugscriptidkeeee"){
                     scripts[i].remove();
                   }
+                }
               }
             };
 
