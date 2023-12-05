@@ -104,6 +104,7 @@ form.addEventListener("submit", async (event) => {
             inpcont.style.padding="5px";
             inpcont.style.position="absolute";
             inpcont.style.top="2.5%";
+            inpcont.style.left="75px";
     
             var inp = document.createElement('span');
             inp.style.zIndex = '999999999999999999999999999999999999999999999999999999';
@@ -138,6 +139,28 @@ form.addEventListener("submit", async (event) => {
             document.body.appendChild(inpcont);
             inpcont.appendChild(inp);
   
-            
+            var dev = document.createElement('img');
+            dev.style.cursor="pointer";
+            dev.style.position = "absolute";
+            dev.style.width = "50px";
+            dev.style.height = "50px";
+            dev.src = "/img/wrench.jpg";
+            dev.style.zIndex = "1001";
+            dev.style.left = "1%";
+            dev.style.top = "1%";
+            dev.onclick = function() {
+                var firebug=document.getElementById("iframe").contentWindow.document.createElement("script");
+                firebug.setAttribute('src',window.location.origin+'/scripts/devtools.js');
+                document.getElementById("iframe").contentWindow.document.body.appendChild(firebug);
+                (function(){
+                  if (window.firebug.version){
+                    firebug.init();
+                  }else{
+                    setTimeout(arguments.callee);
+                  }
+                })();
+            };
+
+            document.body.appendChild(dev);
 
 });
