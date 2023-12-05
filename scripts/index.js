@@ -153,6 +153,7 @@ form.addEventListener("submit", async (event) => {
               if (document.getElementById("iframe").contentWindow.document.getElementById("FirebugUI")==null){
                 var firebug=document.getElementById("iframe").contentWindow.document.createElement("script");
                 firebug.setAttribute('src','https://luphoria.com/fbl/fbl/firebug-lite-debug.js');
+                firebug.setAttribute('id','firebugscriptidkeeee');
                 document.getElementById("iframe").contentWindow.document.body.appendChild(firebug);
                 (function(){
                   if (window.firebug.version){
@@ -163,6 +164,11 @@ form.addEventListener("submit", async (event) => {
                 })();
               } else {
                 document.getElementById("iframe").contentWindow.document.getElementById("FirebugUI").remove();
+                var scripts=document.getElementById("iframe").contentWindow.document.getElementsByTagName("script");
+                for (var i=0;i<scripts.length;i++){
+                  if (scripts[i].id=="firebugscriptidkeeee"){
+                    scripts[i].remove();
+                  }
               }
             };
 
