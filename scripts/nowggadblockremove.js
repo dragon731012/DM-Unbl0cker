@@ -1,4 +1,4 @@
-alert("bypass by Potato. https://github.com/dragon731012");
+document.log("bypass by Potato. https://github.com/dragon731012");
 
 setInterval(() => {
     var div=document.getElementsByTagName("div");
