@@ -60,9 +60,10 @@
     var script=document.createElement("script");
     script.src="/games/gfiles/nowgg.js";
     document.body.appendChild(script);
-    var script2=document.createElement("script");
-    script2.src="/games/gfiles/keys.js";
-    document.body.appendChild(script2);
+    var doc2 = document.getElementById("iframe").contentWindow; 
+    var script2=doc.document.createElement("script");
+    script2.src=window.location.origin+"/scripts/keys.js";
+    doc2.document.body.appendChild(script2);
   }
   
   function reroutetogames(){
