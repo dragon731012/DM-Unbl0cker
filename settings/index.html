@@ -349,13 +349,11 @@ async function sc(){
    fileReader.onload=function(){
 
       var filetext=fileReader.result;
+       ultraviolet.cookie.setCookies(JSON.parse(filetext), db, ultraviolet.meta);
 
    }
 
    fileReader.readAsText(document.getElementById("setinput").files[0]);
-
-    
-    ultraviolet.cookie.setCookies(JSON.parse(filetext), db, ultraviolet.meta);
 }
     
 var fontsize1=2560/window.innerWidth*8;
