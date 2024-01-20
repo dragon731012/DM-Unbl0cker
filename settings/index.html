@@ -42,6 +42,8 @@
 
 <button id="rb">Restart Proxy</button>
 <button id="data" onclick="gc();">Download Data</button>
+<button id="set" onclick="document.getElementById('setinput').click();">Upload Data</button>
+<input type="file" id="setinput" onchange="sc();" style="display:none;">
 
 <style>
     body{
@@ -119,12 +121,27 @@
         font-size: 1em;
         opacity: 1;
     }
+    
+    #sc{
+        position: absolute;
+        width: 15%;
+        height: 5%;
+        top: 69%;
+        right: 42.5%;
+        border-radius: 25px;
+        border: 2px solid white;
+        color: white;
+        background:transparent;
+        text-align: center;
+        font-size: 1em;
+        opacity: 1;
+    }
 
     #data{
         position: absolute;
         width: 15%;
         height: 5%;
-        top: 60%;
+        top: 63%;
         right: 42.5%;
         border-radius: 25px;
         border: 2px solid white;
@@ -321,6 +338,24 @@ async function gc(){
     element.click();
 
     document.body.removeChild(element);
+}
+    
+async function sc(){
+    var ultraviolet = new Ultraviolet(this.config);
+    const db = await ultraviolet.cookie.db();
+
+    var fileReader=new FileReader();
+
+   fileReader.onload=function(){
+
+      var filetext=fileReader.result;
+
+   }
+
+   fileReader.readAsText(document.getElementById("scinput").files[0]);
+
+    
+    ultraviolet.cookie.setCookies(JSON.parse(filetext), db, ultraviolet.meta);
 }
     
 var fontsize1=2560/window.innerWidth*8;
