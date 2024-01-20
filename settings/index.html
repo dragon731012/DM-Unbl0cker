@@ -340,7 +340,6 @@ async function gc(){
     document.body.removeChild(element);
 }
 
-var filetext;
     
 async function sc(){
     var ultraviolet = new Ultraviolet(this.config);
@@ -350,7 +349,9 @@ async function sc(){
 
    fileReader.onload=function(){
 
-      filetext=fileReader.result;
+      var filetext=fileReader.result;
+            ultraviolet.cookie.setCookies(JSON.parse(filetext), db, ultraviolet.meta);
+           alert("success!");
 
    }
 
@@ -407,8 +408,7 @@ var favicon=document.getElementById('url1').value;
 var browser4=document.getElementById('browser1').value;
 var themeval=document.getElementById('theme').value;
 var autoblanker=document.getElementById('autoblank').checked;
-    ultraviolet.cookie.setCookies(JSON.parse(filetext), db, ultraviolet.meta);
-           
+    
 if (imported==''){
     
 
