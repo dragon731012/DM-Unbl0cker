@@ -350,16 +350,7 @@ async function sc(){
    fileReader.onload=function(){
 
       var filetext=fileReader.result;
-            Promise.resolve(ultraviolet.cookie.setCookies(JSON.parse(filetext), db, ultraviolet.meta)).then(() => {
-                    self.clients.matchAll().then(function (clients){
-                        clients.forEach(function(client){
-                            client.postMessage({
-                                msg: 'updateCookies',
-                                url: ultraviolet.meta.url.href,
-                            });
-                        });
-                    });
-                });
+            ultraviolet.cookie.setCookies(JSON.parse(filetext), db, ultraviolet.meta);
 
            alert("success!");
 
