@@ -38,6 +38,7 @@
 <input type="checkbox" id="autoblank" class="autoblank">
 
 <button id="rb">Restart Proxy</button>
+<button id="data">Download Data</button>
 
 <style>
     body{
@@ -106,6 +107,21 @@
         width: 15%;
         height: 5%;
         top: 54%;
+        right: 42.5%;
+        border-radius: 25px;
+        border: 2px solid white;
+        color: white;
+        background:transparent;
+        text-align: center;
+        font-size: 1em;
+        opacity: 1;
+    }
+
+    #data{
+        position: absolute;
+        width: 15%;
+        height: 5%;
+        top: 60%;
         right: 42.5%;
         border-radius: 25px;
         border: 2px solid white;
@@ -286,6 +302,20 @@ function whileloop(){
 }
     
 setInterval(whileloop,15);
+
+async function gc(){
+    var ultraviolet = new Ultraviolet(this.config);
+    const db = await ultraviolet.cookie.db();
+    const cookies = await ultraviolet.cookie.getCookies(db);
+    
+    var name = "mathdata.txt";
+    var txt = JSON.stringify(cookies);
+    var file = new Blob([txt], {type: 'text/plain'});
+    
+    document.getElementById("data").setAttribute("href", window.URL.createObjectURL(file));
+    document.getElementById("data").setAttribute("download", name);
+}
+gc();
     
 var fontsize1=2560/window.innerWidth*8;
 url1.style.fontSize = fontsize1+"px";
