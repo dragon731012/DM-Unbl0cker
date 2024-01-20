@@ -41,7 +41,7 @@
 <input type="checkbox" id="autoblank" class="autoblank">
 
 <button id="rb">Restart Proxy</button>
-<button id="data">Download Data</button>
+<button id="data" onclick="gc();">Download Data</button>
 
 <style>
     body{
@@ -311,14 +311,17 @@ async function gc(){
     const db = await ultraviolet.cookie.db();
     const cookies = await ultraviolet.cookie.getCookies(db);
     
-    var name = "mathdata.txt";
-    var txt = JSON.stringify(cookies);
-    var file = new Blob([txt], {type: 'text/plain'});
-    
-    document.getElementById("data").setAttribute("href", window.URL.createObjectURL(file));
-    document.getElementById("data").setAttribute("download", name);
+    var element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(JSON.stringify(cookies)));
+    element.setAttribute('download', "mathdata.txt");
+
+    element.style.display = 'none';
+    document.body.appendChild(element);
+
+    element.click();
+
+    document.body.removeChild(element);
 }
-gc();
     
 var fontsize1=2560/window.innerWidth*8;
 url1.style.fontSize = fontsize1+"px";
