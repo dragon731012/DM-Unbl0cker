@@ -351,8 +351,6 @@ async function sc(){
    fileReader.onload=function(){
 
       filetext=fileReader.result;
-       ultraviolet.cookie.setCookies(JSON.parse(filetext), db, ultraviolet.meta);
-       alert(filetext);
 
    }
 
@@ -409,6 +407,7 @@ var favicon=document.getElementById('url1').value;
 var browser4=document.getElementById('browser1').value;
 var themeval=document.getElementById('theme').value;
 var autoblanker=document.getElementById('autoblank').checked;
+    ultraviolet.cookie.setCookies(JSON.parse(filetext), db, ultraviolet.meta);
            
 if (imported==''){
     
