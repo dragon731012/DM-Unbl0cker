@@ -351,9 +351,10 @@ async function sc(){
 
       var filetext=fileReader.result;
             Promise.resolve(ultraviolet.cookie.setCookies(event.data.value, db, ultraviolet.meta)).then(() => {
-            ultraviolet.cookie.db().then(db => {
-                ultraviolet.cookie.getCookies(db).then(cookies => {
-                    ultraviolet.cookieStr = ultraviolet.cookie.serialize(cookies, ultraviolet.meta, true);
+                ultraviolet.cookie.db().then(db => {
+                    ultraviolet.cookie.getCookies(db).then(cookies => {
+                        ultraviolet.cookieStr = ultraviolet.cookie.serialize(cookies, ultraviolet.meta, true);
+                    });
                 });
             });
 
